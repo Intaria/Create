@@ -433,15 +433,10 @@ public class AllAdvancements implements DataProvider {
 			.after(DISPLAY_LINK)
 			.special(NOISY)),
 
-		EXTENDO_GRIP = create("extendo_grip", b -> b.icon(AllItems.EXTENDO_GRIP)
-			.title("Boioioing!")
-			.description("Get hold of an Extendo Grip")
-			.after(POTATO_CANNON)),
-
 		LINKED_CONTROLLER = create("linked_controller", b -> b.icon(AllItems.LINKED_CONTROLLER)
 			.title("Remote Activation")
 			.description("Activate a Redstone Link using a Linked Controller")
-			.after(EXTENDO_GRIP)),
+			.after(POTATO_CANNON)),
 
 		ARM_BLAZE_BURNER = create("arm_blaze_burner", b -> b.icon(AllBlocks.BLAZE_BURNER)
 			.title("Combust-o-Tron")
@@ -485,12 +480,6 @@ public class AllAdvancements implements DataProvider {
 		CRAFTER_LAZY = create("crafter_lazy_000", b -> b.icon(AllBlocks.MECHANICAL_CRAFTER)
 			.title("Desperate Measures")
 			.description("Drastically slow down a Mechanical Crafter to procrastinate on proper infrastructure")
-			.after(CRAFTER)
-			.special(SECRET)),
-
-		EXTENDO_GRIP_DUAL = create("extendo_grip_dual", b -> b.icon(AllItems.EXTENDO_GRIP)
-			.title("To Full Extent")
-			.description("Dual-wield Extendo Grips for superhuman reach")
 			.after(CRAFTER)
 			.special(SECRET)),
 

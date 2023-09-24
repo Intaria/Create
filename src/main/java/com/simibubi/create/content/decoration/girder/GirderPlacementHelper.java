@@ -5,7 +5,6 @@ import java.util.function.Predicate;
 
 import com.google.common.base.Predicates;
 import com.simibubi.create.AllBlocks;
-import com.simibubi.create.content.equipment.extendoGrip.ExtendoGripItem;
 import com.simibubi.create.foundation.placement.IPlacementHelper;
 import com.simibubi.create.foundation.placement.PlacementOffset;
 import com.simibubi.create.infrastructure.config.AllConfigs;
@@ -82,8 +81,6 @@ public class GirderPlacementHelper implements IPlacementHelper {
 			int range = AllConfigs.server().equipment.placementAssistRange.get();
 			if (player != null) {
 				AttributeInstance reach = player.getAttribute(ForgeMod.REACH_DISTANCE.get());
-				if (reach != null && reach.hasModifier(ExtendoGripItem.singleRangeAttributeModifier))
-					range += 4;
 			}
 			int poles = attachedPoles(world, pos, dir);
 			if (poles >= range)

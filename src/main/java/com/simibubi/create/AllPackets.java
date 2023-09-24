@@ -35,7 +35,6 @@ import com.simibubi.create.content.contraptions.sync.LimbSwingUpdatePacket;
 import com.simibubi.create.content.equipment.bell.SoulPulseEffectPacket;
 import com.simibubi.create.content.equipment.blueprint.BlueprintAssignCompleteRecipePacket;
 import com.simibubi.create.content.equipment.clipboard.ClipboardEditPacket;
-import com.simibubi.create.content.equipment.extendoGrip.ExtendoGripInteractionPacket;
 import com.simibubi.create.content.equipment.potatoCannon.PotatoCannonPacket;
 import com.simibubi.create.content.equipment.potatoCannon.PotatoProjectileTypeManager;
 import com.simibubi.create.content.equipment.toolbox.ToolboxDisposeAllPacket;
@@ -113,7 +112,6 @@ public enum AllPackets {
 	UPLOAD_SCHEMATIC(SchematicUploadPacket.class, SchematicUploadPacket::new, PLAY_TO_SERVER),
 	CLEAR_CONTAINER(ClearMenuPacket.class, ClearMenuPacket::new, PLAY_TO_SERVER),
 	CONFIGURE_FILTER(FilterScreenPacket.class, FilterScreenPacket::new, PLAY_TO_SERVER),
-	EXTENDO_INTERACT(ExtendoGripInteractionPacket.class, ExtendoGripInteractionPacket::new, PLAY_TO_SERVER),
 	CONTRAPTION_INTERACT(ContraptionInteractionPacket.class, ContraptionInteractionPacket::new, PLAY_TO_SERVER),
 	CLIENT_MOTION(ClientMotionPacket.class, ClientMotionPacket::new, PLAY_TO_SERVER),
 	PLACE_ARM(ArmPlacementPacket.class, ArmPlacementPacket::new, PLAY_TO_SERVER),

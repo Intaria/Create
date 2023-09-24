@@ -27,7 +27,6 @@ import com.simibubi.create.content.equipment.armor.BacktankItem.BacktankBlockIte
 import com.simibubi.create.content.equipment.armor.DivingBootsItem;
 import com.simibubi.create.content.equipment.armor.DivingHelmetItem;
 import com.simibubi.create.content.equipment.blueprint.BlueprintItem;
-import com.simibubi.create.content.equipment.extendoGrip.ExtendoGripItem;
 import com.simibubi.create.content.equipment.goggles.GogglesItem;
 import com.simibubi.create.content.equipment.goggles.GogglesModel;
 import com.simibubi.create.content.equipment.potatoCannon.PotatoCannonItem;
@@ -333,11 +332,6 @@ public class AllItems {
 		REGISTRATE.item("potato_cannon", PotatoCannonItem::new)
 			.model(AssetLookup.itemModelWithPartials())
 			.register();
-
-	public static final ItemEntry<ExtendoGripItem> EXTENDO_GRIP = REGISTRATE.item("extendo_grip", ExtendoGripItem::new)
-		.properties(p -> p.rarity(Rarity.UNCOMMON))
-		.model(AssetLookup.itemModelWithPartials())
-		.register();
 
 	public static final ItemEntry<WorldshaperItem> WORLDSHAPER =
 		REGISTRATE.item("handheld_worldshaper", WorldshaperItem::new)

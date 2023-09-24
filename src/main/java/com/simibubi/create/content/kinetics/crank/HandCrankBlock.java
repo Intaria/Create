@@ -66,9 +66,7 @@ public class HandCrankBlock extends DirectionalKineticBlock
 			return InteractionResult.PASS;
 
 		withBlockEntityDo(worldIn, pos, be -> be.turn(player.isShiftKeyDown()));
-		if (!player.getItemInHand(handIn)
-			.is(AllItems.EXTENDO_GRIP.get()))
-			player.causeFoodExhaustion(getRotationSpeed() * AllConfigs.server().kinetics.crankHungerMultiplier.getF());
+		player.causeFoodExhaustion(getRotationSpeed() * AllConfigs.server().kinetics.crankHungerMultiplier.getF());
 
 		if (player.getFoodData()
 			.getFoodLevel() == 0)

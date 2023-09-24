@@ -21,7 +21,6 @@ import com.simibubi.create.content.equipment.armor.NetheriteBacktankFirstPersonR
 import com.simibubi.create.content.equipment.armor.RemainingAirOverlay;
 import com.simibubi.create.content.equipment.blueprint.BlueprintOverlayRenderer;
 import com.simibubi.create.content.equipment.clipboard.ClipboardValueSettingsHandler;
-import com.simibubi.create.content.equipment.extendoGrip.ExtendoGripRenderHandler;
 import com.simibubi.create.content.equipment.goggles.GoggleOverlayRenderer;
 import com.simibubi.create.content.equipment.toolbox.ToolboxHandlerClient;
 import com.simibubi.create.content.equipment.zapper.ZapperItem;
@@ -148,7 +147,6 @@ public class ClientEvents {
 		CouplingHandlerClient.tick();
 		CouplingRenderer.tickDebugModeRenders();
 		KineticDebugger.tick();
-		ExtendoGripRenderHandler.tick();
 		// CollisionDebugger.tick();
 		ArmInteractionPointHandler.tick();
 		EjectorTargetHandler.tick();

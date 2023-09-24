@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-import com.simibubi.create.content.equipment.extendoGrip.ExtendoGripItem;
 import com.simibubi.create.infrastructure.config.AllConfigs;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -62,8 +61,6 @@ public abstract class PoleHelper<T extends Comparable<T>> implements IPlacementH
 			int range = AllConfigs.server().equipment.placementAssistRange.get();
 			if (player != null) {
 				AttributeInstance reach = player.getAttribute(ForgeMod.REACH_DISTANCE.get());
-				if (reach != null && reach.hasModifier(ExtendoGripItem.singleRangeAttributeModifier))
-					range += 4;
 			}
 			int poles = attachedPoles(world, pos, dir);
 			if (poles >= range)

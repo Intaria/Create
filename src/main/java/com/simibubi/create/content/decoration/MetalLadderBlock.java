@@ -2,7 +2,6 @@ package com.simibubi.create.content.decoration;
 
 import java.util.function.Predicate;
 
-import com.simibubi.create.content.equipment.extendoGrip.ExtendoGripItem;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.placement.IPlacementHelper;
 import com.simibubi.create.foundation.placement.PlacementHelpers;
@@ -93,8 +92,6 @@ public class MetalLadderBlock extends LadderBlock implements IWrenchable {
 			int range = AllConfigs.server().equipment.placementAssistRange.get();
 			if (player != null) {
 				AttributeInstance reach = player.getAttribute(ForgeMod.REACH_DISTANCE.get());
-				if (reach != null && reach.hasModifier(ExtendoGripItem.singleRangeAttributeModifier))
-					range += 4;
 			}
 
 			int ladders = attachedLadders(world, pos, dir);
