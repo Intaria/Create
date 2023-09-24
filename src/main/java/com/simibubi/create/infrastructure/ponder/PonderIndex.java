@@ -25,7 +25,6 @@ import com.simibubi.create.infrastructure.ponder.scenes.FunnelScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.GantryScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ItemVaultScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.KineticsScenes;
-import com.simibubi.create.infrastructure.ponder.scenes.MechanicalDrillScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.MechanicalSawScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.MovementActorScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.PistonScenes;
@@ -33,7 +32,6 @@ import com.simibubi.create.infrastructure.ponder.scenes.ProcessingScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.PulleyScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.RedstoneScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.RedstoneScenes2;
-import com.simibubi.create.infrastructure.ponder.scenes.RollerScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.SteamScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.TunnelScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.fluid.DrainScenes;
@@ -272,10 +270,6 @@ public class PonderIndex {
 			.addStoryBoard("mechanical_saw/processing", MechanicalSawScenes::processing, AllPonderTags.KINETIC_APPLIANCES)
 			.addStoryBoard("mechanical_saw/breaker", MechanicalSawScenes::treeCutting)
 			.addStoryBoard("mechanical_saw/contraption", MechanicalSawScenes::contraption, AllPonderTags.CONTRAPTION_ACTOR);
-		HELPER.forComponents(AllBlocks.MECHANICAL_DRILL)
-			.addStoryBoard("mechanical_drill/breaker", MechanicalDrillScenes::breaker, AllPonderTags.KINETIC_APPLIANCES)
-			.addStoryBoard("mechanical_drill/contraption", MechanicalDrillScenes::contraption,
-				AllPonderTags.CONTRAPTION_ACTOR);
 		HELPER.forComponents(AllBlocks.DEPLOYER)
 			.addStoryBoard("deployer/filter", DeployerScenes::filter, AllPonderTags.KINETIC_APPLIANCES)
 			.addStoryBoard("deployer/modes", DeployerScenes::modes)
@@ -288,9 +282,6 @@ public class PonderIndex {
 			.addStoryBoard("plough", MovementActorScenes::plough);
 		HELPER.forComponents(AllBlocks.CONTRAPTION_CONTROLS)
 			.addStoryBoard("contraption_controls", MovementActorScenes::contraptionControls);
-		HELPER.forComponents(AllBlocks.MECHANICAL_ROLLER)
-			.addStoryBoard("mechanical_roller/clear_and_pave", RollerScenes::clearAndPave)
-			.addStoryBoard("mechanical_roller/fill", RollerScenes::fill);
 
 		// Fluids
 		HELPER.forComponents(AllBlocks.FLUID_PIPE)

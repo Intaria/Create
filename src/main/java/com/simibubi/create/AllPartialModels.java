@@ -50,7 +50,7 @@ public class AllPartialModels {
 		SAW_BLADE_VERTICAL_REVERSED = block("mechanical_saw/blade_vertical_reversed"), GAUGE_DIAL = block("gauge/dial"),
 		GAUGE_INDICATOR = block("gauge/indicator"), GAUGE_HEAD_SPEED = block("gauge/speedometer/head"),
 		GAUGE_HEAD_STRESS = block("gauge/stressometer/head"), BEARING_TOP = block("bearing/top"),
-		BEARING_TOP_WOODEN = block("bearing/top_wooden"), DRILL_HEAD = block("mechanical_drill/head"),
+		BEARING_TOP_WOODEN = block("bearing/top_wooden"),
 		HARVESTER_BLADE = block("mechanical_harvester/blade"), DEPLOYER_POLE = block("deployer/pole"),
 		DEPLOYER_HAND_POINTING = block("deployer/hand_pointing"),
 		DEPLOYER_HAND_PUNCHING = block("deployer/hand_punching"),
@@ -58,9 +58,6 @@ public class AllPartialModels {
 		ANALOG_LEVER_INDICATOR = block("analog_lever/indicator"), FUNNEL_FLAP = block("funnel/flap"),
 		BELT_FUNNEL_FLAP = block("belt_funnel/flap"), BELT_TUNNEL_FLAP = block("belt_tunnel/flap"),
 		FLEXPEATER_INDICATOR = block("diodes/indicator"),
-		
-		ROLLER_WHEEL = block("mechanical_roller/wheel"),
-		ROLLER_FRAME = block("mechanical_roller/frame"),
 
 		CUCKOO_MINUTE_HAND = block("cuckoo_clock/minute_hand"), CUCKOO_HOUR_HAND = block("cuckoo_clock/hour_hand"),
 		CUCKOO_LEFT_DOOR = block("cuckoo_clock/left_door"), CUCKOO_RIGHT_DOOR = block("cuckoo_clock/right_door"),
@@ -79,9 +76,6 @@ public class AllPartialModels {
 		ELEVATOR_BELT = block("elevator_pulley/rope"), ELEVATOR_BELT_HALF = block("elevator_pulley/rope_half"),
 
 		MILLSTONE_COG = block("millstone/inner"),
-
-		SYMMETRY_PLANE = block("symmetry_effect/plane"), SYMMETRY_CROSSPLANE = block("symmetry_effect/crossplane"),
-		SYMMETRY_TRIPLEPLANE = block("symmetry_effect/tripleplane"),
 
 		STICKER_HEAD = block("sticker/head"),
 

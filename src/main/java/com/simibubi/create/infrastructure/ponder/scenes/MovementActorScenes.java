@@ -658,15 +658,9 @@ public class MovementActorScenes {
 			.text("They can be attached anywhere on the contraption");
 		scene.idle(75);
 
-		scene.overlay.showControls(new InputWindowElement(util.vector.topOf(controlsPos2), Pointing.DOWN).rightClick()
-			.withItem(AllBlocks.MECHANICAL_DRILL.asStack()), 30);
-		scene.idle(5);
 		scene.overlay.showControls(new InputWindowElement(util.vector.centerOf(controlsPos1), Pointing.UP).rightClick()
 			.withItem(AllBlocks.MECHANICAL_HARVESTER.asStack()), 25);
 		scene.idle(2);
-		scene.world.setFilterData(util.select.position(controlsPos2), ContraptionControlsBlockEntity.class,
-			AllBlocks.MECHANICAL_DRILL.asStack());
-		scene.idle(5);
 		scene.world.setFilterData(util.select.position(controlsPos1), ContraptionControlsBlockEntity.class,
 			AllBlocks.MECHANICAL_HARVESTER.asStack());
 		scene.idle(30);

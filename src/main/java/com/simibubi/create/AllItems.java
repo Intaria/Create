@@ -32,7 +32,6 @@ import com.simibubi.create.content.equipment.goggles.GogglesItem;
 import com.simibubi.create.content.equipment.goggles.GogglesModel;
 import com.simibubi.create.content.equipment.potatoCannon.PotatoCannonItem;
 import com.simibubi.create.content.equipment.sandPaper.SandPaperItem;
-import com.simibubi.create.content.equipment.symmetryWand.SymmetryWandItem;
 import com.simibubi.create.content.equipment.wrench.WrenchItem;
 import com.simibubi.create.content.equipment.zapper.terrainzapper.WorldshaperItem;
 import com.simibubi.create.content.kinetics.belt.item.BeltConnectorItem;
@@ -339,13 +338,6 @@ public class AllItems {
 		.properties(p -> p.rarity(Rarity.UNCOMMON))
 		.model(AssetLookup.itemModelWithPartials())
 		.register();
-
-	public static final ItemEntry<SymmetryWandItem> WAND_OF_SYMMETRY =
-		REGISTRATE.item("wand_of_symmetry", SymmetryWandItem::new)
-			.properties(p -> p.stacksTo(1)
-				.rarity(Rarity.UNCOMMON))
-			.model(AssetLookup.itemModelWithPartials())
-			.register();
 
 	public static final ItemEntry<WorldshaperItem> WORLDSHAPER =
 		REGISTRATE.item("handheld_worldshaper", WorldshaperItem::new)

@@ -4,7 +4,6 @@ import com.simibubi.create.foundation.config.ConfigBase;
 
 public class CEquipment extends ConfigBase {
 
-	public final ConfigInt maxSymmetryWandRange = i(50, 10, "maxSymmetryWandRange", Comments.symmetryRange);
 	public final ConfigInt placementAssistRange = i(12, 3, "placementAssistRange", Comments.placementRange);
 	public final ConfigInt toolboxRange = i(10, 1, "toolboxRange", Comments.toolboxRange);
 	public final ConfigInt airInBacktank = i(900, 1, "airInBacktank", Comments.maxAirInBacktank);
@@ -21,7 +20,6 @@ public class CEquipment extends ConfigBase {
 	}
 
 	private static class Comments {
-		static String symmetryRange = "The Maximum Distance to an active mirror for the symmetry wand to trigger.";
 		static String maxAirInBacktank =
 			"The Maximum volume of Air that can be stored in a backtank = Seconds of underwater breathing";
 		static String enchantedBacktankCapacity =

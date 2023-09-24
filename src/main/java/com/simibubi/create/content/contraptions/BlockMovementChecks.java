@@ -349,8 +349,6 @@ public class BlockMovementChecks {
 	}
 
 	private static boolean isNotSupportiveFallback(BlockState state, Direction facing) {
-		if (AllBlocks.MECHANICAL_DRILL.has(state))
-			return state.getValue(BlockStateProperties.FACING) == facing;
 		if (AllBlocks.MECHANICAL_BEARING.has(state))
 			return state.getValue(BlockStateProperties.FACING) == facing;
 
@@ -360,7 +358,8 @@ public class BlockMovementChecks {
 			return state.getValue(BlockStateProperties.FACING) == facing;
 		if (AllBlocks.PORTABLE_STORAGE_INTERFACE.has(state))
 			return state.getValue(PortableStorageInterfaceBlock.FACING) == facing;
-		if (state.getBlock() instanceof AttachedActorBlock && !AllBlocks.MECHANICAL_ROLLER.has(state))
+		//if (state.getBlock() instanceof AttachedActorBlock && !AllBlocks.MECHANICAL_ROLLER.has(state))
+		if (state.getBlock() instanceof AttachedActorBlock)
 			return state.getValue(BlockStateProperties.HORIZONTAL_FACING) == facing;
 		if (AllBlocks.ROPE_PULLEY.has(state))
 			return facing == Direction.DOWN;

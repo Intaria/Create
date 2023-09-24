@@ -38,8 +38,6 @@ import com.simibubi.create.content.equipment.clipboard.ClipboardEditPacket;
 import com.simibubi.create.content.equipment.extendoGrip.ExtendoGripInteractionPacket;
 import com.simibubi.create.content.equipment.potatoCannon.PotatoCannonPacket;
 import com.simibubi.create.content.equipment.potatoCannon.PotatoProjectileTypeManager;
-import com.simibubi.create.content.equipment.symmetryWand.ConfigureSymmetryWandPacket;
-import com.simibubi.create.content.equipment.symmetryWand.SymmetryEffectPacket;
 import com.simibubi.create.content.equipment.toolbox.ToolboxDisposeAllPacket;
 import com.simibubi.create.content.equipment.toolbox.ToolboxEquipPacket;
 import com.simibubi.create.content.equipment.zapper.ZapperBeamPacket;
@@ -134,7 +132,6 @@ public enum AllPackets {
 	SUBMIT_GHOST_ITEM(GhostItemSubmitPacket.class, GhostItemSubmitPacket::new, PLAY_TO_SERVER),
 	BLUEPRINT_COMPLETE_RECIPE(BlueprintAssignCompleteRecipePacket.class, BlueprintAssignCompleteRecipePacket::new,
 		PLAY_TO_SERVER),
-	CONFIGURE_SYMMETRY_WAND(ConfigureSymmetryWandPacket.class, ConfigureSymmetryWandPacket::new, PLAY_TO_SERVER),
 	CONFIGURE_WORLDSHAPER(ConfigureWorldshaperPacket.class, ConfigureWorldshaperPacket::new, PLAY_TO_SERVER),
 	TOOLBOX_EQUIP(ToolboxEquipPacket.class, ToolboxEquipPacket::new, PLAY_TO_SERVER),
 	TOOLBOX_DISPOSE_ALL(ToolboxDisposeAllPacket.class, ToolboxDisposeAllPacket::new, PLAY_TO_SERVER),
@@ -165,7 +162,6 @@ public enum AllPackets {
 		ContraptionColliderLockPacketRequest::new, PLAY_TO_SERVER),
 
 	// Server to Client
-	SYMMETRY_EFFECT(SymmetryEffectPacket.class, SymmetryEffectPacket::new, PLAY_TO_CLIENT),
 	SERVER_SPEED(ServerSpeedProvider.Packet.class, ServerSpeedProvider.Packet::new, PLAY_TO_CLIENT),
 	BEAM_EFFECT(ZapperBeamPacket.class, ZapperBeamPacket::new, PLAY_TO_CLIENT),
 	S_CONFIGURE_CONFIG(SConfigureConfigPacket.class, SConfigureConfigPacket::new, PLAY_TO_CLIENT),

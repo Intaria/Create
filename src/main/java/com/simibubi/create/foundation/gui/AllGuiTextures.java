@@ -15,7 +15,6 @@ public enum AllGuiTextures implements ScreenElement {
 
 	// Inventories
 	PLAYER_INVENTORY("player_inventory", 176, 108),
-	WAND_OF_SYMMETRY("curiosities", 0, 131, 188, 101),
 	BLOCKZAPPER("curiosities", 0, 99, 214, 97),
 	TERRAINZAPPER("curiosities", 234, 103),
 	TERRAINZAPPER_INACTIVE_PARAM("curiosities", 238, 0, 18, 18),

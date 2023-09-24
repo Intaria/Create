@@ -24,9 +24,6 @@ import com.simibubi.create.content.contraptions.actors.plough.PloughBlock;
 import com.simibubi.create.content.contraptions.actors.plough.PloughMovementBehaviour;
 import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceBlock;
 import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceMovement;
-import com.simibubi.create.content.contraptions.actors.roller.RollerBlock;
-import com.simibubi.create.content.contraptions.actors.roller.RollerBlockItem;
-import com.simibubi.create.content.contraptions.actors.roller.RollerMovementBehaviour;
 import com.simibubi.create.content.contraptions.actors.seat.SeatBlock;
 import com.simibubi.create.content.contraptions.actors.seat.SeatInteractionBehaviour;
 import com.simibubi.create.content.contraptions.actors.seat.SeatMovementBehaviour;
@@ -119,8 +116,6 @@ import com.simibubi.create.content.kinetics.crusher.CrushingWheelControllerBlock
 import com.simibubi.create.content.kinetics.deployer.DeployerBlock;
 import com.simibubi.create.content.kinetics.deployer.DeployerMovementBehaviour;
 import com.simibubi.create.content.kinetics.deployer.DeployerMovingInteraction;
-import com.simibubi.create.content.kinetics.drill.DrillBlock;
-import com.simibubi.create.content.kinetics.drill.DrillMovementBehaviour;
 import com.simibubi.create.content.kinetics.fan.EncasedFanBlock;
 import com.simibubi.create.content.kinetics.fan.NozzleBlock;
 import com.simibubi.create.content.kinetics.flywheel.FlywheelBlock;
@@ -1260,18 +1255,6 @@ public class AllBlocks {
 			.transform(customItemModel())
 			.register();
 
-	public static final BlockEntry<DrillBlock> MECHANICAL_DRILL = REGISTRATE.block("mechanical_drill", DrillBlock::new)
-		.initialProperties(SharedProperties::stone)
-		.properties(p -> p.color(MaterialColor.PODZOL))
-		.transform(axeOrPickaxe())
-		.blockstate(BlockStateGen.directionalBlockProvider(true))
-		.transform(BlockStressDefaults.setImpact(4.0))
-		.onRegister(movementBehaviour(new DrillMovementBehaviour()))
-		.item()
-		.tag(AllItemTags.CONTRAPTION_CONTROLLED.tag)
-		.transform(customItemModel())
-		.register();
-
 	public static final BlockEntry<SawBlock> MECHANICAL_SAW = REGISTRATE.block("mechanical_saw", SawBlock::new)
 		.initialProperties(SharedProperties::stone)
 		.addLayer(() -> RenderType::cutoutMipped)
@@ -1363,20 +1346,6 @@ public class AllBlocks {
 			.item()
 			.tag(AllItemTags.CONTRAPTION_CONTROLLED.tag)
 			.build()
-			.register();
-
-	public static final BlockEntry<RollerBlock> MECHANICAL_ROLLER =
-		REGISTRATE.block("mechanical_roller", RollerBlock::new)
-			.initialProperties(SharedProperties::stone)
-			.properties(p -> p.color(MaterialColor.COLOR_GRAY)
-				.noOcclusion())
-			.transform(axeOrPickaxe())
-			.onRegister(movementBehaviour(new RollerMovementBehaviour()))
-			.blockstate(BlockStateGen.horizontalBlockProvider(true))
-			.addLayer(() -> RenderType::cutoutMipped)
-			.item(RollerBlockItem::new)
-			.tag(AllItemTags.CONTRAPTION_CONTROLLED.tag)
-			.transform(customItemModel())
 			.register();
 
 	public static final BlockEntry<SailBlock> SAIL_FRAME = REGISTRATE.block("sail_frame", p -> SailBlock.frame(p))

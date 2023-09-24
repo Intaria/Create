@@ -11,8 +11,6 @@ import com.simibubi.create.content.contraptions.actors.psi.PSIInstance;
 import com.simibubi.create.content.contraptions.actors.psi.PortableFluidInterfaceBlockEntity;
 import com.simibubi.create.content.contraptions.actors.psi.PortableItemInterfaceBlockEntity;
 import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceRenderer;
-import com.simibubi.create.content.contraptions.actors.roller.RollerBlockEntity;
-import com.simibubi.create.content.contraptions.actors.roller.RollerRenderer;
 import com.simibubi.create.content.contraptions.bearing.BearingInstance;
 import com.simibubi.create.content.contraptions.bearing.BearingRenderer;
 import com.simibubi.create.content.contraptions.bearing.ClockworkBearingBlockEntity;
@@ -97,9 +95,6 @@ import com.simibubi.create.content.kinetics.crusher.CrushingWheelControllerBlock
 import com.simibubi.create.content.kinetics.deployer.DeployerBlockEntity;
 import com.simibubi.create.content.kinetics.deployer.DeployerInstance;
 import com.simibubi.create.content.kinetics.deployer.DeployerRenderer;
-import com.simibubi.create.content.kinetics.drill.DrillBlockEntity;
-import com.simibubi.create.content.kinetics.drill.DrillInstance;
-import com.simibubi.create.content.kinetics.drill.DrillRenderer;
 import com.simibubi.create.content.kinetics.fan.EncasedFanBlockEntity;
 import com.simibubi.create.content.kinetics.fan.EncasedFanRenderer;
 import com.simibubi.create.content.kinetics.fan.FanInstance;
@@ -530,13 +525,6 @@ public class AllBlockEntityTypes {
 			.renderer(() -> ContraptionControlsRenderer::new)
 			.register();
 
-	public static final BlockEntityEntry<DrillBlockEntity> DRILL = REGISTRATE
-		.blockEntity("drill", DrillBlockEntity::new)
-		.instance(() -> DrillInstance::new, false)
-		.validBlocks(AllBlocks.MECHANICAL_DRILL)
-		.renderer(() -> DrillRenderer::new)
-		.register();
-
 	public static final BlockEntityEntry<SawBlockEntity> SAW = REGISTRATE
 		.blockEntity("saw", SawBlockEntity::new)
 		.instance(() -> SawInstance::new)
@@ -549,12 +537,6 @@ public class AllBlockEntityTypes {
 		.validBlocks(AllBlocks.MECHANICAL_HARVESTER)
 		.renderer(() -> HarvesterRenderer::new)
 		.register();
-
-	public static final BlockEntityEntry<RollerBlockEntity> MECHANICAL_ROLLER =
-		REGISTRATE.blockEntity("mechanical_roller", RollerBlockEntity::new)
-			.validBlocks(AllBlocks.MECHANICAL_ROLLER)
-			.renderer(() -> RollerRenderer::new)
-			.register();
 
 	public static final BlockEntityEntry<PortableItemInterfaceBlockEntity> PORTABLE_STORAGE_INTERFACE =
 		REGISTRATE

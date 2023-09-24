@@ -9,7 +9,6 @@ import com.simibubi.create.AllBlockEntityTypes;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllShapes;
 import com.simibubi.create.content.kinetics.base.DirectionalAxisKineticBlock;
-import com.simibubi.create.content.kinetics.drill.DrillBlock;
 import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.placement.IPlacementHelper;
 import com.simibubi.create.foundation.placement.PlacementHelpers;
@@ -45,6 +44,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.util.Mth;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
@@ -163,7 +163,13 @@ public class SawBlock extends DirectionalAxisKineticBlock implements IBE<SawBloc
 		withBlockEntityDo(worldIn, pos, be -> {
 			if (be.getSpeed() == 0)
 				return;
-			entityIn.hurt(damageSourceSaw, (float) DrillBlock.getDamage(be.getSpeed()));
+
+				float speedAbs = Math.abs(be.getSpeed());
+				double sub1 = Math.min(speedAbs / 16, 2);
+				double sub2 = Math.min(speedAbs / 32, 4);
+				double sub3 = Math.min(speedAbs / 64, 4);
+
+			entityIn.hurt(damageSourceSaw, (float) Mth.clamp(sub1 + sub2 + sub3, 1, 10));
 		});
 	}
 

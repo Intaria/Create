@@ -866,22 +866,6 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 				.pattern("AAA")
 				.pattern(" C ")),
 
-		MECHANICAL_ROLLER = create(AllBlocks.MECHANICAL_ROLLER).unlockedBy(I::andesiteCasing)
-			.viaShaped(b -> b.define('C', I.andesiteCasing())
-				.define('A', I.electronTube())
-				.define('I', AllBlocks.CRUSHING_WHEEL.get())
-				.pattern("A")
-				.pattern("C")
-				.pattern("I")),
-
-		MECHANICAL_DRILL = create(AllBlocks.MECHANICAL_DRILL).unlockedBy(I::andesiteCasing)
-			.viaShaped(b -> b.define('C', I.andesiteCasing())
-				.define('A', I.andesite())
-				.define('I', I.iron())
-				.pattern(" A ")
-				.pattern("AIA")
-				.pattern(" C ")),
-
 		SEQUENCED_GEARSHIFT = create(AllBlocks.SEQUENCED_GEARSHIFT).unlockedBy(I::brassCasing)
 			.viaShapeless(b -> b.requires(I.brassCasing())
 				.requires(I.cog())
