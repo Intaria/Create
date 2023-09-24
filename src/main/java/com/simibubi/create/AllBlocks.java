@@ -227,8 +227,6 @@ import com.simibubi.create.content.redstone.smartObserver.SmartObserverBlock;
 import com.simibubi.create.content.redstone.smartObserver.SmartObserverGenerator;
 import com.simibubi.create.content.redstone.thresholdSwitch.ThresholdSwitchBlock;
 import com.simibubi.create.content.redstone.thresholdSwitch.ThresholdSwitchGenerator;
-import com.simibubi.create.content.schematics.cannon.SchematicannonBlock;
-import com.simibubi.create.content.schematics.table.SchematicTableBlock;
 import com.simibubi.create.content.trains.bogey.BogeySizes;
 import com.simibubi.create.content.trains.bogey.StandardBogeyBlock;
 import com.simibubi.create.content.trains.display.FlapDisplayBlock;
@@ -308,39 +306,6 @@ public class AllBlocks {
 	static {
 		REGISTRATE.creativeModeTab(() -> AllCreativeModeTabs.BASE_CREATIVE_TAB);
 	}
-
-	// Schematics
-
-	public static final BlockEntry<SchematicannonBlock> SCHEMATICANNON =
-		REGISTRATE.block("schematicannon", SchematicannonBlock::new)
-			.initialProperties(() -> Blocks.DISPENSER)
-			.properties(p -> p.color(MaterialColor.COLOR_GRAY))
-			.transform(pickaxeOnly())
-			.blockstate((ctx, prov) -> prov.simpleBlock(ctx.getEntry(), AssetLookup.partialBaseModel(ctx, prov)))
-			.loot((lt, block) -> {
-				Builder builder = LootTable.lootTable();
-				LootItemCondition.Builder survivesExplosion = ExplosionCondition.survivesExplosion();
-				lt.add(block, builder.withPool(LootPool.lootPool()
-					.when(survivesExplosion)
-					.setRolls(ConstantValue.exactly(1))
-					.add(LootItem.lootTableItem(AllBlocks.SCHEMATICANNON.get()
-						.asItem())
-						.apply(CopyNbtFunction.copyData(ContextNbtProvider.BLOCK_ENTITY)
-							.copy("Options", "BlockEntityTag.Options")))));
-			})
-			.item()
-			.transform(customItemModel())
-			.register();
-
-	public static final BlockEntry<SchematicTableBlock> SCHEMATIC_TABLE =
-		REGISTRATE.block("schematic_table", SchematicTableBlock::new)
-			.initialProperties(() -> Blocks.LECTERN)
-			.properties(p -> p.color(MaterialColor.PODZOL))
-			.transform(axeOrPickaxe())
-			.blockstate((ctx, prov) -> prov.horizontalBlock(ctx.getEntry(), prov.models()
-				.getExistingFile(ctx.getId()), 0))
-			.simpleItem()
-			.register();
 
 	// Kinetics
 

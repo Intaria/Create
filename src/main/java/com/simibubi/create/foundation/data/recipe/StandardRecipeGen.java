@@ -985,36 +985,6 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 
 	;
 
-	private Marker SCHEMATICS = enterFolder("schematics");
-
-	GeneratedRecipe
-
-	SCHEMATIC_TABLE = create(AllBlocks.SCHEMATIC_TABLE).unlockedBy(AllItems.EMPTY_SCHEMATIC::get)
-		.viaShaped(b -> b.define('W', ItemTags.WOODEN_SLABS)
-			.define('S', Blocks.SMOOTH_STONE)
-			.pattern("WWW")
-			.pattern(" S ")
-			.pattern(" S ")),
-
-		SCHEMATICANNON = create(AllBlocks.SCHEMATICANNON).unlockedBy(AllItems.EMPTY_SCHEMATIC::get)
-			.viaShaped(b -> b.define('L', ItemTags.LOGS)
-				.define('D', Blocks.DISPENSER)
-				.define('S', Blocks.SMOOTH_STONE)
-				.define('I', Blocks.IRON_BLOCK)
-				.pattern(" I ")
-				.pattern("LIL")
-				.pattern("SDS")),
-
-		EMPTY_SCHEMATIC = create(AllItems.EMPTY_SCHEMATIC).unlockedBy(() -> Items.PAPER)
-			.viaShapeless(b -> b.requires(Items.PAPER)
-				.requires(Tags.Items.DYES_LIGHT_BLUE)),
-
-		SCHEMATIC_AND_QUILL = create(AllItems.SCHEMATIC_AND_QUILL).unlockedBy(() -> Items.PAPER)
-			.viaShapeless(b -> b.requires(AllItems.EMPTY_SCHEMATIC.get())
-				.requires(Tags.Items.FEATHERS))
-
-	;
-
 	private Marker PALETTES = enterFolder("palettes");
 
 	GeneratedRecipe

@@ -29,7 +29,6 @@ import static com.simibubi.create.AllItems.CRAFTER_SLOT_COVER;
 import static com.simibubi.create.AllItems.GOLDEN_SHEET;
 import static com.simibubi.create.AllItems.POWDERED_OBSIDIAN;
 import static com.simibubi.create.AllItems.SCHEMATIC;
-import static com.simibubi.create.AllItems.SCHEMATIC_AND_QUILL;
 import static com.simibubi.create.AllItems.WHEAT_FLOUR;
 import static com.simibubi.create.AllItems.WORLDSHAPER;
 import static com.simibubi.create.Create.asResource;
@@ -175,7 +174,7 @@ public class RemapHelper {
 		reMap.put("empty_blueprint", SCHEMATIC.getId());
 		reMap.put("gold_sheet", GOLDEN_SHEET.getId());
 		reMap.put("flour", WHEAT_FLOUR.getId());
-		reMap.put("blueprint_and_quill", SCHEMATIC_AND_QUILL.getId());
+		//reMap.put("blueprint_and_quill", SCHEMATIC_AND_QUILL.getId());
 		reMap.put("slot_cover", CRAFTER_SLOT_COVER.getId());
 		reMap.put("blueprint", SCHEMATIC.getId());
 		reMap.put("terrain_zapper", WORLDSHAPER.getId());

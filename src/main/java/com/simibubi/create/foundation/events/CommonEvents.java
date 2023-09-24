@@ -61,7 +61,6 @@ public class CommonEvents {
 	public static void onServerTick(ServerTickEvent event) {
 		if (event.phase == Phase.START)
 			return;
-		Create.SCHEMATIC_RECEIVER.tick();
 		Create.LAGGER.tick();
 		ServerSpeedProvider.serverTick();
 		Create.RAILWAYS.sync.serverTick();
@@ -149,9 +148,7 @@ public class CommonEvents {
 	}
 
 	@SubscribeEvent
-	public static void serverStopping(ServerStoppingEvent event) {
-		Create.SCHEMATIC_RECEIVER.shutdown();
-	}
+	public static void serverStopping(ServerStoppingEvent event) {}
 
 	@SubscribeEvent
 	public static void onLoadWorld(LevelEvent.Load event) {

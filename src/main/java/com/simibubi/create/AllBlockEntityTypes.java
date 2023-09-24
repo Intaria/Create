@@ -189,10 +189,6 @@ import com.simibubi.create.content.redstone.nixieTube.NixieTubeBlockEntity;
 import com.simibubi.create.content.redstone.nixieTube.NixieTubeRenderer;
 import com.simibubi.create.content.redstone.smartObserver.SmartObserverBlockEntity;
 import com.simibubi.create.content.redstone.thresholdSwitch.ThresholdSwitchBlockEntity;
-import com.simibubi.create.content.schematics.cannon.SchematicannonBlockEntity;
-import com.simibubi.create.content.schematics.cannon.SchematicannonInstance;
-import com.simibubi.create.content.schematics.cannon.SchematicannonRenderer;
-import com.simibubi.create.content.schematics.table.SchematicTableBlockEntity;
 import com.simibubi.create.content.trains.bogey.BogeyBlockEntityRenderer;
 import com.simibubi.create.content.trains.bogey.StandardBogeyBlockEntity;
 import com.simibubi.create.content.trains.display.FlapDisplayBlockEntity;
@@ -212,21 +208,7 @@ import com.simibubi.create.foundation.blockEntity.renderer.SmartBlockEntityRende
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
 public class AllBlockEntityTypes {
-
-	// Schematics
-	public static final BlockEntityEntry<SchematicannonBlockEntity> SCHEMATICANNON = REGISTRATE
-		.blockEntity("schematicannon", SchematicannonBlockEntity::new)
-		.instance(() -> SchematicannonInstance::new)
-		.validBlocks(AllBlocks.SCHEMATICANNON)
-		.renderer(() -> SchematicannonRenderer::new)
-		.register();
-
-	public static final BlockEntityEntry<SchematicTableBlockEntity> SCHEMATIC_TABLE = REGISTRATE
-		.blockEntity("schematic_table", SchematicTableBlockEntity::new)
-		.validBlocks(AllBlocks.SCHEMATIC_TABLE)
-		.register();
-
-	// Kinetics
+		// Kinetics
 	public static final BlockEntityEntry<BracketedKineticBlockEntity> BRACKETED_KINETIC = REGISTRATE
 		.blockEntity("simple_kinetic", BracketedKineticBlockEntity::new)
 		.instance(() -> BracketedKineticBlockEntityInstance::new, false)

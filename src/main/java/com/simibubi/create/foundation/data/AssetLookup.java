@@ -17,13 +17,6 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ModelFile;
 
 public class AssetLookup {
-
-	/**
-	 * Custom block models packaged with other partials. Example:
-	 * models/block/schematicannon/block.json <br>
-	 * <br>
-	 * Adding "powered", "vertical" will look for /block_powered_vertical.json
-	 */
 	public static ModelFile partialBaseModel(DataGenContext<?, ?> ctx, RegistrateBlockstateProvider prov,
 		String... suffix) {
 		String string = "/block";

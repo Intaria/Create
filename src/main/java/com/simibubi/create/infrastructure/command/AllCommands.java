@@ -42,9 +42,6 @@ public class AllCommands {
 				// utility
 				.then(util);
 
-		if (!FMLLoader.isProduction() && FMLLoader.getDist() == Dist.CLIENT)
-			root.then(CreateTestCommand.register());
-
 		LiteralCommandNode<CommandSourceStack> createRoot = dispatcher.register(root);
 
 		createRoot.addChild(buildRedirect("u", util));

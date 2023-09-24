@@ -44,7 +44,6 @@ import com.simibubi.create.content.materials.ExperienceNuggetItem;
 import com.simibubi.create.content.processing.burner.BlazeBurnerBlockItem;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.content.redstone.link.controller.LinkedControllerItem;
-import com.simibubi.create.content.schematics.SchematicAndQuillItem;
 import com.simibubi.create.content.schematics.SchematicItem;
 import com.simibubi.create.content.trains.schedule.ScheduleItem;
 import com.simibubi.create.foundation.data.AssetLookup;
@@ -361,11 +360,6 @@ public class AllItems {
 	public static final ItemEntry<Item> EMPTY_SCHEMATIC = REGISTRATE.item("empty_schematic", Item::new)
 		.properties(p -> p.stacksTo(1))
 		.register();
-
-	public static final ItemEntry<SchematicAndQuillItem> SCHEMATIC_AND_QUILL =
-		REGISTRATE.item("schematic_and_quill", SchematicAndQuillItem::new)
-			.properties(p -> p.stacksTo(1))
-			.register();
 
 	public static final ItemEntry<SchematicItem> SCHEMATIC = REGISTRATE.item("schematic", SchematicItem::new)
 		.properties(p -> p.stacksTo(1))

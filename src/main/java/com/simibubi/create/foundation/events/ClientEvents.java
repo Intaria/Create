@@ -119,8 +119,6 @@ public class ClientEvents {
 		SoundScapes.tick();
 		AnimationTickHolder.tick();
 
-		CreateClient.SCHEMATIC_SENDER.tick();
-		CreateClient.SCHEMATIC_AND_QUILL_HANDLER.tick();
 		CreateClient.GLUE_HANDLER.tick();
 		CreateClient.SCHEMATIC_HANDLER.tick();
 		CreateClient.ZAPPER_RENDER_HANDLER.tick();

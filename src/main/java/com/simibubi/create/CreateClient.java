@@ -9,8 +9,6 @@ import com.simibubi.create.content.equipment.potatoCannon.PotatoCannonRenderHand
 import com.simibubi.create.content.equipment.zapper.ZapperRenderHandler;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import com.simibubi.create.content.kinetics.waterwheel.WaterWheelRenderer;
-import com.simibubi.create.content.schematics.client.ClientSchematicLoader;
-import com.simibubi.create.content.schematics.client.SchematicAndQuillHandler;
 import com.simibubi.create.content.schematics.client.SchematicHandler;
 import com.simibubi.create.content.trains.GlobalRailwayManager;
 import com.simibubi.create.foundation.ClientResourceReloadListener;
@@ -46,9 +44,7 @@ public class CreateClient {
 	public static final ModelSwapper MODEL_SWAPPER = new ModelSwapper();
 	public static final CasingConnectivity CASING_CONNECTIVITY = new CasingConnectivity();
 
-	public static final ClientSchematicLoader SCHEMATIC_SENDER = new ClientSchematicLoader();
 	public static final SchematicHandler SCHEMATIC_HANDLER = new SchematicHandler();
-	public static final SchematicAndQuillHandler SCHEMATIC_AND_QUILL_HANDLER = new SchematicAndQuillHandler();
 	public static final SuperGlueSelectionHandler GLUE_HANDLER = new SuperGlueSelectionHandler();
 
 	public static final ZapperRenderHandler ZAPPER_RENDER_HANDLER = new ZapperRenderHandler();

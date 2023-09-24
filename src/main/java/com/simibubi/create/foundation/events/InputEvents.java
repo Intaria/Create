@@ -38,7 +38,7 @@ public class InputEvents {
 		double delta = event.getScrollDelta();
 //		CollisionDebugger.onScroll(delta);
 		boolean cancelled = CreateClient.SCHEMATIC_HANDLER.mouseScrolled(delta)
-			|| CreateClient.SCHEMATIC_AND_QUILL_HANDLER.mouseScrolled(delta) || TrainHUD.onScroll(delta)
+			|| TrainHUD.onScroll(delta)
 			|| ElevatorControlsHandler.onScroll(delta);
 		event.setCanceled(cancelled);
 	}
@@ -52,8 +52,6 @@ public class InputEvents {
 		boolean pressed = !(event.getAction() == 0);
 
 		if (CreateClient.SCHEMATIC_HANDLER.onMouseInput(button, pressed))
-			event.setCanceled(true);
-		else if (CreateClient.SCHEMATIC_AND_QUILL_HANDLER.onMouseInput(button, pressed))
 			event.setCanceled(true);
 	}
 

@@ -36,16 +36,6 @@ public class AllSoundEvents {
 
 	public static final SoundEntry
 
-	SCHEMATICANNON_LAUNCH_BLOCK = create("schematicannon_launch_block").subtitle("Schematicannon fires")
-		.playExisting(SoundEvents.GENERIC_EXPLODE, .1f, 1.1f)
-		.category(SoundSource.BLOCKS)
-		.build(),
-
-		SCHEMATICANNON_FINISH = create("schematicannon_finish").subtitle("Schematicannon dings")
-			.playExisting(SoundEvents.NOTE_BLOCK_BELL, 1, .7f)
-			.category(SoundSource.BLOCKS)
-			.build(),
-
 		DEPOT_SLIDE = create("depot_slide").subtitle("Item slides")
 			.playExisting(SoundEvents.SAND_BREAK, .125f, 1.5f)
 			.category(SoundSource.BLOCKS)

@@ -28,17 +28,6 @@ public enum AllGuiTextures implements ScreenElement {
 	SCHEMATIC_PROMPT("schematics_2", 213, 77),
 	HUD_BACKGROUND("overlay", 0, 0, 16, 16),
 
-	SCHEMATIC_TABLE("schematics", 0, 121, 214, 83),
-	SCHEMATIC_TABLE_PROGRESS("schematics", 0, 204, 84, 16),
-
-	SCHEMATICANNON_TOP("schematics_2", 0, 77, 213, 42),
-	SCHEMATICANNON_BOTTOM("schematics_2", 0, 119, 213, 99),
-	SCHEMATICANNON_PROGRESS("schematics_2", 76, 239, 114, 16),
-	SCHEMATICANNON_CHECKLIST_PROGRESS("schematics_2", 191, 240, 16, 14),
-	SCHEMATICANNON_HIGHLIGHT("schematics_2", 1, 229, 26, 26),
-	SCHEMATICANNON_FUEL("schematics_2", 28, 222, 47, 16),
-	SCHEMATICANNON_FUEL_CREATIVE("schematics_2", 28, 239, 47, 16),
-
 	STOCKSWITCH("logistics", 182, 95),
 	STOCKSWITCH_ARROW_UP("logistics", 191, 0, 7, 24),
 	STOCKSWITCH_ARROW_DOWN("logistics", 198, 0, 7, 24),
