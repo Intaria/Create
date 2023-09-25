@@ -64,7 +64,6 @@ import com.simibubi.create.content.kinetics.belt.BeltBlock;
 import com.simibubi.create.content.kinetics.gantry.GantryShaftBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.ShaftBlock;
 import com.simibubi.create.content.kinetics.steamEngine.PoweredShaftBlockEntity;
-import com.simibubi.create.content.logistics.crate.CreativeCrateBlockEntity;
 import com.simibubi.create.content.logistics.vault.ItemVaultBlockEntity;
 import com.simibubi.create.content.redstone.contact.RedstoneContactBlock;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlock;
@@ -648,12 +647,6 @@ public abstract class Contraption {
 		MovingInteractionBehaviour interactionBehaviour = AllInteractionBehaviours.getBehaviour(captured.state);
 		if (interactionBehaviour != null)
 			interactors.put(localPos, interactionBehaviour);
-
-		if (be instanceof CreativeCrateBlockEntity
-			&& ((CreativeCrateBlockEntity) be).getBehaviour(FilteringBehaviour.TYPE)
-				.getFilter()
-				.isEmpty())
-			hasUniversalCreativeCrate = true;
 	}
 
 	@Nullable

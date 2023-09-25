@@ -117,8 +117,6 @@ import com.simibubi.create.content.kinetics.millstone.MillstoneRenderer;
 import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlockEntity;
 import com.simibubi.create.content.kinetics.mixer.MechanicalMixerRenderer;
 import com.simibubi.create.content.kinetics.mixer.MixerInstance;
-import com.simibubi.create.content.kinetics.motor.CreativeMotorBlockEntity;
-import com.simibubi.create.content.kinetics.motor.CreativeMotorRenderer;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.simibubi.create.content.kinetics.press.MechanicalPressRenderer;
 import com.simibubi.create.content.kinetics.press.PressInstance;
@@ -148,7 +146,6 @@ import com.simibubi.create.content.logistics.chute.ChuteBlockEntity;
 import com.simibubi.create.content.logistics.chute.ChuteRenderer;
 import com.simibubi.create.content.logistics.chute.SmartChuteBlockEntity;
 import com.simibubi.create.content.logistics.chute.SmartChuteRenderer;
-import com.simibubi.create.content.logistics.crate.CreativeCrateBlockEntity;
 import com.simibubi.create.content.logistics.depot.DepotBlockEntity;
 import com.simibubi.create.content.logistics.depot.DepotRenderer;
 import com.simibubi.create.content.logistics.depot.EjectorBlockEntity;
@@ -209,13 +206,6 @@ public class AllBlockEntityTypes {
 		.instance(() -> BracketedKineticBlockEntityInstance::new, false)
 		.validBlocks(AllBlocks.SHAFT, AllBlocks.COGWHEEL, AllBlocks.LARGE_COGWHEEL)
 		.renderer(() -> BracketedKineticBlockEntityRenderer::new)
-		.register();
-
-	public static final BlockEntityEntry<CreativeMotorBlockEntity> MOTOR = REGISTRATE
-		.blockEntity("motor", CreativeMotorBlockEntity::new)
-		.instance(() -> HalfShaftInstance::new, false)
-		.validBlocks(AllBlocks.CREATIVE_MOTOR)
-		.renderer(() -> CreativeMotorRenderer::new)
 		.register();
 
 	public static final BlockEntityEntry<GearboxBlockEntity> GEARBOX = REGISTRATE
@@ -363,12 +353,6 @@ public class AllBlockEntityTypes {
 	public static final BlockEntityEntry<FluidTankBlockEntity> FLUID_TANK = REGISTRATE
 		.blockEntity("fluid_tank", FluidTankBlockEntity::new)
 		.validBlocks(AllBlocks.FLUID_TANK)
-		.renderer(() -> FluidTankRenderer::new)
-		.register();
-
-	public static final BlockEntityEntry<CreativeFluidTankBlockEntity> CREATIVE_FLUID_TANK = REGISTRATE
-		.blockEntity("creative_fluid_tank", CreativeFluidTankBlockEntity::new)
-		.validBlocks(AllBlocks.CREATIVE_FLUID_TANK)
 		.renderer(() -> FluidTankRenderer::new)
 		.register();
 
@@ -691,12 +675,6 @@ public class AllBlockEntityTypes {
 	public static final BlockEntityEntry<ThresholdSwitchBlockEntity> THRESHOLD_SWITCH = REGISTRATE
 		.blockEntity("stockpile_switch", ThresholdSwitchBlockEntity::new)
 		.validBlocks(AllBlocks.THRESHOLD_SWITCH)
-		.renderer(() -> SmartBlockEntityRenderer::new)
-		.register();
-
-	public static final BlockEntityEntry<CreativeCrateBlockEntity> CREATIVE_CRATE = REGISTRATE
-		.blockEntity("creative_crate", CreativeCrateBlockEntity::new)
-		.validBlocks(AllBlocks.CREATIVE_CRATE)
 		.renderer(() -> SmartBlockEntityRenderer::new)
 		.register();
 

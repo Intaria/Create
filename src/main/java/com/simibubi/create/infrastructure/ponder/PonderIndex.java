@@ -98,9 +98,6 @@ public class PonderIndex {
 			.addStoryBoard("fan/direction", FanScenes::direction, AllPonderTags.KINETIC_APPLIANCES)
 			.addStoryBoard("fan/processing", FanScenes::processing);
 
-		HELPER.forComponents(AllBlocks.CREATIVE_MOTOR)
-			.addStoryBoard("creative_motor", KineticsScenes::creativeMotor, AllPonderTags.KINETIC_SOURCES)
-			.addStoryBoard("creative_motor_mojang", KineticsScenes::creativeMotorMojang);
 		HELPER.addStoryBoard(AllBlocks.WATER_WHEEL, "water_wheel", KineticsScenes::waterWheel,
 			AllPonderTags.KINETIC_SOURCES);
 		HELPER.addStoryBoard(AllBlocks.LARGE_WATER_WHEEL, "large_water_wheel", KineticsScenes::largeWaterWheel,
@@ -284,10 +281,6 @@ public class PonderIndex {
 		HELPER.forComponents(AllBlocks.FLUID_TANK)
 			.addStoryBoard("fluid_tank/storage", FluidTankScenes::storage, AllPonderTags.FLUIDS)
 			.addStoryBoard("fluid_tank/sizes", FluidTankScenes::sizes);
-		HELPER.forComponents(AllBlocks.CREATIVE_FLUID_TANK)
-			.addStoryBoard("fluid_tank/storage_creative", FluidTankScenes::creative, AllPonderTags.FLUIDS,
-				AllPonderTags.CREATIVE)
-			.addStoryBoard("fluid_tank/sizes_creative", FluidTankScenes::sizes);
 		HELPER.forComponents(AllBlocks.HOSE_PULLEY)
 			.addStoryBoard("hose_pulley/intro", HosePulleyScenes::intro, AllPonderTags.FLUIDS, AllPonderTags.KINETIC_APPLIANCES)
 			.addStoryBoard("hose_pulley/level", HosePulleyScenes::level)

@@ -75,9 +75,8 @@ public class FluidTankItem extends BlockItem {
 
 		if (!FluidTankBlock.isTank(placedOnState))
 			return;
-		boolean creative = getBlock().equals(AllBlocks.CREATIVE_FLUID_TANK.get());
 		FluidTankBlockEntity tankAt = ConnectivityHandler.partAt(
-			creative ? AllBlockEntityTypes.CREATIVE_FLUID_TANK.get() : AllBlockEntityTypes.FLUID_TANK.get(), world, placedOnPos
+			AllBlockEntityTypes.FLUID_TANK.get(), world, placedOnPos
 		);
 		if (tankAt == null)
 			return;

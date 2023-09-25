@@ -44,10 +44,6 @@ public class AllPonderTags {
 		DECORATION = create("decoration").item(Items.ROSE_BUSH)
 			.defaultLang("Aesthetics", "Components used mostly for decorative purposes"),
 
-		CREATIVE = create("creative").item(AllBlocks.CREATIVE_CRATE.get())
-			.defaultLang("Creative Mode", "Components not usually available for Survival Mode")
-			.addToIndex(),
-
 		MOVEMENT_ANCHOR = create("movement_anchor").item(AllBlocks.MECHANICAL_PISTON.get())
 			.defaultLang("Movement Anchors",
 				"Components which allow the creation of moving contraptions, animating an attached structure in a variety of ways")
@@ -127,8 +123,7 @@ public class AllPonderTags {
 			.add(AllBlocks.WATER_WHEEL)
 			.add(AllBlocks.LARGE_WATER_WHEEL)
 			.add(AllBlocks.WINDMILL_BEARING)
-			.add(AllBlocks.STEAM_ENGINE)
-			.add(AllBlocks.CREATIVE_MOTOR);
+			.add(AllBlocks.STEAM_ENGINE);
 
 		PonderRegistry.TAGS.forTag(TRAIN_RELATED)
 			.add(AllBlocks.TRACK)
@@ -170,8 +165,7 @@ public class AllPonderTags {
 			.add(AllBlocks.ITEM_DRAIN)
 			.add(AllBlocks.SPOUT)
 			.add(AllBlocks.PORTABLE_FLUID_INTERFACE)
-			.add(AllBlocks.FLUID_TANK)
-			.add(AllBlocks.CREATIVE_FLUID_TANK);
+			.add(AllBlocks.FLUID_TANK);
 
 		PonderRegistry.TAGS.forTag(ARM_TARGETS)
 			.add(AllBlocks.MECHANICAL_ARM)
@@ -209,7 +203,6 @@ public class AllPonderTags {
 			.add(AllBlocks.BRASS_TUNNEL)
 			.add(AllBlocks.SMART_OBSERVER)
 			.add(AllBlocks.THRESHOLD_SWITCH)
-			.add(AllBlocks.CREATIVE_CRATE)
 			.add(AllBlocks.PORTABLE_STORAGE_INTERFACE);
 
 		PonderRegistry.TAGS.forTag(DECORATION)
@@ -223,11 +216,6 @@ public class AllPonderTags {
 			.add(AllBlocks.BRASS_CASING)
 			.add(AllBlocks.COPPER_CASING)
 			.add(AllBlocks.RAILWAY_CASING);
-
-		PonderRegistry.TAGS.forTag(CREATIVE)
-			.add(AllBlocks.CREATIVE_CRATE)
-			.add(AllBlocks.CREATIVE_FLUID_TANK)
-			.add(AllBlocks.CREATIVE_MOTOR);
 
 		PonderRegistry.TAGS.forTag(SAILS)
 			.add(AllBlocks.SAIL)

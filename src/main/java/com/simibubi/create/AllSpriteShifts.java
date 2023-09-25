@@ -63,8 +63,7 @@ public class AllSpriteShifts {
 	public static final CTSpriteShiftEntry BRASS_TUNNEL_TOP = vertical("tunnel/brass_tunnel_top"),
 		FLUID_TANK = getCT(AllCTTypes.RECTANGLE, "fluid_tank"),
 		FLUID_TANK_TOP = getCT(AllCTTypes.RECTANGLE, "fluid_tank_top"),
-		FLUID_TANK_INNER = getCT(AllCTTypes.RECTANGLE, "fluid_tank_inner"),
-		CREATIVE_FLUID_TANK = getCT(AllCTTypes.RECTANGLE, "creative_fluid_tank");
+		FLUID_TANK_INNER = getCT(AllCTTypes.RECTANGLE, "fluid_tank_inner");
 
 	public static final Couple<CTSpriteShiftEntry> VAULT_TOP = vault("top"), VAULT_FRONT = vault("front"),
 		VAULT_SIDE = vault("side"), VAULT_BOTTOM = vault("bottom");

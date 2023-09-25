@@ -125,8 +125,6 @@ import com.simibubi.create.content.kinetics.mechanicalArm.ArmBlock;
 import com.simibubi.create.content.kinetics.mechanicalArm.ArmItem;
 import com.simibubi.create.content.kinetics.millstone.MillstoneBlock;
 import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlock;
-import com.simibubi.create.content.kinetics.motor.CreativeMotorBlock;
-import com.simibubi.create.content.kinetics.motor.CreativeMotorGenerator;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockModel;
 import com.simibubi.create.content.kinetics.simpleRelays.CogWheelBlock;
@@ -151,7 +149,6 @@ import com.simibubi.create.content.logistics.chute.ChuteBlock;
 import com.simibubi.create.content.logistics.chute.ChuteGenerator;
 import com.simibubi.create.content.logistics.chute.ChuteItem;
 import com.simibubi.create.content.logistics.chute.SmartChuteBlock;
-import com.simibubi.create.content.logistics.crate.CreativeCrateBlock;
 import com.simibubi.create.content.logistics.depot.DepotBlock;
 import com.simibubi.create.content.logistics.depot.EjectorBlock;
 import com.simibubi.create.content.logistics.depot.EjectorItem;
@@ -470,20 +467,6 @@ public class AllBlocks {
 		.onRegister(assignDataBehaviour(new ItemNameDisplaySource(), "combine_item_names"))
 		.onRegister(CreateRegistrate.blockModel(() -> BeltModel::new))
 		.register();
-
-	public static final BlockEntry<CreativeMotorBlock> CREATIVE_MOTOR =
-		REGISTRATE.block("creative_motor", CreativeMotorBlock::new)
-			.initialProperties(SharedProperties::stone)
-			.properties(p -> p.color(MaterialColor.COLOR_PURPLE))
-			.tag(AllBlockTags.SAFE_NBT.tag)
-			.transform(pickaxeOnly())
-			.blockstate(new CreativeMotorGenerator()::generate)
-			.transform(BlockStressDefaults.setCapacity(16384.0))
-			.transform(BlockStressDefaults.setGeneratorSpeed(() -> Couple.create(0, 256)))
-			.item()
-			.properties(p -> p.rarity(Rarity.EPIC))
-			.transform(customItemModel())
-			.register();
 
 	public static final BlockEntry<WaterWheelBlock> WATER_WHEEL = REGISTRATE.block("water_wheel", WaterWheelBlock::new)
 		.initialProperties(SharedProperties::wooden)
@@ -882,26 +865,6 @@ public class AllBlocks {
 		.model(AssetLookup.customBlockItemModel("_", "block_single_window"))
 		.build()
 		.register();
-
-	public static final BlockEntry<FluidTankBlock> CREATIVE_FLUID_TANK =
-		REGISTRATE.block("creative_fluid_tank", FluidTankBlock::creative)
-			.initialProperties(SharedProperties::copperMetal)
-			.properties(p -> p.noOcclusion().color(MaterialColor.COLOR_PURPLE))
-			.transform(pickaxeOnly())
-			.tag(AllBlockTags.SAFE_NBT.tag)
-			.blockstate(new FluidTankGenerator("creative_")::generate)
-			.onRegister(CreateRegistrate.blockModel(() -> FluidTankModel::creative))
-			.addLayer(() -> RenderType::cutoutMipped)
-			.item(FluidTankItem::new)
-			.properties(p -> p.rarity(Rarity.EPIC))
-			.model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/fluid_tank/block_single_window"))
-				.texture("5", p.modLoc("block/creative_fluid_tank_window_single"))
-				.texture("1", p.modLoc("block/creative_fluid_tank"))
-				.texture("particle", p.modLoc("block/creative_fluid_tank"))
-				.texture("4", p.modLoc("block/creative_casing"))
-				.texture("0", p.modLoc("block/creative_casing")))
-			.build()
-			.register();
 
 	public static final BlockEntry<HosePulleyBlock> HOSE_PULLEY = REGISTRATE.block("hose_pulley", HosePulleyBlock::new)
 		.initialProperties(SharedProperties::copperMetal)
@@ -1624,12 +1587,6 @@ public class AllBlocks {
 			.lang("Threshold Switch")
 			.item()
 			.transform(customItemModel("threshold_switch", "block_wall"))
-			.register();
-
-	public static final BlockEntry<CreativeCrateBlock> CREATIVE_CRATE =
-		REGISTRATE.block("creative_crate", CreativeCrateBlock::new)
-			.transform(BuilderTransformers.crate("creative"))
-			.properties(p -> p.color(MaterialColor.COLOR_PURPLE))
 			.register();
 
 	public static final BlockEntry<DisplayLinkBlock> DISPLAY_LINK =

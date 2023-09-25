@@ -60,7 +60,6 @@ public final class NBTProcessors {
 			}
 			return data;
 		});
-		addProcessor(AllBlockEntityTypes.CREATIVE_CRATE.get(), itemProcessor("Filter"));
 		addProcessor(AllBlockEntityTypes.PLACARD.get(), itemProcessor("Item"));
 	}
 

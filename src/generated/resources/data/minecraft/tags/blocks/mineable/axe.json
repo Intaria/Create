@@ -82,7 +82,6 @@
     "create:railway_casing",
     "create:content_observer",
     "create:stockpile_switch",
-    "create:creative_crate",
     "create:display_link",
     "create:redstone_link",
     "create:analog_lever",

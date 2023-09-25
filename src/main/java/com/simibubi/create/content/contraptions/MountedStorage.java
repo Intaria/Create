@@ -36,8 +36,6 @@ public class MountedStorage {
 	public static boolean canUseAsStorage(BlockEntity be) {
 		if (be == null)
 			return false;
-		if (AllBlockEntityTypes.CREATIVE_CRATE.is(be))
-			return true;
 		if (be instanceof ShulkerBoxBlockEntity)
 			return true;
 		if (be instanceof ChestBlockEntity)

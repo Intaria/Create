@@ -271,7 +271,7 @@ public class FluidTankBlock extends Block implements IWrenchable, IBE<FluidTankB
 
 	@Override
 	public BlockEntityType<? extends FluidTankBlockEntity> getBlockEntityType() {
-		return creative ? AllBlockEntityTypes.CREATIVE_FLUID_TANK.get() : AllBlockEntityTypes.FLUID_TANK.get();
+		return AllBlockEntityTypes.FLUID_TANK.get();
 	}
 
 	@Override

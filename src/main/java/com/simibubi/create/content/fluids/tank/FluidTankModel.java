@@ -32,11 +32,6 @@ public class FluidTankModel extends CTModel {
 			AllSpriteShifts.FLUID_TANK_INNER);
 	}
 
-	public static FluidTankModel creative(BakedModel originalModel) {
-		return new FluidTankModel(originalModel, AllSpriteShifts.CREATIVE_FLUID_TANK, AllSpriteShifts.CREATIVE_CASING,
-			AllSpriteShifts.CREATIVE_CASING);
-	}
-
 	private FluidTankModel(BakedModel originalModel, CTSpriteShiftEntry side, CTSpriteShiftEntry top,
 		CTSpriteShiftEntry inner) {
 		super(originalModel, new FluidTankCTBehaviour(side, top, inner));
