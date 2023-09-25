@@ -173,16 +173,10 @@ public class AllAdvancements implements DataProvider {
 			.after(ANDESITE)
 			.special(EXPERT)),
 
-		EJECTOR_MAXED = create("ejector_maxed", b -> b.icon(AllBlocks.WEIGHTED_EJECTOR)
-			.title("Springboard Champion")
-			.description("Get launched more than 30 blocks by a Weighted Ejector")
-			.after(WINDMILL_MAXED)
-			.special(EXPERT)),
-
 		PULLEY_MAXED = create("pulley_maxed", b -> b.icon(AllBlocks.ROPE_PULLEY)
 			.title("Rope to Nowhere")
 			.description("Extend a Rope Pulley over 200 blocks deep")
-			.after(EJECTOR_MAXED)
+			.after(WINDMILL_MAXED)
 			.special(EXPERT)),
 
 		CART_PICKUP = create("cart_pickup", b -> b.icon(AllItems.CHEST_MINECART_CONTRAPTION)

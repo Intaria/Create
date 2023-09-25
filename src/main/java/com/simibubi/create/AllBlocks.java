@@ -147,8 +147,6 @@ import com.simibubi.create.content.logistics.chute.ChuteGenerator;
 import com.simibubi.create.content.logistics.chute.ChuteItem;
 import com.simibubi.create.content.logistics.chute.SmartChuteBlock;
 import com.simibubi.create.content.logistics.depot.DepotBlock;
-import com.simibubi.create.content.logistics.depot.EjectorBlock;
-import com.simibubi.create.content.logistics.depot.EjectorItem;
 import com.simibubi.create.content.logistics.funnel.AndesiteFunnelBlock;
 import com.simibubi.create.content.logistics.funnel.BeltFunnelBlock;
 import com.simibubi.create.content.logistics.funnel.BeltFunnelGenerator;
@@ -675,18 +673,6 @@ public class AllBlocks {
 		.item()
 		.transform(customItemModel("_", "block"))
 		.register();
-
-	public static final BlockEntry<EjectorBlock> WEIGHTED_EJECTOR =
-		REGISTRATE.block("weighted_ejector", EjectorBlock::new)
-			.initialProperties(SharedProperties::stone)
-			.properties(p -> p.noOcclusion().color(MaterialColor.COLOR_GRAY))
-			.transform(axeOrPickaxe())
-			.blockstate((c, p) -> p.horizontalBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p), 180))
-			.transform(BlockStressDefaults.setImpact(2.0))
-			.onRegister(assignDataBehaviour(new ItemNameDisplaySource(), "combine_item_names"))
-			.item(EjectorItem::new)
-			.transform(customItemModel())
-			.register();
 
 	public static final BlockEntry<ChuteBlock> CHUTE = REGISTRATE.block("chute", ChuteBlock::new)
 		.initialProperties(SharedProperties::softMetal)

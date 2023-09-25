@@ -691,14 +691,6 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 			.viaShapeless(b -> b.requires(I.andesite())
 				.requires(I.andesiteCasing())),
 
-		WEIGHTED_EJECTOR = create(AllBlocks.WEIGHTED_EJECTOR).unlockedBy(I::andesiteCasing)
-			.viaShaped(b -> b.define('A', I.goldSheet())
-				.define('D', AllBlocks.DEPOT.get())
-				.define('I', I.cog())
-				.pattern("A")
-				.pattern("D")
-				.pattern("I")),
-
 		MECHANICAL_ARM = create(AllBlocks.MECHANICAL_ARM::get).unlockedBy(I::brassCasing)
 			.returns(1)
 			.viaShaped(b -> b.define('L', I.brassSheet())

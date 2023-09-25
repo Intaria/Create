@@ -28,7 +28,6 @@ import com.simibubi.create.content.kinetics.belt.item.BeltConnectorHandler;
 import com.simibubi.create.content.kinetics.fan.AirCurrent;
 import com.simibubi.create.content.kinetics.mechanicalArm.ArmInteractionPointHandler;
 import com.simibubi.create.content.kinetics.turntable.TurntableHandler;
-import com.simibubi.create.content.logistics.depot.EjectorTargetHandler;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
 import com.simibubi.create.content.redstone.displayLink.DisplayLinkBlockItem;
 import com.simibubi.create.content.redstone.link.LinkRenderer;
@@ -142,7 +141,6 @@ public class ClientEvents {
 		KineticDebugger.tick();
 		// CollisionDebugger.tick();
 		ArmInteractionPointHandler.tick();
-		EjectorTargetHandler.tick();
 		PlacementHelpers.tick();
 		CreateClient.OUTLINER.tickOutlines();
 		CreateClient.GHOST_BLOCKS.tickGhosts();

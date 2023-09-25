@@ -48,7 +48,7 @@ public class AssemblyOperatorBlockItem extends BlockItem {
 	protected boolean operatesOn(BlockState placedOnState) {
 		if (AllBlocks.BELT.has(placedOnState))
 			return placedOnState.getValue(BeltBlock.SLOPE) == BeltSlope.HORIZONTAL;
-		return AllBlocks.BASIN.has(placedOnState) || AllBlocks.DEPOT.has(placedOnState) || AllBlocks.WEIGHTED_EJECTOR.has(placedOnState);
+		return AllBlocks.BASIN.has(placedOnState) || AllBlocks.DEPOT.has(placedOnState);
 	}
 
 }

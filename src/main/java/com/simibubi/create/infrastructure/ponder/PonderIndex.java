@@ -16,7 +16,6 @@ import com.simibubi.create.infrastructure.ponder.scenes.ChassisScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ChuteScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.DetectorScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.DisplayScenes;
-import com.simibubi.create.infrastructure.ponder.scenes.EjectorScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ElevatorScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.FanScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.FunnelScenes;
@@ -135,10 +134,6 @@ public class PonderIndex {
 		HELPER.addStoryBoard(AllItems.EMPTY_BLAZE_BURNER, "empty_blaze_burner", ProcessingScenes::emptyBlazeBurner);
 		HELPER.addStoryBoard(AllBlocks.BLAZE_BURNER, "blaze_burner", ProcessingScenes::blazeBurner);
 		HELPER.addStoryBoard(AllBlocks.DEPOT, "depot", BeltScenes::depot);
-		HELPER.forComponents(AllBlocks.WEIGHTED_EJECTOR)
-			.addStoryBoard("weighted_ejector/eject", EjectorScenes::ejector)
-			.addStoryBoard("weighted_ejector/split", EjectorScenes::splitY)
-			.addStoryBoard("weighted_ejector/redstone", EjectorScenes::redstone);
 			
 		// Vaults
 		HELPER.forComponents(AllBlocks.ITEM_VAULT)

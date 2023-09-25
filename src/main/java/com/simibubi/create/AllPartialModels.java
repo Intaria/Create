@@ -99,8 +99,6 @@ public class AllPartialModels {
 
 		GOGGLES = block("goggles"),
 
-		EJECTOR_TOP = block("weighted_ejector/top"),
-
 		COPPER_BACKTANK_SHAFT = block("copper_backtank/block_shaft_input"),
 		COPPER_BACKTANK_COGS = block("copper_backtank/block_cogs"),
 

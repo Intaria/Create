@@ -145,9 +145,6 @@ import com.simibubi.create.content.logistics.chute.SmartChuteBlockEntity;
 import com.simibubi.create.content.logistics.chute.SmartChuteRenderer;
 import com.simibubi.create.content.logistics.depot.DepotBlockEntity;
 import com.simibubi.create.content.logistics.depot.DepotRenderer;
-import com.simibubi.create.content.logistics.depot.EjectorBlockEntity;
-import com.simibubi.create.content.logistics.depot.EjectorInstance;
-import com.simibubi.create.content.logistics.depot.EjectorRenderer;
 import com.simibubi.create.content.logistics.funnel.FunnelBlockEntity;
 import com.simibubi.create.content.logistics.funnel.FunnelInstance;
 import com.simibubi.create.content.logistics.funnel.FunnelRenderer;
@@ -672,13 +669,6 @@ public class AllBlockEntityTypes {
 		.blockEntity("depot", DepotBlockEntity::new)
 		.validBlocks(AllBlocks.DEPOT)
 		.renderer(() -> DepotRenderer::new)
-		.register();
-
-	public static final BlockEntityEntry<EjectorBlockEntity> WEIGHTED_EJECTOR = REGISTRATE
-		.blockEntity("weighted_ejector", EjectorBlockEntity::new)
-		.instance(() -> EjectorInstance::new)
-		.validBlocks(AllBlocks.WEIGHTED_EJECTOR)
-		.renderer(() -> EjectorRenderer::new)
 		.register();
 
 	public static final BlockEntityEntry<FunnelBlockEntity> FUNNEL = REGISTRATE
