@@ -45,7 +45,6 @@ public class AllPartialModels {
 		GAUGE_INDICATOR = block("gauge/indicator"), GAUGE_HEAD_SPEED = block("gauge/speedometer/head"),
 		GAUGE_HEAD_STRESS = block("gauge/stressometer/head"), BEARING_TOP = block("bearing/top"),
 		BEARING_TOP_WOODEN = block("bearing/top_wooden"),
-		HARVESTER_BLADE = block("mechanical_harvester/blade"),
 		ANALOG_LEVER_HANDLE = block("analog_lever/handle"),
 		ANALOG_LEVER_INDICATOR = block("analog_lever/indicator"), FUNNEL_FLAP = block("funnel/flap"),
 		BELT_FUNNEL_FLAP = block("belt_funnel/flap"), BELT_TUNNEL_FLAP = block("belt_tunnel/flap"),

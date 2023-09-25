@@ -204,9 +204,7 @@ public class PonderIndex {
 
 		// Windmill Bearing
 		HELPER.forComponents(AllBlocks.WINDMILL_BEARING)
-			.addStoryBoard("windmill_bearing/source", BearingScenes::windmillsAsSource, AllPonderTags.KINETIC_SOURCES)
-			.addStoryBoard("windmill_bearing/structure", BearingScenes::windmillsAnyStructure,
-				AllPonderTags.MOVEMENT_ANCHOR);
+			.addStoryBoard("windmill_bearing/source", BearingScenes::windmillsAsSource, AllPonderTags.KINETIC_SOURCES);
 		HELPER.forComponents(AllBlocks.SAIL)
 			.addStoryBoard("sail", BearingScenes::sail);
 		HELPER.forComponents(AllBlocks.SAIL_FRAME)
@@ -247,10 +245,6 @@ public class PonderIndex {
 			.addStoryBoard("portable_interface/redstone", MovementActorScenes::psiRedstone);
 		HELPER.forComponents(AllBlocks.REDSTONE_CONTACT)
 			.addStoryBoard("redstone_contact", RedstoneScenes::contact);
-		HELPER.forComponents(AllBlocks.MECHANICAL_HARVESTER)
-			.addStoryBoard("harvester", MovementActorScenes::harvester);
-		HELPER.forComponents(AllBlocks.CONTRAPTION_CONTROLS)
-			.addStoryBoard("contraption_controls", MovementActorScenes::contraptionControls);
 
 		// Fluids
 		HELPER.forComponents(AllBlocks.FLUID_PIPE)

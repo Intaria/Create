@@ -50,7 +50,6 @@
     "create:portable_storage_interface",
     "create:redstone_contact",
     "create:elevator_contact",
-    "create:mechanical_harvester",
     "create:sail_frame",
     "create:white_sail",
     "create:orange_sail",

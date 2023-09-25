@@ -137,7 +137,7 @@ public class AllAdvancements implements DataProvider {
 			.description("Super Glue some blocks into a group")
 			.after(MILLSTONE)),
 
-		CONTRAPTION_ACTORS = create("contraption_actors", b -> b.icon(AllBlocks.MECHANICAL_HARVESTER)
+		CONTRAPTION_ACTORS = create("contraption_actors", b -> b.icon(AllBlocks.PORTABLE_STORAGE_INTERFACE)
 			.title("Moving with Purpose")
 			.description("Create a Contraption with drills, saws, or harvesters on board")
 			.after(SUPER_GLUE)),

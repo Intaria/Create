@@ -41,8 +41,6 @@ public class CKinetics extends ConfigBase {
 	public final ConfigEnum<ContraptionMovementSetting> reinforcedDeepslateMovement =
 		e(ContraptionMovementSetting.UNMOVABLE, "movableReinforcedDeepslate", Comments.reinforcedDeepslateMovement);
 	public final ConfigBool moveItemsToStorage = b(true, "moveItemsToStorage", Comments.moveItemsToStorage);
-	public final ConfigBool harvestPartiallyGrown = b(false, "harvestPartiallyGrown", Comments.harvestPartiallyGrown);
-	public final ConfigBool harvesterReplants = b(true, "harvesterReplants", Comments.harvesterReplants);
 	public final ConfigBool minecartContraptionInContainers =
 		b(false, "minecartContraptionInContainers", Comments.minecartContraptionInContainers);
 
@@ -84,8 +82,6 @@ public class CKinetics extends ConfigBase {
 		static String maxCartCouplingLength = "Maximum allowed distance of two coupled minecarts.";
 		static String moveItemsToStorage =
 			"Whether items mined or harvested by contraptions should be placed in their mounted storage.";
-		static String harvestPartiallyGrown = "Whether harvesters should break crops that aren't fully grown.";
-		static String harvesterReplants = "Whether harvesters should replant crops after harvesting.";
 		static String stats = "Configure speed/capacity levels for requirements and indicators.";
 		static String rpm = "[in Revolutions per Minute]";
 		static String su = "[in Stress Units]";

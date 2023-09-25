@@ -20,7 +20,6 @@ import com.simibubi.create.AllMovementBehaviours;
 import com.simibubi.create.AllPackets;
 import com.simibubi.create.content.contraptions.AbstractContraptionEntity.ContraptionRotationState;
 import com.simibubi.create.content.contraptions.ContraptionColliderLockPacket.ContraptionColliderLockPacketRequest;
-import com.simibubi.create.content.contraptions.actors.harvester.HarvesterMovementBehaviour;
 import com.simibubi.create.content.contraptions.behaviour.MovementBehaviour;
 import com.simibubi.create.content.contraptions.behaviour.MovingInteractionBehaviour;
 import com.simibubi.create.content.contraptions.sync.ClientMotionPacket;
@@ -767,15 +766,6 @@ public class ContraptionCollider {
 				if (movementBehaviour instanceof BlockBreakingMovementBehaviour) {
 					BlockBreakingMovementBehaviour behaviour = (BlockBreakingMovementBehaviour) movementBehaviour;
 					if (!behaviour.canBreak(world, colliderPos, collidedState) && !emptyCollider)
-						return true;
-					continue;
-				}
-				if (movementBehaviour instanceof HarvesterMovementBehaviour) {
-					HarvesterMovementBehaviour harvesterMovementBehaviour =
-						(HarvesterMovementBehaviour) movementBehaviour;
-					if (!harvesterMovementBehaviour.isValidCrop(world, colliderPos, collidedState)
-						&& !harvesterMovementBehaviour.isValidOther(world, colliderPos, collidedState)
-						&& !emptyCollider)
 						return true;
 					continue;
 				}

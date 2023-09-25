@@ -6,7 +6,6 @@ import static com.simibubi.create.AllBlocks.BRASS_BELT_FUNNEL;
 import static com.simibubi.create.AllBlocks.BRASS_TUNNEL;
 import static com.simibubi.create.AllBlocks.ENCASED_CHAIN_DRIVE;
 import static com.simibubi.create.AllBlocks.LINEAR_CHASSIS;
-import static com.simibubi.create.AllBlocks.MECHANICAL_HARVESTER;
 import static com.simibubi.create.AllBlocks.PISTON_EXTENSION_POLE;
 import static com.simibubi.create.AllBlocks.POWERED_LATCH;
 import static com.simibubi.create.AllBlocks.POWERED_TOGGLE_LATCH;
@@ -80,7 +79,6 @@ public class RemapHelper {
 		reMap.put("entity_detector", SMART_OBSERVER.getId());
 		reMap.put("flexpulsepeater", PULSE_REPEATER.getId());
 		reMap.put("stress_gauge", STRESSOMETER.getId());
-		reMap.put("harvester", MECHANICAL_HARVESTER.getId());
 		reMap.put("flexpeater", PULSE_EXTENDER.getId());
 		reMap.put("rotation_chassis", RADIAL_CHASSIS.getId());
 		reMap.put("belt_tunnel", BRASS_TUNNEL.getId());

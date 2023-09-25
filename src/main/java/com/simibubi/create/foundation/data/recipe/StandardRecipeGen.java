@@ -813,14 +813,6 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 			.viaShapeless(b -> b.requires(I.electronTube())
 				.requires(I.electronTube())),
 
-		MECHANICAL_HARVESTER = create(AllBlocks.MECHANICAL_HARVESTER).unlockedBy(I::andesiteCasing)
-			.viaShaped(b -> b.define('C', I.andesiteCasing())
-				.define('A', I.andesite())
-				.define('I', I.ironSheet())
-				.pattern("AIA")
-				.pattern("AIA")
-				.pattern(" C ")),
-
 		SEQUENCED_GEARSHIFT = create(AllBlocks.SEQUENCED_GEARSHIFT).unlockedBy(I::brassCasing)
 			.viaShapeless(b -> b.requires(I.brassCasing())
 				.requires(I.cog())

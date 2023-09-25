@@ -49,7 +49,7 @@ public class AllPonderTags {
 				"Components which allow the creation of moving contraptions, animating an attached structure in a variety of ways")
 			.addToIndex(),
 
-		CONTRAPTION_ACTOR = create("contraption_actor").item(AllBlocks.MECHANICAL_HARVESTER.get())
+		CONTRAPTION_ACTOR = create("contraption_actor").item(AllBlocks.MECHANICAL_BEARING.get())
 			.defaultLang("Contraption Actors",
 				"Components which expose special behaviour when attached to a moving contraption")
 			.addToIndex(),
@@ -252,7 +252,6 @@ public class AllPonderTags {
 			.add(Blocks.HONEY_BLOCK);
 
 		PonderRegistry.TAGS.forTag(CONTRAPTION_ACTOR)
-			.add(AllBlocks.MECHANICAL_HARVESTER)
 			.add(AllBlocks.PORTABLE_STORAGE_INTERFACE)
 			.add(AllBlocks.PORTABLE_FLUID_INTERFACE)
 			.add(AllBlocks.MECHANICAL_BEARING)

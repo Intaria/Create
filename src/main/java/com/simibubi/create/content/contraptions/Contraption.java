@@ -29,7 +29,6 @@ import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllInteractionBehaviours;
 import com.simibubi.create.AllMovementBehaviours;
 import com.simibubi.create.content.contraptions.actors.contraptionControls.ContraptionControlsMovement;
-import com.simibubi.create.content.contraptions.actors.harvester.HarvesterMovementBehaviour;
 import com.simibubi.create.content.contraptions.actors.seat.SeatBlock;
 import com.simibubi.create.content.contraptions.actors.seat.SeatEntity;
 import com.simibubi.create.content.contraptions.actors.trainControls.ControlsBlock;
@@ -1412,7 +1411,7 @@ public abstract class Contraption {
 	public boolean containsBlockBreakers() {
 		for (MutablePair<StructureBlockInfo, MovementContext> pair : actors) {
 			MovementBehaviour behaviour = AllMovementBehaviours.getBehaviour(pair.getLeft().state);
-			if (behaviour instanceof BlockBreakingMovementBehaviour || behaviour instanceof HarvesterMovementBehaviour)
+			if (behaviour instanceof BlockBreakingMovementBehaviour)
 				return true;
 		}
 		return false;

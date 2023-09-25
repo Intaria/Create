@@ -2,7 +2,6 @@ package com.simibubi.create.infrastructure.ponder.scenes;
 
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllItems;
-import com.simibubi.create.content.contraptions.actors.harvester.HarvesterBlockEntity;
 import com.simibubi.create.content.contraptions.bearing.SailBlock;
 import com.simibubi.create.content.contraptions.glue.SuperGlueEntity;
 import com.simibubi.create.foundation.ponder.ElementLink;
@@ -183,58 +182,6 @@ public class BearingScenes {
 			.text("Right-click the Bearing anytime to stop and edit the Structure again");
 		scene.idle(30);
 
-	}
-
-	public static void windmillsAnyStructure(SceneBuilder scene, SceneBuildingUtil util) {
-		scene.title("windmill_structure", "Windmill Contraptions");
-		scene.configureBasePlate(1, 1, 5);
-		scene.setSceneOffsetY(-1);
-		scene.world.modifyEntities(SuperGlueEntity.class, Entity::discard);
-		scene.world.showSection(util.select.layer(0), Direction.UP);
-		scene.idle(5);
-
-		BlockPos bearingPos = util.grid.at(3, 1, 3);
-		scene.world.showSection(util.select.position(bearingPos), Direction.DOWN);
-		scene.idle(10);
-		ElementLink<WorldSectionElement> contraption =
-			scene.world.showIndependentSection(util.select.position(bearingPos.above()), Direction.DOWN);
-		scene.idle(10);
-		scene.world.showSectionAndMerge(util.select.fromTo(3, 2, 2, 3, 3, 1), Direction.SOUTH, contraption);
-		scene.world.showSectionAndMerge(util.select.fromTo(3, 2, 4, 3, 3, 5), Direction.NORTH, contraption);
-		scene.idle(5);
-		scene.world.showSectionAndMerge(util.select.position(3, 1, 5), Direction.NORTH, contraption);
-		scene.world.showSectionAndMerge(util.select.position(3, 4, 2), Direction.DOWN, contraption);
-		scene.idle(5);
-		scene.world.showSectionAndMerge(util.select.position(2, 1, 5), Direction.EAST, contraption);
-		scene.world.showSectionAndMerge(util.select.position(3, 3, 3), Direction.DOWN, contraption);
-		scene.idle(5);
-		scene.effects.superGlue(bearingPos.above(), Direction.SOUTH, true);
-		scene.effects.superGlue(bearingPos.above(), Direction.NORTH, true);
-		scene.idle(5);
-		scene.effects.superGlue(util.grid.at(3, 1, 5), Direction.UP, true);
-		scene.idle(5);
-		scene.effects.superGlue(util.grid.at(3, 3, 3), Direction.DOWN, true);
-		scene.idle(10);
-
-		scene.overlay.showOutline(PonderPalette.BLUE, bearingPos, util.select.fromTo(3, 2, 1, 3, 3, 2), 80);
-		scene.overlay.showSelectionWithText(util.select.fromTo(3, 2, 4, 3, 3, 5), 80)
-			.colored(PonderPalette.BLUE)
-			.attachKeyFrame()
-			.text("Any Structure can count as a valid Windmill, as long as it contains at least 8 sail-like Blocks.");
-
-		scene.idle(90);
-		scene.overlay.showControls(
-			new InputWindowElement(util.vector.blockSurface(bearingPos, Direction.WEST), Pointing.LEFT).rightClick(),
-			40);
-		scene.idle(7);
-		scene.markAsFinished();
-		scene.world.rotateBearing(bearingPos, -720, 400);
-		scene.world.rotateSection(contraption, 0, -720, 0, 400);
-		scene.world.modifyBlockEntity(util.grid.at(2, 1, 5), HarvesterBlockEntity.class,
-			hte -> hte.setAnimatedSpeed(-150));
-		scene.idle(400);
-		scene.world.modifyBlockEntity(util.grid.at(2, 1, 5), HarvesterBlockEntity.class,
-			hte -> hte.setAnimatedSpeed(0));
 	}
 
 	public static void mechanicalBearing(SceneBuilder scene, SceneBuildingUtil util) {

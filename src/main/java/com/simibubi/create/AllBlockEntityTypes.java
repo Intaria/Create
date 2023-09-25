@@ -5,8 +5,6 @@ import static com.simibubi.create.content.redstone.displayLink.AllDisplayBehavio
 
 import com.simibubi.create.content.contraptions.actors.contraptionControls.ContraptionControlsBlockEntity;
 import com.simibubi.create.content.contraptions.actors.contraptionControls.ContraptionControlsRenderer;
-import com.simibubi.create.content.contraptions.actors.harvester.HarvesterBlockEntity;
-import com.simibubi.create.content.contraptions.actors.harvester.HarvesterRenderer;
 import com.simibubi.create.content.contraptions.actors.psi.PSIInstance;
 import com.simibubi.create.content.contraptions.actors.psi.PortableFluidInterfaceBlockEntity;
 import com.simibubi.create.content.contraptions.actors.psi.PortableItemInterfaceBlockEntity;
@@ -479,12 +477,6 @@ public class AllBlockEntityTypes {
 			.validBlocks(AllBlocks.CONTRAPTION_CONTROLS)
 			.renderer(() -> ContraptionControlsRenderer::new)
 			.register();
-
-	public static final BlockEntityEntry<HarvesterBlockEntity> HARVESTER = REGISTRATE
-		.blockEntity("harvester", HarvesterBlockEntity::new)
-		.validBlocks(AllBlocks.MECHANICAL_HARVESTER)
-		.renderer(() -> HarvesterRenderer::new)
-		.register();
 
 	public static final BlockEntityEntry<PortableItemInterfaceBlockEntity> PORTABLE_STORAGE_INTERFACE =
 		REGISTRATE

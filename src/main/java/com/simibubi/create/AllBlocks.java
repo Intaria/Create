@@ -18,8 +18,6 @@ import com.simibubi.create.AllTags.AllItemTags;
 import com.simibubi.create.content.contraptions.actors.contraptionControls.ContraptionControlsBlock;
 import com.simibubi.create.content.contraptions.actors.contraptionControls.ContraptionControlsMovement;
 import com.simibubi.create.content.contraptions.actors.contraptionControls.ContraptionControlsMovingInteraction;
-import com.simibubi.create.content.contraptions.actors.harvester.HarvesterBlock;
-import com.simibubi.create.content.contraptions.actors.harvester.HarvesterMovementBehaviour;
 import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceBlock;
 import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceMovement;
 import com.simibubi.create.content.contraptions.actors.seat.SeatBlock;
@@ -1200,19 +1198,6 @@ public class AllBlocks {
 			.onRegister(assignDataBehaviour(new CurrentFloorDisplaySource(), "current_floor"))
 			.item()
 			.transform(customItemModel("_", "block"))
-			.register();
-
-	public static final BlockEntry<HarvesterBlock> MECHANICAL_HARVESTER =
-		REGISTRATE.block("mechanical_harvester", HarvesterBlock::new)
-			.initialProperties(SharedProperties::stone)
-			.properties(p -> p.color(MaterialColor.METAL))
-			.transform(axeOrPickaxe())
-			.onRegister(movementBehaviour(new HarvesterMovementBehaviour()))
-			.blockstate(BlockStateGen.horizontalBlockProvider(true))
-			.addLayer(() -> RenderType::cutoutMipped)
-			.item()
-			.tag(AllItemTags.CONTRAPTION_CONTROLLED.tag)
-			.transform(customItemModel())
 			.register();
 
 	public static final BlockEntry<SailBlock> SAIL_FRAME = REGISTRATE.block("sail_frame", p -> SailBlock.frame(p))
