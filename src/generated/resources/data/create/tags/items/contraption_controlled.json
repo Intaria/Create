@@ -6,7 +6,6 @@
     "create:portable_storage_interface",
     "create:redstone_contact",
     "create:mechanical_harvester",
-    "create:mechanical_plough",
     "create:andesite_funnel",
     "create:brass_funnel",
     "create:peculiar_bell",

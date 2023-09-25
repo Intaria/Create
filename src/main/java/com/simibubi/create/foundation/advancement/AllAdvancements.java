@@ -196,12 +196,6 @@ public class AllAdvancements implements DataProvider {
 			.after(PULLEY_MAXED)
 			.special(EXPERT)),
 
-		ANVIL_PLOUGH = create("anvil_plough", b -> b.icon(Blocks.CHIPPED_ANVIL)
-			.title("Blacksmith Artillery")
-			.description("Launch an Anvil with Mechanical Ploughs")
-			.after(CART_PICKUP)
-			.special(EXPERT)),
-
 		// Andesite - Hidden
 
 		LAVA_WHEEL = create("lava_wheel_00000", b -> b.icon(AllBlocks.WATER_WHEEL)

@@ -273,7 +273,6 @@ public class AllPonderTags {
 
 		PonderRegistry.TAGS.forTag(CONTRAPTION_ACTOR)
 			.add(AllBlocks.MECHANICAL_HARVESTER)
-			.add(AllBlocks.MECHANICAL_PLOUGH)
 			.add(AllBlocks.MECHANICAL_SAW)
 			.add(AllBlocks.DEPLOYER)
 			.add(AllBlocks.PORTABLE_STORAGE_INTERFACE)

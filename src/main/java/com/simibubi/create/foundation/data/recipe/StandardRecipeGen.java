@@ -858,14 +858,6 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 				.pattern("AIA")
 				.pattern(" C ")),
 
-		MECHANICAL_PLOUGH = create(AllBlocks.MECHANICAL_PLOUGH).unlockedBy(I::andesiteCasing)
-			.viaShaped(b -> b.define('C', I.andesiteCasing())
-				.define('A', I.andesite())
-				.define('I', I.ironSheet())
-				.pattern("III")
-				.pattern("AAA")
-				.pattern(" C ")),
-
 		SEQUENCED_GEARSHIFT = create(AllBlocks.SEQUENCED_GEARSHIFT).unlockedBy(I::brassCasing)
 			.viaShapeless(b -> b.requires(I.brassCasing())
 				.requires(I.cog())

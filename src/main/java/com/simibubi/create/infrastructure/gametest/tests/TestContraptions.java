@@ -84,71 +84,12 @@ public class TestContraptions {
 		});
 	}
 
-	@GameTest(template = "ploughing")
-	public static void ploughing(CreateGameTestHelper helper) {
-		BlockPos dirt = new BlockPos(4, 2, 1);
-		BlockPos lever = new BlockPos(3, 3, 2);
-		helper.pullLever(lever);
-		helper.succeedWhen(() -> helper.assertBlockPresent(Blocks.FARMLAND, dirt));
-	}
-
 	@GameTest(template = "redstone_contacts")
 	public static void redstoneContacts(CreateGameTestHelper helper) {
 		BlockPos end = new BlockPos(5, 10, 1);
 		BlockPos lever = new BlockPos(1, 3, 2);
 		helper.pullLever(lever);
 		helper.succeedWhen(() -> helper.assertBlockPresent(Blocks.DIAMOND_BLOCK, end));
-	}
-
-	@GameTest(template = "controls", timeoutTicks = CreateGameTestHelper.TEN_SECONDS)
-	public static void controls(CreateGameTestHelper helper) {
-		BlockPos button = new BlockPos(5, 5, 4);
-		BlockPos gearshift = new BlockPos(4, 5, 4);
-		BlockPos bearingPos = new BlockPos(4, 4, 4);
-		AtomicInteger step = new AtomicInteger(1);
-
-		List<BlockPos> dirt = List.of(new BlockPos(4, 2, 6), new BlockPos(2, 2, 4), new BlockPos(4, 2, 2));
-		List<BlockPos> wheat = List.of(new BlockPos(4, 3, 7), new BlockPos(1, 3, 4), new BlockPos(4, 3, 1));
-
-		helper.pressButton(button);
-		helper.succeedWhen(() -> {
-			// wait for gearshift to reset
-			helper.assertBlockProperty(gearshift, SequencedGearshiftBlock.STATE, 0);
-			if (step.get() == 4)
-				return; // step 4: all done!
-			MechanicalBearingBlockEntity bearing = helper.getBlockEntity(AllBlockEntityTypes.MECHANICAL_BEARING.get(), bearingPos);
-			if (bearing.getMovedContraption() == null)
-				helper.fail("Contraption not assembled");
-			Contraption contraption = bearing.getMovedContraption().getContraption();
-			switch (step.get()) {
-				case 1 -> { // step 1: both should be active
-					helper.assertBlockPresent(Blocks.FARMLAND, dirt.get(0));
-					helper.assertBlockProperty(wheat.get(0), CropBlock.AGE, 0);
-					// now disable harvester
-					helper.toggleActorsOfType(contraption, AllBlocks.MECHANICAL_HARVESTER.get());
-					helper.pressButton(button);
-					step.incrementAndGet();
-					helper.fail("Entering step 2");
-				}
-				case 2 -> { // step 2: harvester disabled
-					helper.assertBlockPresent(Blocks.FARMLAND, dirt.get(1));
-					helper.assertBlockProperty(wheat.get(1), CropBlock.AGE, 7);
-					// now disable plough
-					helper.toggleActorsOfType(contraption, AllBlocks.MECHANICAL_PLOUGH.get());
-					helper.pressButton(button);
-					step.incrementAndGet();
-					helper.fail("Entering step 3");
-				}
-				case 3 -> { // step 3: both disabled
-					helper.assertBlockPresent(Blocks.DIRT, dirt.get(2));
-					helper.assertBlockProperty(wheat.get(2), CropBlock.AGE, 7);
-					// successful!
-					helper.pressButton(button);
-					step.incrementAndGet();
-					helper.fail("Entering step 4");
-				}
-			}
-		});
 	}
 
 	@GameTest(template = "elevator")

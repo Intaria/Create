@@ -278,8 +278,6 @@ public class PonderIndex {
 			.addStoryBoard("deployer/contraption", DeployerScenes::contraption, AllPonderTags.CONTRAPTION_ACTOR);
 		HELPER.forComponents(AllBlocks.MECHANICAL_HARVESTER)
 			.addStoryBoard("harvester", MovementActorScenes::harvester);
-		HELPER.forComponents(AllBlocks.MECHANICAL_PLOUGH)
-			.addStoryBoard("plough", MovementActorScenes::plough);
 		HELPER.forComponents(AllBlocks.CONTRAPTION_CONTROLS)
 			.addStoryBoard("contraption_controls", MovementActorScenes::contraptionControls);
 

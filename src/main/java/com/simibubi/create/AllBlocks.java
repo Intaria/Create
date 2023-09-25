@@ -20,8 +20,6 @@ import com.simibubi.create.content.contraptions.actors.contraptionControls.Contr
 import com.simibubi.create.content.contraptions.actors.contraptionControls.ContraptionControlsMovingInteraction;
 import com.simibubi.create.content.contraptions.actors.harvester.HarvesterBlock;
 import com.simibubi.create.content.contraptions.actors.harvester.HarvesterMovementBehaviour;
-import com.simibubi.create.content.contraptions.actors.plough.PloughBlock;
-import com.simibubi.create.content.contraptions.actors.plough.PloughMovementBehaviour;
 import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceBlock;
 import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceMovement;
 import com.simibubi.create.content.contraptions.actors.seat.SeatBlock;
@@ -1299,18 +1297,6 @@ public class AllBlocks {
 			.item()
 			.tag(AllItemTags.CONTRAPTION_CONTROLLED.tag)
 			.transform(customItemModel())
-			.register();
-
-	public static final BlockEntry<PloughBlock> MECHANICAL_PLOUGH =
-		REGISTRATE.block("mechanical_plough", PloughBlock::new)
-			.initialProperties(SharedProperties::stone)
-			.properties(p -> p.color(MaterialColor.COLOR_GRAY))
-			.transform(axeOrPickaxe())
-			.onRegister(movementBehaviour(new PloughMovementBehaviour()))
-			.blockstate(BlockStateGen.horizontalBlockProvider(false))
-			.item()
-			.tag(AllItemTags.CONTRAPTION_CONTROLLED.tag)
-			.build()
 			.register();
 
 	public static final BlockEntry<SailBlock> SAIL_FRAME = REGISTRATE.block("sail_frame", p -> SailBlock.frame(p))
