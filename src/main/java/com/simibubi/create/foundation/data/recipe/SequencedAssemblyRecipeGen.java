@@ -21,20 +21,6 @@ public class SequencedAssemblyRecipeGen extends CreateRecipeProvider {
 
 	GeneratedRecipe
 
-//	TEST = create("test", b -> b.require(I.goldSheet())
-//		.transitionTo(AllItems.INCOMPLETE_CLOCKWORK_COMPONENT.get())
-//		.addOutput(AllItems.CLOCKWORK_COMPONENT.get(), 10)
-//		.addOutput(AllItems.GOLDEN_SHEET.get(), 5)
-//		.addOutput(AllItems.ANDESITE_ALLOY.get(), 2)
-//		.addOutput(AllBlocks.COGWHEEL.get(), 1)
-//		.loops(5)
-//		.addStep(DeployerApplicationRecipe::new, rb -> rb.require(I.cog()))
-//		.addStep(PressingRecipe::new, rb -> rb)
-//		.addStep(FillingRecipe::new, rb -> rb.require(Fluids.LAVA, 500))
-//		.addStep(CuttingRecipe::new, rb -> rb.averageProcessingDuration())
-//		.addStep(FillingRecipe::new, rb -> rb.require(Fluids.WATER, 100))
-//		)
-
 	PRECISION_MECHANISM = create("precision_mechanism", b -> b.require(I.goldSheet())
 		.transitionTo(AllItems.INCOMPLETE_PRECISION_MECHANISM.get())
 		.addOutput(AllItems.PRECISION_MECHANISM.get(), 120)

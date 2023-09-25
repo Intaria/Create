@@ -17,7 +17,6 @@ import com.simibubi.create.content.kinetics.belt.behaviour.TransportedItemStackH
 import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterBlock;
 import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterBlockEntity;
 import com.simibubi.create.content.kinetics.deployer.DeployerBlock;
-import com.simibubi.create.content.kinetics.saw.SawBlock;
 import com.simibubi.create.content.logistics.chute.AbstractChuteBlock;
 import com.simibubi.create.content.logistics.funnel.AbstractFunnelBlock;
 import com.simibubi.create.content.logistics.funnel.BeltFunnelBlock;
@@ -72,7 +71,6 @@ public class AllArmInteractionPointTypes {
 	public static final DepotType DEPOT = register("depot", DepotType::new);
 	public static final FunnelType FUNNEL = register("funnel", FunnelType::new);
 	public static final MillstoneType MILLSTONE = register("millstone", MillstoneType::new);
-	public static final SawType SAW = register("saw", SawType::new);
 
 	public static final CampfireType CAMPFIRE = register("campfire", CampfireType::new);
 	public static final ComposterType COMPOSTER = register("composter", ComposterType::new);
@@ -252,23 +250,6 @@ public class AllArmInteractionPointTypes {
 		@Override
 		public ArmInteractionPoint createPoint(Level level, BlockPos pos, BlockState state) {
 			return new ArmInteractionPoint(this, level, pos, state);
-		}
-	}
-
-	public static class SawType extends ArmInteractionPointType {
-		public SawType(ResourceLocation id) {
-			super(id);
-		}
-
-		@Override
-		public boolean canCreatePoint(Level level, BlockPos pos, BlockState state) {
-			return AllBlocks.MECHANICAL_SAW.has(state) && state.getValue(SawBlock.FACING) == Direction.UP
-				&& ((KineticBlockEntity) level.getBlockEntity(pos)).getSpeed() != 0;
-		}
-
-		@Override
-		public ArmInteractionPoint createPoint(Level level, BlockPos pos, BlockState state) {
-			return new DepotPoint(this, level, pos, state);
 		}
 	}
 

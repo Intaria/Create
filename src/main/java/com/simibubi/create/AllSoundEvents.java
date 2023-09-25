@@ -167,16 +167,6 @@ public class AllSoundEvents {
 			.category(SoundSource.BLOCKS)
 			.build(),
 
-		SAW_ACTIVATE_WOOD = create("saw_activate_wood").subtitle("Mechanical Saw activates")
-			.playExisting(SoundEvents.BOAT_PADDLE_LAND, .75f, 1.5f)
-			.category(SoundSource.BLOCKS)
-			.build(),
-
-		SAW_ACTIVATE_STONE = create("saw_activate_stone").subtitle("Mechanical Saw activates")
-			.playExisting(SoundEvents.UI_STONECUTTER_TAKE_RESULT, .125f, 1.25f)
-			.category(SoundSource.BLOCKS)
-			.build(),
-
 		BLAZE_MUNCH = create("blaze_munch").subtitle("Blaze Burner munches")
 			.playExisting(SoundEvents.GENERIC_EAT, .5f, 1f)
 			.category(SoundSource.BLOCKS)

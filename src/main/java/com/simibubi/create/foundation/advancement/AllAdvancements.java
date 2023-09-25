@@ -78,15 +78,10 @@ public class AllAdvancements implements DataProvider {
 			.description("Use an Encased Fan to process materials")
 			.after(ENCASED_FAN)),
 
-		SAW_PROCESSING = create("saw_processing", b -> b.icon(AllBlocks.MECHANICAL_SAW)
-			.title("Workshop's Most Feared")
-			.description("Use an upright Mechanical Saw to process materials")
-			.after(FAN_PROCESSING)),
-
 		COMPACTING = create("compacting", b -> b.icon(Blocks.IRON_BLOCK)
 			.title("Compactification")
 			.description("Use a Mechanical Press and a Basin to create fewer items from more")
-			.after(SAW_PROCESSING)),
+			.after(FAN_PROCESSING)),
 
 		BELT = create("belt", b -> b.icon(AllItems.BELT_CONNECTOR)
 			.title("Kelp Drive")

@@ -148,7 +148,6 @@ public class AllPonderTags {
 			.add(AllBlocks.CUCKOO_CLOCK)
 			.add(AllBlocks.MECHANICAL_PRESS)
 			.add(AllBlocks.MECHANICAL_MIXER)
-			.add(AllBlocks.MECHANICAL_SAW)
 			.add(AllBlocks.DEPLOYER)
 			.add(AllBlocks.MECHANICAL_PUMP)
 			.add(AllBlocks.MECHANICAL_ARM)
@@ -185,7 +184,6 @@ public class AllPonderTags {
 			.add(AllBlocks.BRASS_FUNNEL)
 			.add(AllBlocks.MILLSTONE)
 			.add(AllBlocks.DEPLOYER)
-			.add(AllBlocks.MECHANICAL_SAW)
 			.add(AllBlocks.BLAZE_BURNER)
 			.add(AllBlocks.CRUSHING_WHEEL)
 			.add(AllBlocks.TRACK_STATION)
@@ -271,7 +269,6 @@ public class AllPonderTags {
 
 		PonderRegistry.TAGS.forTag(CONTRAPTION_ACTOR)
 			.add(AllBlocks.MECHANICAL_HARVESTER)
-			.add(AllBlocks.MECHANICAL_SAW)
 			.add(AllBlocks.DEPLOYER)
 			.add(AllBlocks.PORTABLE_STORAGE_INTERFACE)
 			.add(AllBlocks.PORTABLE_FLUID_INTERFACE)

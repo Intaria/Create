@@ -829,14 +829,6 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 			.viaShapeless(b -> b.requires(I.electronTube())
 				.requires(I.electronTube())),
 
-		MECHANICAL_SAW = create(AllBlocks.MECHANICAL_SAW).unlockedBy(I::andesiteCasing)
-			.viaShaped(b -> b.define('C', I.andesiteCasing())
-				.define('A', I.ironSheet())
-				.define('I', I.iron())
-				.pattern(" A ")
-				.pattern("AIA")
-				.pattern(" C ")),
-
 		MECHANICAL_HARVESTER = create(AllBlocks.MECHANICAL_HARVESTER).unlockedBy(I::andesiteCasing)
 			.viaShaped(b -> b.define('C', I.andesiteCasing())
 				.define('A', I.andesite())

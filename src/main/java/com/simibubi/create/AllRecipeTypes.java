@@ -20,7 +20,6 @@ import com.simibubi.create.content.kinetics.millstone.MillingRecipe;
 import com.simibubi.create.content.kinetics.mixer.CompactingRecipe;
 import com.simibubi.create.content.kinetics.mixer.MixingRecipe;
 import com.simibubi.create.content.kinetics.press.PressingRecipe;
-import com.simibubi.create.content.kinetics.saw.CuttingRecipe;
 import com.simibubi.create.content.processing.basin.BasinRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder.ProcessingRecipeFactory;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer;
@@ -46,7 +45,6 @@ public enum AllRecipeTypes implements IRecipeTypeInfo {
 
 	CONVERSION(ConversionRecipe::new),
 	CRUSHING(CrushingRecipe::new),
-	CUTTING(CuttingRecipe::new),
 	MILLING(MillingRecipe::new),
 	BASIN(BasinRecipe::new),
 	MIXING(MixingRecipe::new),

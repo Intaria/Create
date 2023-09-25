@@ -128,9 +128,6 @@ import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlock;
 import com.simibubi.create.content.kinetics.motor.CreativeMotorBlock;
 import com.simibubi.create.content.kinetics.motor.CreativeMotorGenerator;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlock;
-import com.simibubi.create.content.kinetics.saw.SawBlock;
-import com.simibubi.create.content.kinetics.saw.SawGenerator;
-import com.simibubi.create.content.kinetics.saw.SawMovementBehaviour;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockModel;
 import com.simibubi.create.content.kinetics.simpleRelays.CogWheelBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.CogwheelBlockItem;
@@ -1217,20 +1214,6 @@ public class AllBlocks {
 			.item()
 			.transform(customItemModel())
 			.register();
-
-	public static final BlockEntry<SawBlock> MECHANICAL_SAW = REGISTRATE.block("mechanical_saw", SawBlock::new)
-		.initialProperties(SharedProperties::stone)
-		.addLayer(() -> RenderType::cutoutMipped)
-		.properties(p -> p.color(MaterialColor.PODZOL))
-		.transform(axeOrPickaxe())
-		.blockstate(new SawGenerator()::generate)
-		.transform(BlockStressDefaults.setImpact(4.0))
-		.onRegister(movementBehaviour(new SawMovementBehaviour()))
-		.addLayer(() -> RenderType::cutoutMipped)
-		.item()
-		.tag(AllItemTags.CONTRAPTION_CONTROLLED.tag)
-		.transform(customItemModel())
-		.register();
 
 	public static final BlockEntry<DeployerBlock> DEPLOYER = REGISTRATE.block("deployer", DeployerBlock::new)
 		.initialProperties(SharedProperties::stone)

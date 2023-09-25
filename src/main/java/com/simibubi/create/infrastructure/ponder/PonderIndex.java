@@ -24,7 +24,6 @@ import com.simibubi.create.infrastructure.ponder.scenes.FunnelScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.GantryScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ItemVaultScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.KineticsScenes;
-import com.simibubi.create.infrastructure.ponder.scenes.MechanicalSawScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.MovementActorScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.PistonScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ProcessingScenes;
@@ -257,10 +256,6 @@ public class PonderIndex {
 			.addStoryBoard("portable_interface/redstone", MovementActorScenes::psiRedstone);
 		HELPER.forComponents(AllBlocks.REDSTONE_CONTACT)
 			.addStoryBoard("redstone_contact", RedstoneScenes::contact);
-		HELPER.forComponents(AllBlocks.MECHANICAL_SAW)
-			.addStoryBoard("mechanical_saw/processing", MechanicalSawScenes::processing, AllPonderTags.KINETIC_APPLIANCES)
-			.addStoryBoard("mechanical_saw/breaker", MechanicalSawScenes::treeCutting)
-			.addStoryBoard("mechanical_saw/contraption", MechanicalSawScenes::contraption, AllPonderTags.CONTRAPTION_ACTOR);
 		HELPER.forComponents(AllBlocks.DEPLOYER)
 			.addStoryBoard("deployer/filter", DeployerScenes::filter, AllPonderTags.KINETIC_APPLIANCES)
 			.addStoryBoard("deployer/modes", DeployerScenes::modes)

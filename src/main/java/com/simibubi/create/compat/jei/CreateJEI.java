@@ -18,8 +18,6 @@ import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.Create;
-import com.simibubi.create.compat.jei.category.BlockCuttingCategory;
-import com.simibubi.create.compat.jei.category.BlockCuttingCategory.CondensedBlockCuttingRecipe;
 import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 import com.simibubi.create.compat.jei.category.CrushingCategory;
 import com.simibubi.create.compat.jei.category.DeployingCategory;
@@ -37,7 +35,6 @@ import com.simibubi.create.compat.jei.category.PackingCategory;
 import com.simibubi.create.compat.jei.category.PolishingCategory;
 import com.simibubi.create.compat.jei.category.PressingCategory;
 import com.simibubi.create.compat.jei.category.ProcessingViaFanCategory;
-import com.simibubi.create.compat.jei.category.SawingCategory;
 import com.simibubi.create.compat.jei.category.SequencedAssemblyCategory;
 import com.simibubi.create.compat.jei.category.SpoutCategory;
 import com.simibubi.create.content.equipment.blueprint.BlueprintScreen;
@@ -55,8 +52,6 @@ import com.simibubi.create.content.kinetics.fan.processing.HauntingRecipe;
 import com.simibubi.create.content.kinetics.fan.processing.SplashingRecipe;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.simibubi.create.content.kinetics.press.PressingRecipe;
-import com.simibubi.create.content.kinetics.saw.CuttingRecipe;
-import com.simibubi.create.content.kinetics.saw.SawBlockEntity;
 import com.simibubi.create.content.logistics.filter.AbstractFilterScreen;
 import com.simibubi.create.content.processing.basin.BasinRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
@@ -214,30 +209,6 @@ public class CreateJEI implements IModPlugin {
 				.doubleItemIcon(AllBlocks.MECHANICAL_PRESS.get(), Blocks.CRAFTING_TABLE)
 				.emptyBackground(177, 85)
 				.build("automatic_packing", PackingCategory::autoSquare),
-
-		sawing = builder(CuttingRecipe.class)
-				.addTypedRecipes(AllRecipeTypes.CUTTING)
-				.catalyst(AllBlocks.MECHANICAL_SAW::get)
-				.doubleItemIcon(AllBlocks.MECHANICAL_SAW.get(), Items.OAK_LOG)
-				.emptyBackground(177, 70)
-				.build("sawing", SawingCategory::new),
-
-		blockCutting = builder(CondensedBlockCuttingRecipe.class)
-				.enableWhen(c -> c.allowStonecuttingOnSaw)
-				.addRecipes(() -> CondensedBlockCuttingRecipe.condenseRecipes(getTypedRecipesExcluding(RecipeType.STONECUTTING, AllRecipeTypes::shouldIgnoreInAutomation)))
-				.catalyst(AllBlocks.MECHANICAL_SAW::get)
-				.doubleItemIcon(AllBlocks.MECHANICAL_SAW.get(), Items.STONE_BRICK_STAIRS)
-				.emptyBackground(177, 70)
-				.build("block_cutting", BlockCuttingCategory::new),
-
-		woodCutting = builder(CondensedBlockCuttingRecipe.class)
-				.enableIf(c -> c.allowWoodcuttingOnSaw.get() && ModList.get()
-						.isLoaded("druidcraft"))
-				.addRecipes(() -> CondensedBlockCuttingRecipe.condenseRecipes(getTypedRecipesExcluding(SawBlockEntity.woodcuttingRecipeType.get(), AllRecipeTypes::shouldIgnoreInAutomation)))
-				.catalyst(AllBlocks.MECHANICAL_SAW::get)
-				.doubleItemIcon(AllBlocks.MECHANICAL_SAW.get(), Items.OAK_STAIRS)
-				.emptyBackground(177, 70)
-				.build("wood_cutting", BlockCuttingCategory::new),
 
 		polishing = builder(SandPaperPolishingRecipe.class)
 				.addTypedRecipes(AllRecipeTypes.SANDPAPER_POLISHING)

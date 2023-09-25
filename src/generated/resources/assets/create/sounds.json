@@ -317,24 +317,6 @@
     ],
     "subtitle": "create.subtitle.sanding_short"
   },
-  "saw_activate_stone": {
-    "sounds": [
-      {
-        "type": "event",
-        "name": "minecraft:ui.stonecutter.take_result"
-      }
-    ],
-    "subtitle": "create.subtitle.saw_activate_stone"
-  },
-  "saw_activate_wood": {
-    "sounds": [
-      {
-        "type": "event",
-        "name": "minecraft:entity.boat.paddle_land"
-      }
-    ],
-    "subtitle": "create.subtitle.saw_activate_wood"
-  },
   "scroll_value": {
     "sounds": [
       {

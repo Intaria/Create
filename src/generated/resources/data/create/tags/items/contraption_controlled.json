@@ -1,7 +1,6 @@
 {
   "values": [
     "create:portable_fluid_interface",
-    "create:mechanical_saw",
     "create:deployer",
     "create:portable_storage_interface",
     "create:redstone_contact",

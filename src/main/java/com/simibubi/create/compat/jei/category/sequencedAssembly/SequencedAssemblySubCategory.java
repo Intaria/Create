@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 import com.simibubi.create.compat.jei.category.animations.AnimatedDeployer;
 import com.simibubi.create.compat.jei.category.animations.AnimatedPress;
-import com.simibubi.create.compat.jei.category.animations.AnimatedSaw;
 import com.simibubi.create.compat.jei.category.animations.AnimatedSpout;
 import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedRecipe;
@@ -127,25 +126,4 @@ public abstract class SequencedAssemblySubCategory {
 		}
 
 	}
-
-	public static class AssemblyCutting extends SequencedAssemblySubCategory {
-
-		AnimatedSaw saw;
-
-		public AssemblyCutting() {
-			super(25);
-			saw = new AnimatedSaw();
-		}
-
-		@Override
-		public void draw(SequencedRecipe<?> recipe, PoseStack ms, double mouseX, double mouseY, int index) {
-			ms.pushPose();
-			ms.translate(0, 51.5f, 0);
-			ms.scale(.6f, .6f, .6f);
-			saw.draw(ms, getWidth() / 2, 30);
-			ms.popPose();
-		}
-
-	}
-
 }

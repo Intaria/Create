@@ -122,9 +122,6 @@ import com.simibubi.create.content.kinetics.motor.CreativeMotorRenderer;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.simibubi.create.content.kinetics.press.MechanicalPressRenderer;
 import com.simibubi.create.content.kinetics.press.PressInstance;
-import com.simibubi.create.content.kinetics.saw.SawBlockEntity;
-import com.simibubi.create.content.kinetics.saw.SawInstance;
-import com.simibubi.create.content.kinetics.saw.SawRenderer;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntityInstance;
 import com.simibubi.create.content.kinetics.simpleRelays.BracketedKineticBlockEntityRenderer;
@@ -504,13 +501,6 @@ public class AllBlockEntityTypes {
 			.validBlocks(AllBlocks.CONTRAPTION_CONTROLS)
 			.renderer(() -> ContraptionControlsRenderer::new)
 			.register();
-
-	public static final BlockEntityEntry<SawBlockEntity> SAW = REGISTRATE
-		.blockEntity("saw", SawBlockEntity::new)
-		.instance(() -> SawInstance::new)
-		.validBlocks(AllBlocks.MECHANICAL_SAW)
-		.renderer(() -> SawRenderer::new)
-		.register();
 
 	public static final BlockEntityEntry<HarvesterBlockEntity> HARVESTER = REGISTRATE
 		.blockEntity("harvester", HarvesterBlockEntity::new)

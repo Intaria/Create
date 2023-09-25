@@ -354,8 +354,6 @@ public class BlockMovementChecks {
 
 		if (AllBlocks.CART_ASSEMBLER.has(state))
 			return Direction.DOWN == facing;
-		if (AllBlocks.MECHANICAL_SAW.has(state))
-			return state.getValue(BlockStateProperties.FACING) == facing;
 		if (AllBlocks.PORTABLE_STORAGE_INTERFACE.has(state))
 			return state.getValue(PortableStorageInterfaceBlock.FACING) == facing;
 		//if (state.getBlock() instanceof AttachedActorBlock && !AllBlocks.MECHANICAL_ROLLER.has(state))

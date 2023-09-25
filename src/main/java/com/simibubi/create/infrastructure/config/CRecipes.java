@@ -5,7 +5,6 @@ import com.simibubi.create.foundation.config.ConfigBase;
 public class CRecipes extends ConfigBase {
 
 	public final ConfigBool bulkPressing = b(false, "bulkPressing", Comments.bulkPressing);
-	public final ConfigBool bulkCutting = b(false, "bulkCutting", Comments.bulkCutting);
 	public final ConfigBool allowBrewingInMixer = b(true, "allowBrewingInMixer", Comments.allowBrewingInMixer);
 	public final ConfigBool allowShapelessInMixer = b(true, "allowShapelessInMixer", Comments.allowShapelessInMixer);
 	public final ConfigBool allowShapedSquareInPress = b(true, "allowShapedSquareInPress", Comments.allowShapedSquareInPress);
@@ -13,8 +12,6 @@ public class CRecipes extends ConfigBase {
 		b(true, "allowRegularCraftingInCrafter", Comments.allowRegularCraftingInCrafter);
 	public final ConfigInt maxFireworkIngredientsInCrafter =
 		i(9, 1, "maxFireworkIngredientsInCrafter", Comments.maxFireworkIngredientsInCrafter);
-	public final ConfigBool allowStonecuttingOnSaw = b(true, "allowStonecuttingOnSaw", Comments.allowStonecuttingOnSaw);
-	public final ConfigBool allowWoodcuttingOnSaw = b(true, "allowWoodcuttingOnSaw", Comments.allowWoodcuttingOnSaw);
 	public final ConfigBool allowCastingBySpout = b(true, "allowCastingBySpout", Comments.allowCastingBySpout);
 	public final ConfigBool displayLogStrippingRecipes = b(true, "displayLogStrippingRecipes", Comments.displayLogStrippingRecipes);
 	public final ConfigInt lightSourceCountForRefinedRadiance =
@@ -30,7 +27,6 @@ public class CRecipes extends ConfigBase {
 
 	private static class Comments {
 		static String bulkPressing = "Allow the Mechanical Press to process entire stacks at a time.";
-		static String bulkCutting = "Allow the Mechanical Saw to process entire stacks at a time.";
 		static String allowBrewingInMixer = "Allow supported potions to be brewed by a Mechanical Mixer + Basin.";
 		static String allowShapelessInMixer =
 			"Allow any shapeless crafting recipes to be processed by a Mechanical Mixer + Basin.";
@@ -40,10 +36,6 @@ public class CRecipes extends ConfigBase {
 			"Allow any standard crafting recipes to be processed by Mechanical Crafters.";
 		static String maxFireworkIngredientsInCrafter =
 			"The Maximum amount of ingredients that can be used to craft Firework Rockets using Mechanical Crafters.";
-		static String allowStonecuttingOnSaw =
-			"Allow any stonecutting recipes to be processed by a Mechanical Saw.";
-		static String allowWoodcuttingOnSaw =
-			"Allow any Druidcraft woodcutter recipes to be processed by a Mechanical Saw.";
 		static String allowCastingBySpout =
 			"Allow Spouts to interact with Casting Tables and Basins from Tinkers' Construct.";
 		static String refinedRadiance =

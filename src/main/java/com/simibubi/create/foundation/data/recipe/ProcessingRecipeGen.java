@@ -30,7 +30,6 @@ public abstract class ProcessingRecipeGen extends CreateRecipeProvider {
 	public static void registerAll(DataGenerator gen) {
 		GENERATORS.add(new CrushingRecipeGen(gen));
 		GENERATORS.add(new MillingRecipeGen(gen));
-		GENERATORS.add(new CuttingRecipeGen(gen));
 		GENERATORS.add(new WashingRecipeGen(gen));
 		GENERATORS.add(new PolishingRecipeGen(gen));
 		GENERATORS.add(new DeployingRecipeGen(gen));
