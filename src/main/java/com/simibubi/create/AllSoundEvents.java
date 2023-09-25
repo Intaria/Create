@@ -82,11 +82,6 @@ public class AllSoundEvents {
 			.category(SoundSource.BLOCKS)
 			.build(),
 
-		WORLDSHAPER_PLACE = create("worldshaper_place").subtitle("Worldshaper zaps")
-			.playExisting(SoundEvents.NOTE_BLOCK_BASEDRUM)
-			.category(SoundSource.PLAYERS)
-			.build(),
-
 		SCROLL_VALUE = create("scroll_value").subtitle("Scroll-input clicks")
 			.playExisting(SoundEvents.NOTE_BLOCK_HAT, .124f, 1f)
 			.category(SoundSource.PLAYERS)
@@ -107,12 +102,6 @@ public class AllSoundEvents {
 			.build(),
 
 		FWOOMP = create("fwoomp").subtitle("Potato Launcher fwoomps")
-			.category(SoundSource.PLAYERS)
-			.build(),
-
-		POTATO_HIT = create("potato_hit").subtitle("Vegetable impacts")
-			.playExisting(SoundEvents.ITEM_FRAME_BREAK, .75f, .75f)
-			.playExisting(SoundEvents.WEEPING_VINES_BREAK, .75f, 1.25f)
 			.category(SoundSource.PLAYERS)
 			.build(),
 

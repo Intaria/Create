@@ -295,23 +295,6 @@
     ],
     "subtitle": "create.subtitle.peculiar_bell_use"
   },
-  "potato_hit": {
-    "sounds": [
-      {
-        "type": "event",
-        "name": "minecraft:entity.item_frame.break"
-      }
-    ],
-    "subtitle": "create.subtitle.potato_hit"
-  },
-  "potato_hit_compounded_1": {
-    "sounds": [
-      {
-        "type": "event",
-        "name": "minecraft:block.weeping_vines.break"
-      }
-    ]
-  },
   "sanding_long": {
     "sounds": [
       {
@@ -494,15 +477,6 @@
         "name": "create:whistle_train_manual_low_end"
       }
     ]
-  },
-  "worldshaper_place": {
-    "sounds": [
-      {
-        "type": "event",
-        "name": "minecraft:block.note_block.basedrum"
-      }
-    ],
-    "subtitle": "create.subtitle.worldshaper_place"
   },
   "wrench_remove": {
     "sounds": [

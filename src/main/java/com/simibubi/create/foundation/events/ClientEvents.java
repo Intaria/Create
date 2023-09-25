@@ -23,8 +23,6 @@ import com.simibubi.create.content.equipment.blueprint.BlueprintOverlayRenderer;
 import com.simibubi.create.content.equipment.clipboard.ClipboardValueSettingsHandler;
 import com.simibubi.create.content.equipment.goggles.GoggleOverlayRenderer;
 import com.simibubi.create.content.equipment.toolbox.ToolboxHandlerClient;
-import com.simibubi.create.content.equipment.zapper.ZapperItem;
-import com.simibubi.create.content.equipment.zapper.terrainzapper.WorldshaperRenderHandler;
 import com.simibubi.create.content.kinetics.KineticDebugger;
 import com.simibubi.create.content.kinetics.belt.item.BeltConnectorHandler;
 import com.simibubi.create.content.kinetics.fan.AirCurrent;
@@ -121,8 +119,6 @@ public class ClientEvents {
 
 		CreateClient.GLUE_HANDLER.tick();
 		CreateClient.SCHEMATIC_HANDLER.tick();
-		CreateClient.ZAPPER_RENDER_HANDLER.tick();
-		CreateClient.POTATO_CANNON_RENDER_HANDLER.tick();
 		CreateClient.SOUL_PULSE_EFFECT_HANDLER.tick(world);
 		CreateClient.RAILWAYS.clientTick();
 
@@ -141,7 +137,6 @@ public class ClientEvents {
 		ChassisRangeDisplay.tick();
 		EdgeInteractionRenderer.tick();
 		GirderWrenchBehavior.tick();
-		WorldshaperRenderHandler.tick();
 		CouplingHandlerClient.tick();
 		CouplingRenderer.tickDebugModeRenders();
 		KineticDebugger.tick();
@@ -314,9 +309,6 @@ public class ClientEvents {
 	@SubscribeEvent
 	public static void leftClickEmpty(PlayerInteractEvent.LeftClickEmpty event) {
 		ItemStack stack = event.getItemStack();
-		if (stack.getItem() instanceof ZapperItem) {
-			AllPackets.getChannel().sendToServer(new LeftClickPacket());
-		}
 	}
 
 	@EventBusSubscriber(value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)

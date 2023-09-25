@@ -29,10 +29,8 @@ import com.simibubi.create.content.equipment.armor.DivingHelmetItem;
 import com.simibubi.create.content.equipment.blueprint.BlueprintItem;
 import com.simibubi.create.content.equipment.goggles.GogglesItem;
 import com.simibubi.create.content.equipment.goggles.GogglesModel;
-import com.simibubi.create.content.equipment.potatoCannon.PotatoCannonItem;
 import com.simibubi.create.content.equipment.sandPaper.SandPaperItem;
 import com.simibubi.create.content.equipment.wrench.WrenchItem;
-import com.simibubi.create.content.equipment.zapper.terrainzapper.WorldshaperItem;
 import com.simibubi.create.content.kinetics.belt.item.BeltConnectorItem;
 import com.simibubi.create.content.kinetics.gearbox.VerticalGearboxItem;
 import com.simibubi.create.content.legacy.ChromaticCompoundColor;
@@ -324,18 +322,6 @@ public class AllItems {
 	public static final ItemEntry<LinkedControllerItem> LINKED_CONTROLLER =
 		REGISTRATE.item("linked_controller", LinkedControllerItem::new)
 			.properties(p -> p.stacksTo(1))
-			.model(AssetLookup.itemModelWithPartials())
-			.register();
-
-	public static final ItemEntry<PotatoCannonItem> POTATO_CANNON =
-		REGISTRATE.item("potato_cannon", PotatoCannonItem::new)
-			.model(AssetLookup.itemModelWithPartials())
-			.register();
-
-	public static final ItemEntry<WorldshaperItem> WORLDSHAPER =
-		REGISTRATE.item("handheld_worldshaper", WorldshaperItem::new)
-			.properties(p -> p.rarity(Rarity.EPIC))
-			.lang("Creative Worldshaper")
 			.model(AssetLookup.itemModelWithPartials())
 			.register();
 

@@ -5,11 +5,8 @@ import com.simibubi.create.content.contraptions.ContraptionHandler;
 import com.simibubi.create.content.contraptions.actors.trainControls.ControlsServerHandler;
 import com.simibubi.create.content.contraptions.minecart.CouplingPhysics;
 import com.simibubi.create.content.contraptions.minecart.capability.CapabilityMinecartController;
-import com.simibubi.create.content.equipment.potatoCannon.PotatoProjectileTypeManager;
 import com.simibubi.create.content.equipment.toolbox.ToolboxHandler;
 import com.simibubi.create.content.equipment.wrench.WrenchItem;
-import com.simibubi.create.content.equipment.zapper.ZapperInteractionHandler;
-import com.simibubi.create.content.equipment.zapper.ZapperItem;
 import com.simibubi.create.content.redstone.link.controller.LinkedControllerServerHandler;
 import com.simibubi.create.content.trains.entity.CarriageEntityHandler;
 import com.simibubi.create.foundation.ModFilePackResources;
@@ -32,7 +29,6 @@ import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
-import net.minecraftforge.event.OnDatapackSyncEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent.LevelTickEvent;
 import net.minecraftforge.event.TickEvent.Phase;
@@ -134,17 +130,6 @@ public class CommonEvents {
 	@SubscribeEvent
 	public static void addReloadListeners(AddReloadListenerEvent event) {
 		event.addListener(RecipeFinder.LISTENER);
-		event.addListener(PotatoProjectileTypeManager.ReloadListener.INSTANCE);
-	}
-
-	@SubscribeEvent
-	public static void onDatapackSync(OnDatapackSyncEvent event) {
-		ServerPlayer player = event.getPlayer();
-		if (player != null) {
-			PotatoProjectileTypeManager.syncTo(player);
-		} else {
-			PotatoProjectileTypeManager.syncToAll();
-		}
 	}
 
 	@SubscribeEvent
@@ -178,9 +163,6 @@ public class CommonEvents {
 
 	public static void leftClickEmpty(ServerPlayer player) {
 		ItemStack stack = player.getMainHandItem();
-		if (stack.getItem() instanceof ZapperItem) {
-			ZapperInteractionHandler.trySelect(stack, player);
-		}
 	}
 
 	@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)

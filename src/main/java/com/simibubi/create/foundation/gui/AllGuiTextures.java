@@ -15,9 +15,6 @@ public enum AllGuiTextures implements ScreenElement {
 
 	// Inventories
 	PLAYER_INVENTORY("player_inventory", 176, 108),
-	BLOCKZAPPER("curiosities", 0, 99, 214, 97),
-	TERRAINZAPPER("curiosities", 234, 103),
-	TERRAINZAPPER_INACTIVE_PARAM("curiosities", 238, 0, 18, 18),
 
 	LOGO("logo", 256, 256),
 	CURSEFORGE_LOGO("platform_icons/curseforge", 256, 256),
@@ -144,7 +141,6 @@ public enum AllGuiTextures implements ScreenElement {
 	JEI_LIGHT("jei/widgets", 0, 42, 52, 11),
 	JEI_QUESTION_MARK("jei/widgets", 0, 178, 12, 16),
 	JEI_SHADOW("jei/widgets", 0, 56, 52, 11),
-	BLOCKZAPPER_UPGRADE_RECIPE("jei/widgets", 0, 75, 144, 66),
 	JEI_HEAT_BAR("jei/widgets", 0, 201, 169, 19),
 	JEI_NO_HEAT_BAR("jei/widgets", 0, 221, 169, 19),
 

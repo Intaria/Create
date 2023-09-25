@@ -28,16 +28,7 @@ public class MechanicalCraftingRecipeGen extends CreateRecipeProvider {
 			.patternLine("APSPA")
 			.patternLine("AAPAA")
 			.patternLine(" AAA ")
-			.disallowMirrored()),
-
-		POTATO_CANNON = create(AllItems.POTATO_CANNON::get).returns(1)
-			.recipe(b -> b.key('L', I.andesite())
-				.key('R', I.precisionMechanism())
-				.key('S', AllBlocks.FLUID_PIPE.get())
-				.key('C', Ingredient.of(I.copper()))
-				.patternLine("LRSSS")
-				.patternLine("CC   "))
-
+			.disallowMirrored())
 	;
 
 	public MechanicalCraftingRecipeGen(DataGenerator p_i48262_1_) {

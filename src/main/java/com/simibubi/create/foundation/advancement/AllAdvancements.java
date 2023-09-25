@@ -416,16 +416,10 @@ public class AllAdvancements implements DataProvider {
 			.after(CLOCKWORK_BEARING)
 			.special(NOISY)),
 
-		POTATO_CANNON = create("potato_cannon", b -> b.icon(AllItems.POTATO_CANNON)
-			.title("Fwoomp!")
-			.description("Defeat an enemy with your Potato Cannon")
-			.after(DISPLAY_LINK)
-			.special(NOISY)),
-
 		LINKED_CONTROLLER = create("linked_controller", b -> b.icon(AllItems.LINKED_CONTROLLER)
 			.title("Remote Activation")
 			.description("Activate a Redstone Link using a Linked Controller")
-			.after(POTATO_CANNON)),
+			.after(DISPLAY_LINK)),
 
 		ARM_BLAZE_BURNER = create("arm_blaze_burner", b -> b.icon(AllBlocks.BLAZE_BURNER)
 			.title("Combust-o-Tron")
@@ -446,16 +440,10 @@ public class AllAdvancements implements DataProvider {
 			.after(CRUSHER_MAXED)
 			.special(EXPERT)),
 
-		POTATO_CANNON_COLLIDE = create("potato_cannon_collide", b -> b.icon(Items.CARROT)
-			.title("Veggie Fireworks")
-			.description("Cause Potato Cannon projectiles of different types to collide with each other")
-			.after(ARM_MANY_TARGETS)
-			.special(EXPERT)),
-
 		SELF_DEPLOYING = create("self_deploying", b -> b.icon(Items.RAIL)
 			.title("Self-Driving Cart")
 			.description("Create a Minecart Contraption that places tracks in front of itself")
-			.after(POTATO_CANNON_COLLIDE)
+			.after(ARM_MANY_TARGETS)
 			.special(EXPERT)),
 
 		// Brass - Hidden

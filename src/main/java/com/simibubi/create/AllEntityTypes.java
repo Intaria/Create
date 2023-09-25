@@ -11,8 +11,6 @@ import com.simibubi.create.content.contraptions.render.ContraptionEntityRenderer
 import com.simibubi.create.content.contraptions.render.OrientedContraptionEntityRenderer;
 import com.simibubi.create.content.equipment.blueprint.BlueprintEntity;
 import com.simibubi.create.content.equipment.blueprint.BlueprintRenderer;
-import com.simibubi.create.content.equipment.potatoCannon.PotatoProjectileEntity;
-import com.simibubi.create.content.equipment.potatoCannon.PotatoProjectileRenderer;
 import com.simibubi.create.content.trains.entity.CarriageContraptionEntity;
 import com.simibubi.create.content.trains.entity.CarriageContraptionEntityRenderer;
 import com.simibubi.create.content.trains.entity.CarriageContraptionInstance;
@@ -51,10 +49,6 @@ public class AllEntityTypes {
 	public static final EntityEntry<BlueprintEntity> CRAFTING_BLUEPRINT =
 		register("crafting_blueprint", BlueprintEntity::new, () -> BlueprintRenderer::new, MobCategory.MISC, 10,
 			Integer.MAX_VALUE, false, true, BlueprintEntity::build).register();
-
-	public static final EntityEntry<PotatoProjectileEntity> POTATO_PROJECTILE =
-		register("potato_projectile", PotatoProjectileEntity::new, () -> PotatoProjectileRenderer::new,
-			MobCategory.MISC, 4, 20, true, false, PotatoProjectileEntity::build).register();
 
 	public static final EntityEntry<SeatEntity> SEAT = register("seat", SeatEntity::new, () -> SeatEntity.Render::new,
 		MobCategory.MISC, 5, Integer.MAX_VALUE, false, true, SeatEntity::build).register();

@@ -28,7 +28,6 @@ import static com.simibubi.create.AllItems.GOLDEN_SHEET;
 import static com.simibubi.create.AllItems.POWDERED_OBSIDIAN;
 import static com.simibubi.create.AllItems.SCHEMATIC;
 import static com.simibubi.create.AllItems.WHEAT_FLOUR;
-import static com.simibubi.create.AllItems.WORLDSHAPER;
 import static com.simibubi.create.Create.asResource;
 import static com.simibubi.create.content.decoration.palettes.AllPaletteBlocks.ACACIA_WINDOW;
 import static com.simibubi.create.content.decoration.palettes.AllPaletteBlocks.ACACIA_WINDOW_PANE;
@@ -172,7 +171,6 @@ public class RemapHelper {
 		reMap.put("gold_sheet", GOLDEN_SHEET.getId());
 		reMap.put("flour", WHEAT_FLOUR.getId());
 		reMap.put("blueprint", SCHEMATIC.getId());
-		reMap.put("terrain_zapper", WORLDSHAPER.getId());
 		reMap.put("property_filter", ATTRIBUTE_FILTER.getId());
 		reMap.put("obsidian_dust", POWDERED_OBSIDIAN.getId());
 		reMap.put("diving_helmet", COPPER_DIVING_HELMET.getId());

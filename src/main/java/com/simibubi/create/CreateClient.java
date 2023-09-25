@@ -5,8 +5,6 @@ import com.simibubi.create.content.contraptions.render.ContraptionRenderDispatch
 import com.simibubi.create.content.contraptions.render.SBBContraptionManager;
 import com.simibubi.create.content.decoration.encasing.CasingConnectivity;
 import com.simibubi.create.content.equipment.bell.SoulPulseEffectHandler;
-import com.simibubi.create.content.equipment.potatoCannon.PotatoCannonRenderHandler;
-import com.simibubi.create.content.equipment.zapper.ZapperRenderHandler;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import com.simibubi.create.content.kinetics.waterwheel.WaterWheelRenderer;
 import com.simibubi.create.content.schematics.client.SchematicHandler;
@@ -47,8 +45,6 @@ public class CreateClient {
 	public static final SchematicHandler SCHEMATIC_HANDLER = new SchematicHandler();
 	public static final SuperGlueSelectionHandler GLUE_HANDLER = new SuperGlueSelectionHandler();
 
-	public static final ZapperRenderHandler ZAPPER_RENDER_HANDLER = new ZapperRenderHandler();
-	public static final PotatoCannonRenderHandler POTATO_CANNON_RENDER_HANDLER = new PotatoCannonRenderHandler();
 	public static final SoulPulseEffectHandler SOUL_PULSE_EFFECT_HANDLER = new SoulPulseEffectHandler();
 	public static final GlobalRailwayManager RAILWAYS = new GlobalRailwayManager();
 	public static final ValueSettingsClient VALUE_SETTINGS_HANDLER = new ValueSettingsClient();
@@ -62,9 +58,6 @@ public class CreateClient {
 		modEventBus.addListener(ContraptionRenderDispatcher::gatherContext);
 
 		MODEL_SWAPPER.registerListeners(modEventBus);
-
-		ZAPPER_RENDER_HANDLER.registerListeners(forgeEventBus);
-		POTATO_CANNON_RENDER_HANDLER.registerListeners(forgeEventBus);
 	}
 
 	public static void clientInit(final FMLClientSetupEvent event) {
