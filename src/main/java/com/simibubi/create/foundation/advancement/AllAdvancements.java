@@ -390,15 +390,10 @@ public class AllAdvancements implements DataProvider {
 			.after(SPEED_CONTROLLER)
 			.special(NOISY)),
 
-		CRAFTER = create("mechanical_crafter", b -> b.icon(AllBlocks.MECHANICAL_CRAFTER)
-			.title("Automated Assembly")
-			.description("Place and power some Mechanical Crafters")
-			.after(MECHANICAL_ARM)),
-
 		CRUSHING_WHEEL = create("crushing_wheel", b -> b.icon(AllBlocks.CRUSHING_WHEEL)
 			.title("A Pair of Giants")
 			.description("Place and power a set of Crushing Wheels")
-			.after(CRAFTER)
+			.after(MECHANICAL_ARM)
 			.special(NOISY)),
 
 		// Brass - Top Branch
@@ -468,19 +463,13 @@ public class AllAdvancements implements DataProvider {
 		FIST_BUMP = create("fist_bump", b -> b.icon(AllBlocks.DEPLOYER)
 			.title("Pound It, Bro!")
 			.description("Make two Deployers fist-bump")
-			.after(CRAFTER)
-			.special(SECRET)),
-
-		CRAFTER_LAZY = create("crafter_lazy_000", b -> b.icon(AllBlocks.MECHANICAL_CRAFTER)
-			.title("Desperate Measures")
-			.description("Drastically slow down a Mechanical Crafter to procrastinate on proper infrastructure")
-			.after(CRAFTER)
+			.after(BRASS)
 			.special(SECRET)),
 
 		MUSICAL_ARM = create("musical_arm", b -> b.icon(Blocks.JUKEBOX)
 			.title("DJ Mechanico")
 			.description("Watch a Mechanical Arm operate your Jukebox")
-			.after(CRAFTER)
+			.after(BRASS)
 			.special(SECRET)),
 
 		// Trains - Central Branch

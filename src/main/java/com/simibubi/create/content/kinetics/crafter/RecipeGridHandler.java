@@ -137,13 +137,15 @@ public class RecipeGridHandler {
 	}
 
 	private static boolean isCrafter(BlockState state) {
-		return AllBlocks.MECHANICAL_CRAFTER.has(state);
+		return false;
+		//return AllBlocks.MECHANICAL_CRAFTER.has(state);
 	}
 
 	public static ItemStack tryToApplyRecipe(Level world, GroupedItems items) {
 		items.calcStats();
-		CraftingContainer craftinginventory = new MechanicalCraftingInventory(items);
+		//CraftingContainer craftinginventory = new MechanicalCraftingInventory(items);
 		ItemStack result = null;
+		/*
 		if (AllConfigs.server().recipes.allowRegularCraftingInCrafter.get())
 			result = world.getRecipeManager()
 				.getRecipeFor(RecipeType.CRAFTING, craftinginventory, world)
@@ -154,6 +156,7 @@ public class RecipeGridHandler {
 			result = AllRecipeTypes.MECHANICAL_CRAFTING.find(craftinginventory, world)
 				.map(r -> r.assemble(craftinginventory))
 				.orElse(null);
+		*/
 		return result;
 	}
 

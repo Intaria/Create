@@ -83,8 +83,6 @@ import com.simibubi.create.content.kinetics.belt.BeltRenderer;
 import com.simibubi.create.content.kinetics.chainDrive.ChainGearshiftBlockEntity;
 import com.simibubi.create.content.kinetics.clock.CuckooClockBlockEntity;
 import com.simibubi.create.content.kinetics.clock.CuckooClockRenderer;
-import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterBlockEntity;
-import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterRenderer;
 import com.simibubi.create.content.kinetics.crafter.ShaftlessCogwheelInstance;
 import com.simibubi.create.content.kinetics.crank.HandCrankBlockEntity;
 import com.simibubi.create.content.kinetics.crank.HandCrankInstance;
@@ -629,13 +627,6 @@ public class AllBlockEntityTypes {
 		.blockEntity("blaze_heater", BlazeBurnerBlockEntity::new)
 		.validBlocks(AllBlocks.BLAZE_BURNER)
 		.renderer(() -> BlazeBurnerRenderer::new)
-		.register();
-
-	public static final BlockEntityEntry<MechanicalCrafterBlockEntity> MECHANICAL_CRAFTER = REGISTRATE
-		.blockEntity("mechanical_crafter", MechanicalCrafterBlockEntity::new)
-		.instance(() -> ShaftlessCogwheelInstance::new)
-		.validBlocks(AllBlocks.MECHANICAL_CRAFTER)
-		.renderer(() -> MechanicalCrafterRenderer::new)
 		.register();
 
 	public static final BlockEntityEntry<SequencedGearshiftBlockEntity> SEQUENCED_GEARSHIFT = REGISTRATE

@@ -45,8 +45,10 @@ public class ConnectedInputHandler {
 		if (face == refDirection)
 			return false;
 		BlockState neighbour = world.getBlockState(pos.relative(direction));
+		/*
 		if (!AllBlocks.MECHANICAL_CRAFTER.has(neighbour))
 			return false;
+		*/
 		if (refDirection != neighbour.getValue(HORIZONTAL_FACING))
 			return false;
 		return true;

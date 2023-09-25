@@ -161,7 +161,8 @@ public class AllArmInteractionPointTypes {
 
 		@Override
 		public boolean canCreatePoint(Level level, BlockPos pos, BlockState state) {
-			return AllBlocks.MECHANICAL_CRAFTER.has(state);
+			//return AllBlocks.MECHANICAL_CRAFTER.has(state);
+			return false;
 		}
 
 		@Override

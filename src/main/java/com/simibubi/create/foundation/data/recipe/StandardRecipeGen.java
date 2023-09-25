@@ -242,10 +242,6 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 				.pattern("AS")
 				.pattern("NA")),
 
-		CRAFTER_SLOT_COVER = create(AllItems.CRAFTER_SLOT_COVER).unlockedBy(AllBlocks.MECHANICAL_CRAFTER::get)
-			.viaShaped(b -> b.define('A', I.brassNugget())
-				.pattern("AAA")),
-
 		COGWHEEL = create(AllBlocks.COGWHEEL).unlockedBy(I::andesite)
 			.viaShapeless(b -> b.requires(I.shaft())
 				.requires(I.planks())),
@@ -468,15 +464,6 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 				.pattern("S")
 				.pattern("C")
 				.pattern("A")),
-
-		MECHANICAL_CRAFTER = create(AllBlocks.MECHANICAL_CRAFTER).returns(3)
-			.unlockedBy(I::brassCasing)
-			.viaShaped(b -> b.define('B', I.electronTube())
-				.define('R', Blocks.CRAFTING_TABLE)
-				.define('C', I.brassCasing())
-				.pattern("B")
-				.pattern("C")
-				.pattern("R")),
 
 		WINDMILL_BEARING = create(AllBlocks.WINDMILL_BEARING).unlockedBy(I::andesite)
 			.viaShaped(b -> b.define('B', ItemTags.WOODEN_SLABS)

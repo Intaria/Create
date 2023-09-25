@@ -32,8 +32,12 @@ public class MechanicalCraftingRecipe extends ShapedRecipe {
 
 	@Override
 	public boolean matches(CraftingContainer inv, Level worldIn) {
-		if (!(inv instanceof MechanicalCraftingInventory))
-			return false;
+		return false;
+
+		//if (!(inv instanceof MechanicalCraftingInventory))
+		//	return false;
+
+		/*
 		if (acceptsMirrored())
 			return super.matches(inv, worldIn);
 
@@ -43,6 +47,7 @@ public class MechanicalCraftingRecipe extends ShapedRecipe {
 				if (this.matchesSpecific(inv, i, j))
 					return true;
 		return false;
+		*/
 	}
 
 	// From ShapedRecipe

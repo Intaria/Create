@@ -98,8 +98,6 @@ public class MechanicalCrafterBlock extends HorizontalKineticBlock
 		if (state.hasBlockEntity() && !state.is(newState.getBlock())) {
 			MechanicalCrafterBlockEntity crafter = CrafterHelper.getCrafter(worldIn, pos);
 			if (crafter != null) {
-				if (crafter.covered)
-					Block.popResource(worldIn, pos, AllItems.CRAFTER_SLOT_COVER.asStack());
 				if (!isMoving)
 					crafter.ejectWholeGrid();
 			}
@@ -179,18 +177,6 @@ public class MechanicalCrafterBlock extends HorizontalKineticBlock
 				if (worldIn.isClientSide)
 					return InteractionResult.SUCCESS;
 
-				if (AllItems.CRAFTER_SLOT_COVER.isIn(heldItem)) {
-					if (crafter.covered)
-						return InteractionResult.PASS;
-					if (!crafter.inventory.isEmpty())
-						return InteractionResult.PASS;
-					crafter.covered = true;
-					crafter.setChanged();
-					crafter.sendData();
-					if (!player.isCreative())
-						heldItem.shrink(1);
-					return InteractionResult.SUCCESS;
-				}
 
 				LazyOptional<IItemHandler> capability =
 					crafter.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY);
@@ -212,9 +198,7 @@ public class MechanicalCrafterBlock extends HorizontalKineticBlock
 					crafter.covered = false;
 					crafter.setChanged();
 					crafter.sendData();
-					if (!player.isCreative())
-						player.getInventory()
-							.placeItemBackInInventory(AllItems.CRAFTER_SLOT_COVER.asStack());
+
 					return InteractionResult.SUCCESS;
 				}
 				return InteractionResult.PASS;
@@ -252,17 +236,25 @@ public class MechanicalCrafterBlock extends HorizontalKineticBlock
 	}
 
 	public static Direction getTargetDirection(BlockState state) {
+		//return Direction.UP;
+		
+		/*
 		if (!AllBlocks.MECHANICAL_CRAFTER.has(state))
 			return Direction.UP;
+		*/
+		
 		Direction facing = state.getValue(HORIZONTAL_FACING);
 		Pointing point = state.getValue(POINTING);
 		Vec3 targetVec = new Vec3(0, 1, 0);
 		targetVec = VecHelper.rotate(targetVec, -point.getXRotation(), Axis.Z);
 		targetVec = VecHelper.rotate(targetVec, AngleHelper.horizontalAngle(facing), Axis.Y);
 		return Direction.getNearest(targetVec.x, targetVec.y, targetVec.z);
+		
 	}
 
 	public static boolean isValidTarget(Level world, BlockPos targetPos, BlockState crafterState) {
+		return false;
+		/*
 		BlockState targetState = world.getBlockState(targetPos);
 		if (!world.isLoaded(targetPos))
 			return false;
@@ -276,6 +268,7 @@ public class MechanicalCrafterBlock extends HorizontalKineticBlock
 				.getXRotation()) == 180)
 			return false;
 		return true;
+		*/
 	}
 
 	@Override
@@ -285,7 +278,7 @@ public class MechanicalCrafterBlock extends HorizontalKineticBlock
 
 	@Override
 	public BlockEntityType<? extends MechanicalCrafterBlockEntity> getBlockEntityType() {
-		return AllBlockEntityTypes.MECHANICAL_CRAFTER.get();
+		return null;
+		//return AllBlockEntityTypes.MECHANICAL_CRAFTER.get();
 	}
-
 }

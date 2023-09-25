@@ -281,6 +281,9 @@ public class CreateJEI implements IModPlugin {
 				.emptyBackground(177, 50)
 				.build("draining", ItemDrainCategory::new),
 
+				/*
+				 TODO:
+				 
 		autoShaped = builder(CraftingRecipe.class)
 				.enableWhen(c -> c.allowRegularCraftingInCrafter)
 				.addAllRecipesIf(r -> r instanceof CraftingRecipe && !(r instanceof IShapedRecipe<?>)
@@ -293,13 +296,7 @@ public class CreateJEI implements IModPlugin {
 				.itemIcon(AllBlocks.MECHANICAL_CRAFTER.get())
 				.emptyBackground(177, 107)
 				.build("automatic_shaped", MechanicalCraftingCategory::new),
-
-		mechanicalCrafting = builder(CraftingRecipe.class)
-				.addTypedRecipes(AllRecipeTypes.MECHANICAL_CRAFTING)
-				.catalyst(AllBlocks.MECHANICAL_CRAFTER::get)
-				.itemIcon(AllBlocks.MECHANICAL_CRAFTER.get())
-				.emptyBackground(177, 107)
-				.build("mechanical_crafting", MechanicalCraftingCategory::new),
+			*/
 
 		seqAssembly = builder(SequencedAssemblyRecipe.class)
 				.addTypedRecipes(AllRecipeTypes.SEQUENCED_ASSEMBLY)

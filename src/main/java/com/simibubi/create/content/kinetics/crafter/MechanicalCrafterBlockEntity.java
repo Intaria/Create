@@ -117,17 +117,12 @@ public class MechanicalCrafterBlockEntity extends KineticBlockEntity {
 			.require(AllItems.WRENCH.get());
 		behaviours.add(inserting);
 		behaviours.add(connectivity);
-		registerAwardables(behaviours, AllAdvancements.CRAFTER, AllAdvancements.CRAFTER_LAZY);
+		registerAwardables(behaviours);
 	}
 
 	@Override
 	public void onSpeedChanged(float previousSpeed) {
 		super.onSpeedChanged(previousSpeed);
-		if (!Mth.equal(getSpeed(), 0)) {
-			award(AllAdvancements.CRAFTER);
-			if (Math.abs(getSpeed()) < 5)
-				award(AllAdvancements.CRAFTER_LAZY);
-		}
 	}
 
 	public void blockChanged() {
@@ -433,7 +428,8 @@ public class MechanicalCrafterBlockEntity extends KineticBlockEntity {
 
 	public void eject() {
 		BlockState blockState = getBlockState();
-		boolean present = AllBlocks.MECHANICAL_CRAFTER.has(blockState);
+		//boolean present = AllBlocks.MECHANICAL_CRAFTER.has(blockState);
+		boolean present = false;
 		Vec3 vec = present ? Vec3.atLowerCornerOf(blockState.getValue(HORIZONTAL_FACING)
 			.getNormal())
 			.scale(.75f) : Vec3.ZERO;

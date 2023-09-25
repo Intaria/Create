@@ -24,10 +24,12 @@ public class AnimatedCrafter extends AnimatedKinetics {
 			.scale(scale)
 			.render(matrixStack);
 
+		/*
 		blockElement(AllBlocks.MECHANICAL_CRAFTER.getDefaultState())
 			.rotateBlock(0, 180, 0)
 			.scale(scale)
 			.render(matrixStack);
+		*/
 
 		matrixStack.popPose();
 	}

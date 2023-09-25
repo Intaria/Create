@@ -14,7 +14,6 @@ import com.simibubi.create.infrastructure.ponder.scenes.CartAssemblerScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ChainDriveScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ChassisScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ChuteScenes;
-import com.simibubi.create.infrastructure.ponder.scenes.CrafterScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.DeployerScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.DetectorScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.DisplayScenes;
@@ -145,14 +144,7 @@ public class PonderIndex {
 			.addStoryBoard("weighted_ejector/eject", EjectorScenes::ejector)
 			.addStoryBoard("weighted_ejector/split", EjectorScenes::splitY)
 			.addStoryBoard("weighted_ejector/redstone", EjectorScenes::redstone);
-
-		// Crafters
-		HELPER.forComponents(AllBlocks.MECHANICAL_CRAFTER)
-			.addStoryBoard("mechanical_crafter/setup", CrafterScenes::setup)
-			.addStoryBoard("mechanical_crafter/connect", CrafterScenes::connect);
-		HELPER.forComponents(AllBlocks.MECHANICAL_CRAFTER, AllItems.CRAFTER_SLOT_COVER)
-			.addStoryBoard("mechanical_crafter/covers", CrafterScenes::covers);
-
+			
 		// Vaults
 		HELPER.forComponents(AllBlocks.ITEM_VAULT)
 			.addStoryBoard("item_vault/storage", ItemVaultScenes::storage, AllPonderTags.LOGISTICS)
@@ -195,7 +187,6 @@ public class PonderIndex {
 		// Mechanical Arm
 		HELPER.forComponents(AllBlocks.MECHANICAL_ARM)
 			.addStoryBoard("mechanical_arm/setup", ArmScenes::setup, AllPonderTags.ARM_TARGETS)
-			.addStoryBoard("mechanical_arm/filter", ArmScenes::filtering)
 			.addStoryBoard("mechanical_arm/modes", ArmScenes::modes)
 			.addStoryBoard("mechanical_arm/redstone", ArmScenes::redstone);
 

@@ -1375,19 +1375,6 @@ public class AllBlocks {
 			.lang("Radiant Casing")
 			.register();
 
-	public static final BlockEntry<MechanicalCrafterBlock> MECHANICAL_CRAFTER =
-		REGISTRATE.block("mechanical_crafter", MechanicalCrafterBlock::new)
-			.initialProperties(SharedProperties::softMetal)
-			.properties(p -> p.noOcclusion().color(MaterialColor.TERRACOTTA_YELLOW))
-			.transform(axeOrPickaxe())
-			.blockstate(BlockStateGen.horizontalBlockProvider(true))
-			.transform(BlockStressDefaults.setImpact(2.0))
-			.onRegister(CreateRegistrate.connectedTextures(CrafterCTBehaviour::new))
-			.addLayer(() -> RenderType::cutoutMipped)
-			.item()
-			.transform(customItemModel())
-			.register();
-
 	public static final BlockEntry<SequencedGearshiftBlock> SEQUENCED_GEARSHIFT =
 		REGISTRATE.block("sequenced_gearshift", SequencedGearshiftBlock::new)
 			.initialProperties(SharedProperties::stone)

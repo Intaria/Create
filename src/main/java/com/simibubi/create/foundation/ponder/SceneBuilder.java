@@ -20,7 +20,6 @@ import com.simibubi.create.content.kinetics.belt.behaviour.DirectBeltInputBehavi
 import com.simibubi.create.content.kinetics.belt.behaviour.TransportedItemStackHandlerBehaviour;
 import com.simibubi.create.content.kinetics.belt.behaviour.TransportedItemStackHandlerBehaviour.TransportedResult;
 import com.simibubi.create.content.kinetics.crafter.ConnectedInputHandler;
-import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterBlockEntity;
 import com.simibubi.create.content.kinetics.gauge.SpeedGaugeBlockEntity;
 import com.simibubi.create.content.kinetics.mechanicalArm.ArmBlockEntity;
 import com.simibubi.create.content.logistics.funnel.FunnelBlockEntity;
@@ -856,10 +855,6 @@ public class SceneBuilder {
 
 		public void flapFunnel(BlockPos position, boolean outward) {
 			modifyBlockEntity(position, FunnelBlockEntity.class, funnel -> funnel.flap(!outward));
-		}
-
-		public void setCraftingResult(BlockPos crafter, ItemStack output) {
-			modifyBlockEntity(crafter, MechanicalCrafterBlockEntity.class, mct -> mct.setScriptedResult(output));
 		}
 
 		public void connectCrafterInvs(BlockPos position1, BlockPos position2) {

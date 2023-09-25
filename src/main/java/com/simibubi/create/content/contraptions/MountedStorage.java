@@ -2,7 +2,6 @@ package com.simibubi.create.content.contraptions;
 
 import com.simibubi.create.AllBlockEntityTypes;
 import com.simibubi.create.AllTags.AllBlockTags;
-import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterBlockEntity;
 import com.simibubi.create.content.logistics.crate.BottomlessItemHandler;
 import com.simibubi.create.content.logistics.vault.ItemVaultBlockEntity;
 import com.simibubi.create.content.processing.recipe.ProcessingInventory;
@@ -36,8 +35,6 @@ public class MountedStorage {
 
 	public static boolean canUseAsStorage(BlockEntity be) {
 		if (be == null)
-			return false;
-		if (be instanceof MechanicalCrafterBlockEntity)
 			return false;
 		if (AllBlockEntityTypes.CREATIVE_CRATE.is(be))
 			return true;
