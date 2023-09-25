@@ -32,14 +32,12 @@ public abstract class ProcessingRecipeGen extends CreateRecipeProvider {
 		GENERATORS.add(new MillingRecipeGen(gen));
 		GENERATORS.add(new WashingRecipeGen(gen));
 		GENERATORS.add(new PolishingRecipeGen(gen));
-		GENERATORS.add(new DeployingRecipeGen(gen));
 		GENERATORS.add(new MixingRecipeGen(gen));
 		GENERATORS.add(new CompactingRecipeGen(gen));
 		GENERATORS.add(new PressingRecipeGen(gen));
 		GENERATORS.add(new FillingRecipeGen(gen));
 		GENERATORS.add(new EmptyingRecipeGen(gen));
 		GENERATORS.add(new HauntingRecipeGen(gen));
-		GENERATORS.add(new ItemApplicationRecipeGen(gen));
 
 		gen.addProvider(true, new DataProvider() {
 

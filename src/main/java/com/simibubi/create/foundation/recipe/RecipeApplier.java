@@ -3,7 +3,6 @@ package com.simibubi.create.foundation.recipe;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.simibubi.create.content.kinetics.deployer.ManualApplicationRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingOutput;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.foundation.item.ItemHelper;
@@ -37,7 +36,7 @@ public class RecipeApplier {
 			stacks = new ArrayList<>();
 			for (int i = 0; i < stackIn.getCount(); i++) {
 				List<ProcessingOutput> outputs =
-					pr instanceof ManualApplicationRecipe mar ? mar.getRollableResults() : pr.getRollableResults();
+					pr.getRollableResults();
 				for (ItemStack stack : pr.rollResults(outputs)) {
 					for (ItemStack previouslyRolled : stacks) {
 						if (stack.isEmpty())

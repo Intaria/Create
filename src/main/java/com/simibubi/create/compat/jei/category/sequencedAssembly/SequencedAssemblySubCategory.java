@@ -2,10 +2,8 @@ package com.simibubi.create.compat.jei.category.sequencedAssembly;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
-import com.simibubi.create.compat.jei.category.animations.AnimatedDeployer;
 import com.simibubi.create.compat.jei.category.animations.AnimatedPress;
 import com.simibubi.create.compat.jei.category.animations.AnimatedSpout;
-import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedRecipe;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
 import com.simibubi.create.foundation.utility.Lang;
@@ -87,41 +85,6 @@ public abstract class SequencedAssemblySubCategory {
 				.get(0)
 				.getMatchingFluidStacks())
 				.draw(ms, getWidth() / 2, 0);
-			ms.popPose();
-		}
-
-	}
-
-	public static class AssemblyDeploying extends SequencedAssemblySubCategory {
-
-		AnimatedDeployer deployer;
-
-		public AssemblyDeploying() {
-			super(25);
-			deployer = new AnimatedDeployer();
-		}
-
-		@Override
-		public void setRecipe(IRecipeLayoutBuilder builder, SequencedRecipe<?> recipe, IFocusGroup focuses, int x) {
-			IRecipeSlotBuilder slot = builder
-					.addSlot(RecipeIngredientRole.INPUT, x + 4, 15)
-					.setBackground(CreateRecipeCategory.getRenderedSlot(), -1, -1)
-					.addIngredients(recipe.getRecipe().getIngredients().get(1));
-
-			if (recipe.getAsAssemblyRecipe() instanceof DeployerApplicationRecipe deployerRecipe && deployerRecipe.shouldKeepHeldItem()) {
-				slot.addTooltipCallback(
-						(recipeSlotView, tooltip) -> tooltip.add(1, Lang.translateDirect("recipe.deploying.not_consumed").withStyle(ChatFormatting.GOLD))
-				);
-			}
-		}
-
-		@Override
-		public void draw(SequencedRecipe<?> recipe, PoseStack ms, double mouseX, double mouseY, int index) {
-			deployer.offset = index;
-			ms.pushPose();
-			ms.translate(-7, 50, 0);
-			ms.scale(.75f, .75f, .75f);
-			deployer.draw(ms, getWidth() / 2, 0);
 			ms.popPose();
 		}
 

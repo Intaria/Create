@@ -3,7 +3,6 @@ package com.simibubi.create.infrastructure.ponder.scenes;
 import com.google.common.collect.ImmutableList;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllItems;
-import com.simibubi.create.content.kinetics.deployer.DeployerBlockEntity;
 import com.simibubi.create.content.kinetics.millstone.MillstoneBlockEntity;
 import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlockEntity;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
@@ -702,24 +701,6 @@ public class ProcessingScenes {
 			.text("With a Blaze Cake, the Burner can reach an even stronger level of heat")
 			.pointAt(util.vector.blockSurface(burner, Direction.WEST))
 			.placeNearTarget();
-		scene.idle(90);
-
-		Class<DeployerBlockEntity> teType = DeployerBlockEntity.class;
-		scene.world.modifyBlockEntityNBT(util.select.position(4, 1, 2), teType,
-			nbt -> nbt.put("HeldItem", AllItems.BLAZE_CAKE.asStack()
-				.serializeNBT()));
-
-		scene.world.showSection(util.select.fromTo(3, 0, 5, 2, 0, 5), Direction.UP);
-		scene.idle(5);
-		scene.world.showSection(util.select.fromTo(4, 1, 2, 4, 1, 5), Direction.DOWN);
-		scene.idle(5);
-		scene.world.showSection(util.select.fromTo(2, 1, 4, 2, 1, 5), Direction.DOWN);
-		scene.idle(10);
-
-		scene.overlay.showText(80)
-			.attachKeyFrame()
-			.text("The feeding process can be automated using Deployers or Mechanical Arms")
-			.pointAt(util.vector.blockSurface(burner.east(2), Direction.UP));
 		scene.idle(90);
 	}
 

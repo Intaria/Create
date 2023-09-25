@@ -8,7 +8,6 @@ import com.simibubi.create.AllItems;
 import com.simibubi.create.AllTags.AllItemTags;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
-import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
 import com.simibubi.create.content.kinetics.press.PressingRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipeBuilder;
 
@@ -32,10 +31,7 @@ public class SequencedAssemblyRecipeGen extends CreateRecipeProvider {
 		.addOutput(AllItems.CRUSHED_GOLD.get(), 2)
 		.addOutput(Items.IRON_INGOT, 1)
 		.addOutput(Items.CLOCK, 1)
-		.loops(5)
-		.addStep(DeployerApplicationRecipe::new, rb -> rb.require(I.cog()))
-		.addStep(DeployerApplicationRecipe::new, rb -> rb.require(I.largeCog()))
-		.addStep(DeployerApplicationRecipe::new, rb -> rb.require(I.ironNugget()))),
+		.loops(5)),
 
 		REINFORCED_SHEET = create("sturdy_sheet", b -> b.require(AllItems.POWDERED_OBSIDIAN.get())
 			.transitionTo(AllItems.INCOMPLETE_REINFORCED_SHEET.get())
@@ -49,12 +45,6 @@ public class SequencedAssemblyRecipeGen extends CreateRecipeProvider {
 			.transitionTo(AllItems.INCOMPLETE_TRACK.get())
 			.addOutput(AllBlocks.TRACK.get(), 1)
 			.loops(1)
-			.addStep(DeployerApplicationRecipe::new,
-				rb -> rb.require(Ingredient.fromValues(
-					Stream.of(new Ingredient.TagValue(I.ironNugget()), new Ingredient.TagValue(I.zincNugget())))))
-			.addStep(DeployerApplicationRecipe::new,
-				rb -> rb.require(Ingredient.fromValues(
-					Stream.of(new Ingredient.TagValue(I.ironNugget()), new Ingredient.TagValue(I.zincNugget())))))
 			.addStep(PressingRecipe::new, rb -> rb))
 
 	;

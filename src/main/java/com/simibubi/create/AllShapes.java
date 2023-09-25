@@ -171,9 +171,6 @@ public class AllShapes {
 		TRACK_DIAG = shape(TrackVoxelShapes.diagonal()).forHorizontal(SOUTH),
 		TRACK_ORTHO_LONG = shape(TrackVoxelShapes.longOrthogonalZOffset()).forHorizontal(SOUTH),
 
-		DEPLOYER_INTERACTION = shape(CASING_12PX.get(UP)).add(SIX_VOXEL_POLE.get(Axis.Y))
-			.forDirectional(UP),
-
 		WHISTLE_BASE = shape(1, 0, 1, 15, 3, 15).add(5, 0, 5, 11, 8, 11)
 			.forDirectional(UP)
 

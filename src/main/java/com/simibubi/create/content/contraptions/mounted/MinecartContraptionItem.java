@@ -15,7 +15,6 @@ import com.simibubi.create.content.contraptions.ContraptionMovementSetting;
 import com.simibubi.create.content.contraptions.OrientedContraptionEntity;
 import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceMovement;
 import com.simibubi.create.content.contraptions.behaviour.MovementContext;
-import com.simibubi.create.content.kinetics.deployer.DeployerFakePlayer;
 import com.simibubi.create.foundation.advancement.AllAdvancements;
 import com.simibubi.create.foundation.utility.Lang;
 import com.simibubi.create.foundation.utility.NBTHelper;
@@ -220,8 +219,6 @@ public class MinecartContraptionItem extends Item {
 		if (!(entity instanceof AbstractMinecart))
 			return;
 		if (!entity.isAlive())
-			return;
-		if (player instanceof DeployerFakePlayer dfp && dfp.onMinecartContraption)
 			return;
 		AbstractMinecart cart = (AbstractMinecart) entity;
 		Type type = cart.getMinecartType();

@@ -6,7 +6,6 @@ import java.util.Optional;
 import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.kinetics.belt.transport.TransportedItemStack;
-import com.simibubi.create.content.kinetics.crafter.MechanicalCraftingRecipe;
 import com.simibubi.create.content.kinetics.press.PressingBehaviour.Mode;
 import com.simibubi.create.content.kinetics.press.PressingBehaviour.PressingBehaviourSpecifics;
 import com.simibubi.create.content.processing.basin.BasinBlockEntity;
@@ -199,7 +198,7 @@ public class MechanicalPressBlockEntity extends BasinOperatingBlockEntity implem
 
 	@Override
 	protected <C extends Container> boolean matchStaticFilters(Recipe<C> recipe) {
-		return (recipe instanceof CraftingRecipe && !(recipe instanceof MechanicalCraftingRecipe) && canCompress(recipe)
+		return (recipe instanceof CraftingRecipe && canCompress(recipe)
 			&& !AllRecipeTypes.shouldIgnoreInAutomation(recipe))
 			|| recipe.getType() == AllRecipeTypes.COMPACTING.getType();
 	}

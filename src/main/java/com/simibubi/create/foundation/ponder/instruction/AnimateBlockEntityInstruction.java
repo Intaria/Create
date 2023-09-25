@@ -6,7 +6,6 @@ import java.util.function.Function;
 
 import com.simibubi.create.content.contraptions.bearing.IBearingBlockEntity;
 import com.simibubi.create.content.contraptions.pulley.PulleyBlockEntity;
-import com.simibubi.create.content.kinetics.deployer.DeployerBlockEntity;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlockEntity;
 import com.simibubi.create.foundation.ponder.PonderScene;
 import com.simibubi.create.foundation.ponder.PonderWorld;
@@ -43,14 +42,6 @@ public class AnimateBlockEntityInstruction extends TickingInstruction {
 		return new AnimateBlockEntityInstruction(location, totalDelta, ticks,
 			(w, f) -> castIfPresent(w, location, PulleyBlockEntity.class).ifPresent(pulley -> pulley.animateOffset(f)),
 			(w) -> castIfPresent(w, location, PulleyBlockEntity.class).map(pulley -> pulley.offset)
-				.orElse(0f));
-	}
-
-	public static AnimateBlockEntityInstruction deployer(BlockPos location, float totalDelta, int ticks) {
-		return new AnimateBlockEntityInstruction(location, totalDelta, ticks,
-			(w, f) -> castIfPresent(w, location, DeployerBlockEntity.class)
-				.ifPresent(deployer -> deployer.setAnimatedOffset(f)),
-			(w) -> castIfPresent(w, location, DeployerBlockEntity.class).map(deployer -> deployer.getHandOffset(1))
 				.orElse(0f));
 	}
 

@@ -48,7 +48,6 @@
     "create:secondary_linear_chassis",
     "create:radial_chassis",
     "create:contraption_controls",
-    "create:deployer",
     "create:portable_storage_interface",
     "create:redstone_contact",
     "create:elevator_contact",

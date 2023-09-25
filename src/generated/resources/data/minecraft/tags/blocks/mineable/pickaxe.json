@@ -89,7 +89,6 @@
     "create:radial_chassis",
     "create:sticker",
     "create:contraption_controls",
-    "create:deployer",
     "create:portable_storage_interface",
     "create:redstone_contact",
     "create:elevator_contact",

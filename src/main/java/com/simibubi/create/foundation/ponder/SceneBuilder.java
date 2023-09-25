@@ -629,10 +629,6 @@ public class SceneBuilder {
 			addInstruction(AnimateBlockEntityInstruction.bogey(pos, distance, duration + 1));
 		}
 
-		public void moveDeployer(BlockPos pos, float distance, int duration) {
-			addInstruction(AnimateBlockEntityInstruction.deployer(pos, distance, duration));
-		}
-
 		public void setBlocks(Selection selection, BlockState state, boolean spawnParticles) {
 			addInstruction(new ReplaceBlocksInstruction(selection, $ -> state, true, spawnParticles));
 		}

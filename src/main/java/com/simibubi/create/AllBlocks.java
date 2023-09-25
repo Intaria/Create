@@ -111,9 +111,6 @@ import com.simibubi.create.content.kinetics.crank.HandCrankBlock;
 import com.simibubi.create.content.kinetics.crank.ValveHandleBlock;
 import com.simibubi.create.content.kinetics.crusher.CrushingWheelBlock;
 import com.simibubi.create.content.kinetics.crusher.CrushingWheelControllerBlock;
-import com.simibubi.create.content.kinetics.deployer.DeployerBlock;
-import com.simibubi.create.content.kinetics.deployer.DeployerMovementBehaviour;
-import com.simibubi.create.content.kinetics.deployer.DeployerMovingInteraction;
 import com.simibubi.create.content.kinetics.fan.EncasedFanBlock;
 import com.simibubi.create.content.kinetics.fan.NozzleBlock;
 import com.simibubi.create.content.kinetics.flywheel.FlywheelBlock;
@@ -1177,19 +1174,6 @@ public class AllBlocks {
 			.item()
 			.transform(customItemModel())
 			.register();
-
-	public static final BlockEntry<DeployerBlock> DEPLOYER = REGISTRATE.block("deployer", DeployerBlock::new)
-		.initialProperties(SharedProperties::stone)
-		.properties(p -> p.color(MaterialColor.PODZOL))
-		.transform(axeOrPickaxe())
-		.blockstate(BlockStateGen.directionalAxisBlockProvider())
-		.transform(BlockStressDefaults.setImpact(4.0))
-		.onRegister(movementBehaviour(new DeployerMovementBehaviour()))
-		.onRegister(interactionBehaviour(new DeployerMovingInteraction()))
-		.item(AssemblyOperatorBlockItem::new)
-		.tag(AllItemTags.CONTRAPTION_CONTROLLED.tag)
-		.transform(customItemModel())
-		.register();
 
 	public static final BlockEntry<PortableStorageInterfaceBlock> PORTABLE_STORAGE_INTERFACE =
 		REGISTRATE.block("portable_storage_interface", PortableStorageInterfaceBlock::forItems)

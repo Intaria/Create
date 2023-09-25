@@ -362,16 +362,11 @@ public class AllAdvancements implements DataProvider {
 			.whenIconCollected()
 			.after(BRASS_CASING)),
 
-		DEPLOYER = create("deployer", b -> b.icon(AllBlocks.DEPLOYER)
-			.title("Artificial Intelligence")
-			.description("Place and power a Deployer, the perfect reflection of yourself")
-			.after(ROSE_QUARTZ)),
-
 		MECHANISM = create("precision_mechanism", b -> b.icon(AllItems.PRECISION_MECHANISM)
 			.title("Complex Curiosities")
 			.description("Assemble a Precision Mechanism")
 			.whenIconCollected()
-			.after(DEPLOYER)
+			.after(ROSE_QUARTZ)
 			.special(NOISY)),
 
 		SPEED_CONTROLLER = create("speed_controller", b -> b.icon(AllBlocks.ROTATION_SPEED_CONTROLLER)
@@ -442,12 +437,6 @@ public class AllAdvancements implements DataProvider {
 			.special(EXPERT)),
 
 		// Brass - Hidden
-
-		FIST_BUMP = create("fist_bump", b -> b.icon(AllBlocks.DEPLOYER)
-			.title("Pound It, Bro!")
-			.description("Make two Deployers fist-bump")
-			.after(BRASS)
-			.special(SECRET)),
 
 		MUSICAL_ARM = create("musical_arm", b -> b.icon(Blocks.JUKEBOX)
 			.title("DJ Mechanico")

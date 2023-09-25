@@ -14,7 +14,6 @@ import com.simibubi.create.infrastructure.ponder.scenes.CartAssemblerScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ChainDriveScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ChassisScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.ChuteScenes;
-import com.simibubi.create.infrastructure.ponder.scenes.DeployerScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.DetectorScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.DisplayScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.EjectorScenes;
@@ -253,12 +252,6 @@ public class PonderIndex {
 			.addStoryBoard("portable_interface/redstone", MovementActorScenes::psiRedstone);
 		HELPER.forComponents(AllBlocks.REDSTONE_CONTACT)
 			.addStoryBoard("redstone_contact", RedstoneScenes::contact);
-		HELPER.forComponents(AllBlocks.DEPLOYER)
-			.addStoryBoard("deployer/filter", DeployerScenes::filter, AllPonderTags.KINETIC_APPLIANCES)
-			.addStoryBoard("deployer/modes", DeployerScenes::modes)
-			.addStoryBoard("deployer/processing", DeployerScenes::processing)
-			.addStoryBoard("deployer/redstone", DeployerScenes::redstone)
-			.addStoryBoard("deployer/contraption", DeployerScenes::contraption, AllPonderTags.CONTRAPTION_ACTOR);
 		HELPER.forComponents(AllBlocks.MECHANICAL_HARVESTER)
 			.addStoryBoard("harvester", MovementActorScenes::harvester);
 		HELPER.forComponents(AllBlocks.CONTRAPTION_CONTROLS)

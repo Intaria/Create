@@ -10,8 +10,6 @@ public class CKinetics extends ConfigBase {
 	public final ConfigInt maxBeltLength = i(20, 5, "maxBeltLength", Comments.maxBeltLength);
 	public final ConfigInt crushingDamage = i(4, 0, "crushingDamage", Comments.crushingDamage);
 	public final ConfigInt maxRotationSpeed = i(256, 64, "maxRotationSpeed", Comments.rpm, Comments.maxRotationSpeed);
-	public final ConfigEnum<DeployerAggroSetting> ignoreDeployerAttacks =
-		e(DeployerAggroSetting.CREEPERS, "ignoreDeployerAttacks", Comments.ignoreDeployerAttacks);
 	public final ConfigInt kineticValidationFrequency =
 		i(60, 5, "kineticValidationFrequency", Comments.kineticValidationFrequency);
 	public final ConfigFloat crankHungerMultiplier = f(.01f, 0, 1, "crankHungerMultiplier", Comments.crankHungerMultiplier);
@@ -101,7 +99,6 @@ public class CKinetics extends ConfigBase {
 		static String mediumCapacity = "Minimum added Capacity by sources to be considered 'medium'";
 		static String highCapacity = "Minimum added Capacity by sources to be considered 'high'";
 		static String stress = "Fine tune the kinetic stats of individual components";
-		static String ignoreDeployerAttacks = "Select what mobs should ignore Deployers when attacked by them.";
 		static String disableStress = "Disable the Stress mechanic altogether.";
 		static String kineticValidationFrequency =
 			"Game ticks between Kinetic Blocks checking whether their source is still valid.";
@@ -118,9 +115,4 @@ public class CKinetics extends ConfigBase {
 		static String reinforcedDeepslateMovement = "Configure how Reinforced Deepslate blocks can be moved by contraptions.";
 		static String minecartContraptionInContainers = "Whether minecart contraptions can be placed into container items.";
 	}
-
-	public enum DeployerAggroSetting {
-		ALL, CREEPERS, NONE
-	}
-
 }

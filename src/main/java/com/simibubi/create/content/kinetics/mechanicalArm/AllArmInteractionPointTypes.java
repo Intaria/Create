@@ -16,7 +16,6 @@ import com.simibubi.create.content.kinetics.belt.behaviour.TransportedItemStackH
 import com.simibubi.create.content.kinetics.belt.behaviour.TransportedItemStackHandlerBehaviour.TransportedResult;
 import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterBlock;
 import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterBlockEntity;
-import com.simibubi.create.content.kinetics.deployer.DeployerBlock;
 import com.simibubi.create.content.logistics.chute.AbstractChuteBlock;
 import com.simibubi.create.content.logistics.funnel.AbstractFunnelBlock;
 import com.simibubi.create.content.logistics.funnel.BeltFunnelBlock;
@@ -67,7 +66,6 @@ public class AllArmInteractionPointTypes {
 	public static final ChuteType CHUTE = register("chute", ChuteType::new);
 	public static final CrafterType CRAFTER = register("crafter", CrafterType::new);
 	public static final CrushingWheelsType CRUSHING_WHEELS = register("crushing_wheels", CrushingWheelsType::new);
-	public static final DeployerType DEPLOYER = register("deployer", DeployerType::new);
 	public static final DepotType DEPOT = register("depot", DepotType::new);
 	public static final FunnelType FUNNEL = register("funnel", FunnelType::new);
 	public static final MillstoneType MILLSTONE = register("millstone", MillstoneType::new);
@@ -182,22 +180,6 @@ public class AllArmInteractionPointTypes {
 		@Override
 		public ArmInteractionPoint createPoint(Level level, BlockPos pos, BlockState state) {
 			return new TopFaceArmInteractionPoint(this, level, pos, state);
-		}
-	}
-
-	public static class DeployerType extends ArmInteractionPointType {
-		public DeployerType(ResourceLocation id) {
-			super(id);
-		}
-
-		@Override
-		public boolean canCreatePoint(Level level, BlockPos pos, BlockState state) {
-			return AllBlocks.DEPLOYER.has(state);
-		}
-
-		@Override
-		public ArmInteractionPoint createPoint(Level level, BlockPos pos, BlockState state) {
-			return new DeployerPoint(this, level, pos, state);
 		}
 	}
 
@@ -435,33 +417,6 @@ public class AllArmInteractionPointTypes {
 			ItemStack extract = super.extract(slot, amount, simulate);
 			inventory.forbidExtraction();
 			return extract;
-		}
-	}
-
-	public static class DeployerPoint extends ArmInteractionPoint {
-		public DeployerPoint(ArmInteractionPointType type, Level level, BlockPos pos, BlockState state) {
-			super(type, level, pos, state);
-		}
-
-		@Override
-		protected Direction getInteractionDirection() {
-			return cachedState.getOptionalValue(DeployerBlock.FACING)
-				.orElse(Direction.UP)
-				.getOpposite();
-		}
-
-		@Override
-		protected Vec3 getInteractionPositionVector() {
-			return super.getInteractionPositionVector().add(Vec3.atLowerCornerOf(getInteractionDirection().getNormal())
-				.scale(.65f));
-		}
-
-		@Override
-		public void updateCachedState() {
-			BlockState oldState = cachedState;
-			super.updateCachedState();
-			if (oldState != cachedState)
-				cachedAngles = null;
 		}
 	}
 

@@ -260,8 +260,6 @@ public class SchematicHandler implements IGuiOverlay {
 		if (mc.hitResult instanceof BlockHitResult) {
 			BlockHitResult blockRayTraceResult = (BlockHitResult) mc.hitResult;
 			BlockState clickedBlock = mc.level.getBlockState(blockRayTraceResult.getBlockPos());
-			if (AllBlocks.DEPLOYER.has(clickedBlock))
-				return false;
 		}
 		return currentTool.getTool()
 			.handleRightClick();

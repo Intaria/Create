@@ -1,7 +1,6 @@
 {
   "values": [
     "create:portable_fluid_interface",
-    "create:deployer",
     "create:portable_storage_interface",
     "create:redstone_contact",
     "create:mechanical_harvester",

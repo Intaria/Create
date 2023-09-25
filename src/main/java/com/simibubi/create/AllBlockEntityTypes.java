@@ -90,9 +90,6 @@ import com.simibubi.create.content.kinetics.crank.HandCrankRenderer;
 import com.simibubi.create.content.kinetics.crank.ValveHandleBlockEntity;
 import com.simibubi.create.content.kinetics.crusher.CrushingWheelBlockEntity;
 import com.simibubi.create.content.kinetics.crusher.CrushingWheelControllerBlockEntity;
-import com.simibubi.create.content.kinetics.deployer.DeployerBlockEntity;
-import com.simibubi.create.content.kinetics.deployer.DeployerInstance;
-import com.simibubi.create.content.kinetics.deployer.DeployerRenderer;
 import com.simibubi.create.content.kinetics.fan.EncasedFanBlockEntity;
 import com.simibubi.create.content.kinetics.fan.EncasedFanRenderer;
 import com.simibubi.create.content.kinetics.fan.FanInstance;
@@ -582,13 +579,6 @@ public class AllBlockEntityTypes {
 		.instance(() -> MixerInstance::new)
 		.validBlocks(AllBlocks.MECHANICAL_MIXER)
 		.renderer(() -> MechanicalMixerRenderer::new)
-		.register();
-
-	public static final BlockEntityEntry<DeployerBlockEntity> DEPLOYER = REGISTRATE
-		.blockEntity("deployer", DeployerBlockEntity::new)
-		.instance(() -> DeployerInstance::new)
-		.validBlocks(AllBlocks.DEPLOYER)
-		.renderer(() -> DeployerRenderer::new)
 		.register();
 
 	public static final BlockEntityEntry<BasinBlockEntity> BASIN = REGISTRATE

@@ -10,10 +10,7 @@ import com.simibubi.create.content.equipment.sandPaper.SandPaperPolishingRecipe;
 import com.simibubi.create.content.equipment.toolbox.ToolboxDyeingRecipe;
 import com.simibubi.create.content.fluids.transfer.EmptyingRecipe;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
-import com.simibubi.create.content.kinetics.crafter.MechanicalCraftingRecipe;
 import com.simibubi.create.content.kinetics.crusher.CrushingRecipe;
-import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
-import com.simibubi.create.content.kinetics.deployer.ManualApplicationRecipe;
 import com.simibubi.create.content.kinetics.fan.processing.HauntingRecipe;
 import com.simibubi.create.content.kinetics.fan.processing.SplashingRecipe;
 import com.simibubi.create.content.kinetics.millstone.MillingRecipe;
@@ -53,12 +50,9 @@ public enum AllRecipeTypes implements IRecipeTypeInfo {
 	SANDPAPER_POLISHING(SandPaperPolishingRecipe::new),
 	SPLASHING(SplashingRecipe::new),
 	HAUNTING(HauntingRecipe::new),
-	DEPLOYING(DeployerApplicationRecipe::new),
 	FILLING(FillingRecipe::new),
 	EMPTYING(EmptyingRecipe::new),
-	ITEM_APPLICATION(ManualApplicationRecipe::new),
 
-	MECHANICAL_CRAFTING(MechanicalCraftingRecipe.Serializer::new),
 	SEQUENCED_ASSEMBLY(SequencedAssemblyRecipeSerializer::new),
 
 	TOOLBOX_DYEING(() -> new SimpleRecipeSerializer<>(ToolboxDyeingRecipe::new), () -> RecipeType.CRAFTING, false);

@@ -20,12 +20,10 @@ import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.Create;
 import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 import com.simibubi.create.compat.jei.category.CrushingCategory;
-import com.simibubi.create.compat.jei.category.DeployingCategory;
 import com.simibubi.create.compat.jei.category.FanBlastingCategory;
 import com.simibubi.create.compat.jei.category.FanHauntingCategory;
 import com.simibubi.create.compat.jei.category.FanSmokingCategory;
 import com.simibubi.create.compat.jei.category.FanWashingCategory;
-import com.simibubi.create.compat.jei.category.ItemApplicationCategory;
 import com.simibubi.create.compat.jei.category.ItemDrainCategory;
 import com.simibubi.create.compat.jei.category.MechanicalCraftingCategory;
 import com.simibubi.create.compat.jei.category.MillingCategory;
@@ -43,11 +41,7 @@ import com.simibubi.create.content.fluids.potion.PotionFluid;
 import com.simibubi.create.content.fluids.potion.PotionMixingRecipes;
 import com.simibubi.create.content.fluids.transfer.EmptyingRecipe;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
-import com.simibubi.create.content.kinetics.crafter.MechanicalCraftingRecipe;
 import com.simibubi.create.content.kinetics.crusher.AbstractCrushingRecipe;
-import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
-import com.simibubi.create.content.kinetics.deployer.ItemApplicationRecipe;
-import com.simibubi.create.content.kinetics.deployer.ManualApplicationRecipe;
 import com.simibubi.create.content.kinetics.fan.processing.HauntingRecipe;
 import com.simibubi.create.content.kinetics.fan.processing.SplashingRecipe;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
@@ -58,7 +52,6 @@ import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
 import com.simibubi.create.content.redstone.link.controller.LinkedControllerScreen;
 import com.simibubi.create.content.trains.schedule.ScheduleScreen;
 import com.simibubi.create.foundation.config.ConfigBase.ConfigBool;
-import com.simibubi.create.foundation.data.recipe.LogStrippingFakeRecipes;
 import com.simibubi.create.foundation.gui.menu.AbstractSimiContainerScreen;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import com.simibubi.create.foundation.utility.Lang;
@@ -201,8 +194,7 @@ public class CreateJEI implements IModPlugin {
 		autoSquare = builder(BasinRecipe.class)
 				.enableWhen(c -> c.allowShapedSquareInPress)
 				.addAllRecipesIf(
-						r -> (r instanceof CraftingRecipe) && !(r instanceof MechanicalCraftingRecipe)
-								&& MechanicalPressBlockEntity.canCompress(r) && !AllRecipeTypes.shouldIgnoreInAutomation(r),
+						r -> (r instanceof CraftingRecipe) && MechanicalPressBlockEntity.canCompress(r) && !AllRecipeTypes.shouldIgnoreInAutomation(r),
 						BasinRecipe::convertShapeless)
 				.catalyst(AllBlocks.MECHANICAL_PRESS::get)
 				.catalyst(AllBlocks.BASIN::get)
@@ -217,24 +209,6 @@ public class CreateJEI implements IModPlugin {
 				.itemIcon(AllItems.SAND_PAPER.get())
 				.emptyBackground(177, 55)
 				.build("sandpaper_polishing", PolishingCategory::new),
-
-		item_application = builder(ItemApplicationRecipe.class)
-				.addTypedRecipes(AllRecipeTypes.ITEM_APPLICATION)
-				.addRecipes(LogStrippingFakeRecipes::createRecipes)
-				.itemIcon(AllItems.BRASS_HAND.get())
-				.emptyBackground(177, 60)
-				.build("item_application", ItemApplicationCategory::new),
-
-		deploying = builder(DeployerApplicationRecipe.class)
-				.addTypedRecipes(AllRecipeTypes.DEPLOYING)
-				.addTypedRecipes(AllRecipeTypes.SANDPAPER_POLISHING::getType, DeployerApplicationRecipe::convert)
-				.addTypedRecipes(AllRecipeTypes.ITEM_APPLICATION::getType, ManualApplicationRecipe::asDeploying)
-				.catalyst(AllBlocks.DEPLOYER::get)
-				.catalyst(AllBlocks.DEPOT::get)
-				.catalyst(AllItems.BELT_CONNECTOR::get)
-				.itemIcon(AllBlocks.DEPLOYER.get())
-				.emptyBackground(177, 70)
-				.build("deploying", DeployingCategory::new),
 
 		spoutFilling = builder(FillingRecipe.class)
 				.addTypedRecipes(AllRecipeTypes.FILLING)

@@ -624,14 +624,6 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 				.pattern("C")
 				.pattern("I")),
 
-		DEPLOYER = create(AllBlocks.DEPLOYER).unlockedBy(I::electronTube)
-			.viaShaped(b -> b.define('I', AllItems.BRASS_HAND.get())
-				.define('B', I.electronTube())
-				.define('C', I.andesiteCasing())
-				.pattern("B")
-				.pattern("C")
-				.pattern("I")),
-
 		PORTABLE_STORAGE_INTERFACE = create(AllBlocks.PORTABLE_STORAGE_INTERFACE).unlockedBy(I::andesiteCasing)
 			.viaShapeless(b -> b.requires(I.andesiteCasing())
 				.requires(AllBlocks.CHUTE.get())),
