@@ -342,10 +342,6 @@ public class PonderIndex {
 			.addStoryBoard("steam_whistle", SteamScenes::whistle);
 		HELPER.forComponents(AllBlocks.STEAM_ENGINE)
 			.addStoryBoard("steam_engine", SteamScenes::engine);
-
-		// Debug scenes, can be found in game via the Brass Hand
-		if (REGISTER_DEBUG_SCENES)
-			DebugScenes.registerAll();
 	}
 
 	public static boolean editingModeActive() {

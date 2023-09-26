@@ -42,7 +42,6 @@ import com.simibubi.create.foundation.utility.RegisteredObjects;
 import com.simibubi.create.foundation.utility.animation.LerpedFloat;
 import com.simibubi.create.foundation.utility.animation.LerpedFloat.Chaser;
 import com.simibubi.create.infrastructure.config.AllConfigs;
-import com.simibubi.create.infrastructure.ponder.DebugScenes;
 import com.simibubi.create.infrastructure.ponder.PonderIndex;
 
 import net.minecraft.ChatFormatting;
@@ -143,11 +142,6 @@ public class PonderUI extends NavigatableSimiScreen {
 
 		tags = new ArrayList<>(PonderRegistry.TAGS.getTags(component));
 		this.scenes = scenes;
-		if (scenes.isEmpty()) {
-			List<PonderStoryBoardEntry> l = Collections.singletonList(new PonderStoryBoardEntry(DebugScenes::empty,
-				Create.ID, "debug/scene_1", new ResourceLocation("minecraft", "stick")));
-			scenes.addAll(PonderRegistry.compile(l));
-		}
 		lazyIndex = LerpedFloat.linear()
 			.startWithValue(index);
 		fadeIn = LerpedFloat.linear()

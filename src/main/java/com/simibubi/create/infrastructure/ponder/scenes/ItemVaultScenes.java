@@ -57,12 +57,14 @@ public class ItemVaultScenes {
 		scene.world.hideIndependentSection(chestLink, Direction.DOWN);
 		scene.idle(15);
 
+		/*
 		ItemStack hand = AllItems.BRASS_HAND.asStack();
 		scene.overlay
 			.showControls(new InputWindowElement(util.vector.blockSurface(frontVault, Direction.NORTH), Pointing.RIGHT)
 				.showing(AllIcons.I_MTD_CLOSE)
 				.withItem(hand), 40);
 		scene.idle(7);
+		*/
 
 		scene.overlay.showText(60)
 			.text("However, contents cannot be added or taken manually")

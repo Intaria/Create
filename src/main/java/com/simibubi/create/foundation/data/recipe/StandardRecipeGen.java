@@ -228,13 +228,6 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 				.define('A', I.brassNugget())
 				.pattern("ASA")),
 
-		BRASS_HAND = create(AllItems.BRASS_HAND).unlockedByTag(I::brass)
-			.viaShaped(b -> b.define('A', I.andesite())
-				.define('B', I.brassSheet())
-				.pattern(" A ")
-				.pattern("BBB")
-				.pattern(" B ")),
-
 		SUPER_GLUE = create(AllItems.SUPER_GLUE).unlockedByTag(I::ironSheet)
 			.viaShaped(b -> b.define('A', Tags.Items.SLIMEBALLS)
 				.define('S', I.ironSheet())

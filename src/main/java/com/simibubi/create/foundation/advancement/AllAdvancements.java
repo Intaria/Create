@@ -42,7 +42,7 @@ public class AllAdvancements implements DataProvider {
 		 * (Advancement ordering seems to be deterministic but hash based)
 		 */
 
-		ROOT = create("root", b -> b.icon(AllItems.BRASS_HAND)
+		ROOT = create("root", b -> b.icon(AllItems.ANDESITE_ALLOY)
 			.title("Welcome to Create")
 			.description("Here Be Contraptions")
 			.awardedForFree()
