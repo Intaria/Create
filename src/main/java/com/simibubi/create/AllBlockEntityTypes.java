@@ -166,9 +166,6 @@ import com.simibubi.create.content.redstone.displayLink.DisplayLinkBlockEntity;
 import com.simibubi.create.content.redstone.displayLink.DisplayLinkRenderer;
 import com.simibubi.create.content.redstone.displayLink.source.NixieTubeDisplaySource;
 import com.simibubi.create.content.redstone.displayLink.target.NixieTubeDisplayTarget;
-import com.simibubi.create.content.redstone.link.RedstoneLinkBlockEntity;
-import com.simibubi.create.content.redstone.link.controller.LecternControllerBlockEntity;
-import com.simibubi.create.content.redstone.link.controller.LecternControllerRenderer;
 import com.simibubi.create.content.redstone.nixieTube.NixieTubeBlockEntity;
 import com.simibubi.create.content.redstone.nixieTube.NixieTubeRenderer;
 import com.simibubi.create.content.redstone.smartObserver.SmartObserverBlockEntity;
@@ -630,11 +627,6 @@ public class AllBlockEntityTypes {
 		.register();
 
 	// Logistics
-	public static final BlockEntityEntry<RedstoneLinkBlockEntity> REDSTONE_LINK = REGISTRATE
-		.blockEntity("redstone_link", RedstoneLinkBlockEntity::new)
-		.validBlocks(AllBlocks.REDSTONE_LINK)
-		.renderer(() -> SmartBlockEntityRenderer::new)
-		.register();
 
 	public static final BlockEntityEntry<NixieTubeBlockEntity> NIXIE_TUBE = REGISTRATE
 		.blockEntity("nixie_tube", NixieTubeBlockEntity::new)
@@ -689,12 +681,6 @@ public class AllBlockEntityTypes {
 		.instance(() -> BrassDiodeInstance::new, false)
 		.validBlocks(AllBlocks.PULSE_REPEATER)
 		.renderer(() -> BrassDiodeRenderer::new)
-		.register();
-
-	public static final BlockEntityEntry<LecternControllerBlockEntity> LECTERN_CONTROLLER = REGISTRATE
-		.blockEntity("lectern_controller", LecternControllerBlockEntity::new)
-		.validBlocks(AllBlocks.LECTERN_CONTROLLER)
-		.renderer(() -> LecternControllerRenderer::new)
 		.register();
 
 	// Curiosities

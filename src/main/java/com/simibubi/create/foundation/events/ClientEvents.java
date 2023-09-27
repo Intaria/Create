@@ -30,8 +30,6 @@ import com.simibubi.create.content.kinetics.mechanicalArm.ArmInteractionPointHan
 import com.simibubi.create.content.kinetics.turntable.TurntableHandler;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
 import com.simibubi.create.content.redstone.displayLink.DisplayLinkBlockItem;
-import com.simibubi.create.content.redstone.link.LinkRenderer;
-import com.simibubi.create.content.redstone.link.controller.LinkedControllerClientHandler;
 import com.simibubi.create.content.trains.CameraDistanceModifier;
 import com.simibubi.create.content.trains.TrainHUD;
 import com.simibubi.create.content.trains.entity.CarriageContraptionEntity;
@@ -107,7 +105,6 @@ public class ClientEvents {
 
 		Level world = Minecraft.getInstance().level;
 		if (event.phase == Phase.START) {
-			LinkedControllerClientHandler.tick();
 			ControlsHandler.tick();
 			AirCurrent.tickClientPlayerSounds();
 			return;
@@ -131,7 +128,6 @@ public class ClientEvents {
 		BeltConnectorHandler.tick();
 //		BeltSlicer.tickHoveringInformation();
 		FilteringRenderer.tick();
-		LinkRenderer.tick();
 		ScrollValueRenderer.tick();
 		ChassisRangeDisplay.tick();
 		EdgeInteractionRenderer.tick();
@@ -334,7 +330,6 @@ public class ClientEvents {
 			event.registerAbove(VanillaGuiOverlay.HOTBAR.id(), "track_placement", TrackPlacementOverlay.INSTANCE);
 			event.registerAbove(VanillaGuiOverlay.HOTBAR.id(), "goggle_info", GoggleOverlayRenderer.OVERLAY);
 			event.registerAbove(VanillaGuiOverlay.HOTBAR.id(), "blueprint", BlueprintOverlayRenderer.OVERLAY);
-			event.registerAbove(VanillaGuiOverlay.HOTBAR.id(), "linked_controller", LinkedControllerClientHandler.OVERLAY);
 			event.registerAbove(VanillaGuiOverlay.HOTBAR.id(), "schematic", CreateClient.SCHEMATIC_HANDLER);
 			event.registerAbove(VanillaGuiOverlay.HOTBAR.id(), "toolbox", ToolboxHandlerClient.OVERLAY);
 		}

@@ -8,8 +8,6 @@ import com.simibubi.create.content.logistics.filter.AttributeFilterMenu;
 import com.simibubi.create.content.logistics.filter.AttributeFilterScreen;
 import com.simibubi.create.content.logistics.filter.FilterMenu;
 import com.simibubi.create.content.logistics.filter.FilterScreen;
-import com.simibubi.create.content.redstone.link.controller.LinkedControllerMenu;
-import com.simibubi.create.content.redstone.link.controller.LinkedControllerScreen;
 import com.simibubi.create.content.trains.schedule.ScheduleMenu;
 import com.simibubi.create.content.trains.schedule.ScheduleScreen;
 import com.tterrag.registrate.builders.MenuBuilder.ForgeMenuFactory;
@@ -30,9 +28,6 @@ public class AllMenuTypes {
 
 	public static final MenuEntry<BlueprintMenu> CRAFTING_BLUEPRINT =
 		register("crafting_blueprint", BlueprintMenu::new, () -> BlueprintScreen::new);
-
-	public static final MenuEntry<LinkedControllerMenu> LINKED_CONTROLLER =
-		register("linked_controller", LinkedControllerMenu::new, () -> LinkedControllerScreen::new);
 	
 	public static final MenuEntry<ToolboxMenu> TOOLBOX =
 		register("toolbox", ToolboxMenu::new, () -> ToolboxScreen::new);

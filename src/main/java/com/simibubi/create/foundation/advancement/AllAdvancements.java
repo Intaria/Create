@@ -400,15 +400,10 @@ public class AllAdvancements implements DataProvider {
 			.after(CLOCKWORK_BEARING)
 			.special(NOISY)),
 
-		LINKED_CONTROLLER = create("linked_controller", b -> b.icon(AllItems.LINKED_CONTROLLER)
-			.title("Remote Activation")
-			.description("Activate a Redstone Link using a Linked Controller")
-			.after(DISPLAY_LINK)),
-
 		ARM_BLAZE_BURNER = create("arm_blaze_burner", b -> b.icon(AllBlocks.BLAZE_BURNER)
 			.title("Combust-o-Tron")
 			.description("Instruct a Mechanical Arm to feed your Blaze Burner")
-			.after(LINKED_CONTROLLER)),
+			.after(DISPLAY_LINK)),
 
 		// Brass - Expert Branch
 

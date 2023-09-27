@@ -9,7 +9,6 @@ import com.simibubi.create.content.trains.schedule.condition.FluidThresholdCondi
 import com.simibubi.create.content.trains.schedule.condition.IdleCargoCondition;
 import com.simibubi.create.content.trains.schedule.condition.ItemThresholdCondition;
 import com.simibubi.create.content.trains.schedule.condition.PlayerPassengerCondition;
-import com.simibubi.create.content.trains.schedule.condition.RedstoneLinkCondition;
 import com.simibubi.create.content.trains.schedule.condition.ScheduleWaitCondition;
 import com.simibubi.create.content.trains.schedule.condition.ScheduledDelay;
 import com.simibubi.create.content.trains.schedule.condition.StationPoweredCondition;
@@ -44,7 +43,6 @@ public class Schedule {
 		registerCondition("time_of_day", TimeOfDayCondition::new);
 		registerCondition("fluid_threshold", FluidThresholdCondition::new);
 		registerCondition("item_threshold", ItemThresholdCondition::new);
-		registerCondition("redstone_link", RedstoneLinkCondition::new);
 		registerCondition("player_count", PlayerPassengerCondition::new);
 		registerCondition("idle", IdleCargoCondition::new);
 		registerCondition("unloaded", StationUnloadedCondition::new);

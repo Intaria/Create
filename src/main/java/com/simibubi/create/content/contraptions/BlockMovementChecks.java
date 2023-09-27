@@ -27,7 +27,6 @@ import com.simibubi.create.content.fluids.tank.FluidTankBlock;
 import com.simibubi.create.content.kinetics.crank.HandCrankBlock;
 import com.simibubi.create.content.kinetics.fan.NozzleBlock;
 import com.simibubi.create.content.logistics.vault.ItemVaultBlock;
-import com.simibubi.create.content.redstone.link.RedstoneLinkBlock;
 import com.simibubi.create.content.trains.bogey.AbstractBogeyBlock;
 import com.simibubi.create.content.trains.station.StationBlock;
 import com.simibubi.create.content.trains.track.ITrackBlock;
@@ -281,8 +280,6 @@ public class BlockMovementChecks {
 				facing = facing.getOpposite();
 			return direction == facing;
 		}
-		if (block instanceof RedstoneLinkBlock)
-			return direction.getOpposite() == state.getValue(RedstoneLinkBlock.FACING);
 		if (block instanceof FlowerPotBlock)
 			return direction == Direction.DOWN;
 		if (block instanceof DiodeBlock)

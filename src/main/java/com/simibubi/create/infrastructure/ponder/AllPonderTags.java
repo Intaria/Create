@@ -224,7 +224,6 @@ public class AllPonderTags {
 			.add(AllBlocks.ORANGE_NIXIE_TUBE)
 			.add(AllBlocks.REDSTONE_CONTACT)
 			.add(AllBlocks.ANALOG_LEVER)
-			.add(AllBlocks.REDSTONE_LINK)
 			.add(AllBlocks.PULSE_EXTENDER)
 			.add(AllBlocks.PULSE_REPEATER)
 			.add(AllBlocks.POWERED_LATCH)

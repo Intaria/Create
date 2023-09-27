@@ -201,9 +201,6 @@ import com.simibubi.create.content.redstone.displayLink.source.StopWatchDisplayS
 import com.simibubi.create.content.redstone.displayLink.source.TimeOfDayDisplaySource;
 import com.simibubi.create.content.redstone.displayLink.source.TrainStatusDisplaySource;
 import com.simibubi.create.content.redstone.displayLink.target.DisplayBoardTarget;
-import com.simibubi.create.content.redstone.link.RedstoneLinkBlock;
-import com.simibubi.create.content.redstone.link.RedstoneLinkGenerator;
-import com.simibubi.create.content.redstone.link.controller.LecternControllerBlock;
 import com.simibubi.create.content.redstone.nixieTube.NixieTubeBlock;
 import com.simibubi.create.content.redstone.nixieTube.NixieTubeGenerator;
 import com.simibubi.create.content.redstone.rail.ControllerRailBlock;
@@ -1609,18 +1606,6 @@ public class AllBlocks {
 			.simpleItem()
 			.register();
 
-	public static final BlockEntry<RedstoneLinkBlock> REDSTONE_LINK =
-		REGISTRATE.block("redstone_link", RedstoneLinkBlock::new)
-			.initialProperties(SharedProperties::wooden)
-			.properties(p -> p.color(MaterialColor.TERRACOTTA_BROWN))
-			.transform(axeOrPickaxe())
-			.tag(AllBlockTags.BRITTLE.tag, AllBlockTags.SAFE_NBT.tag)
-			.blockstate(new RedstoneLinkGenerator()::generate)
-			.addLayer(() -> RenderType::cutoutMipped)
-			.item()
-			.transform(customItemModel("_", "transmitter"))
-			.register();
-
 	public static final BlockEntry<AnalogLeverBlock> ANALOG_LEVER =
 		REGISTRATE.block("analog_lever", AnalogLeverBlock::new)
 			.initialProperties(() -> Blocks.LEVER)
@@ -1676,15 +1661,6 @@ public class AllBlocks {
 			.addLayer(() -> RenderType::cutoutMipped)
 			.item()
 			.transform(customItemModel("diodes", "latch_off"))
-			.register();
-
-	public static final BlockEntry<LecternControllerBlock> LECTERN_CONTROLLER =
-		REGISTRATE.block("lectern_controller", LecternControllerBlock::new)
-			.initialProperties(() -> Blocks.LECTERN)
-			.transform(axeOnly())
-			.blockstate((c, p) -> p.horizontalBlock(c.get(), p.models()
-				.getExistingFile(p.mcLoc("block/lectern"))))
-			.loot((lt, block) -> lt.dropOther(block, Blocks.LECTERN))
 			.register();
 
 	// Curiosities

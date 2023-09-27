@@ -55,7 +55,6 @@ public enum AllGuiTextures implements ScreenElement {
 	SEQUENCER_EMPTY("sequencer", 0, 104, 162, 22),
 	SEQUENCER_AWAIT("sequencer", 0, 162, 162, 22),
 
-	LINKED_CONTROLLER("curiosities_2", 179, 109),
 	BLUEPRINT("curiosities_2", 0, 109, 179, 109),
 	
 	CLIPBOARD("clipboard", 0, 0, 256, 256),

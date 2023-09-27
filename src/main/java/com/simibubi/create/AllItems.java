@@ -41,7 +41,6 @@ import com.simibubi.create.content.logistics.filter.FilterItem;
 import com.simibubi.create.content.materials.ExperienceNuggetItem;
 import com.simibubi.create.content.processing.burner.BlazeBurnerBlockItem;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
-import com.simibubi.create.content.redstone.link.controller.LinkedControllerItem;
 import com.simibubi.create.content.schematics.SchematicItem;
 import com.simibubi.create.content.trains.schedule.ScheduleItem;
 import com.simibubi.create.foundation.data.AssetLookup;
@@ -318,12 +317,6 @@ public class AllItems {
 			.register();
 
 	// Curiosities
-
-	public static final ItemEntry<LinkedControllerItem> LINKED_CONTROLLER =
-		REGISTRATE.item("linked_controller", LinkedControllerItem::new)
-			.properties(p -> p.stacksTo(1))
-			.model(AssetLookup.itemModelWithPartials())
-			.register();
 
 	public static final ItemEntry<TreeFertilizerItem> TREE_FERTILIZER =
 		REGISTRATE.item("tree_fertilizer", TreeFertilizerItem::new)
