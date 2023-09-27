@@ -145,15 +145,7 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 
 		ROSE_QUARTZ = create(AllItems.ROSE_QUARTZ).unlockedBy(() -> Items.REDSTONE)
 			.viaShapeless(b -> b.requires(Tags.Items.GEMS_QUARTZ)
-				.requires(Ingredient.of(I.redstone()), 8)),
-
-		SAND_PAPER = create(AllItems.SAND_PAPER).unlockedBy(() -> Items.PAPER)
-			.viaShapeless(b -> b.requires(Items.PAPER)
-				.requires(Tags.Items.SAND_COLORLESS)),
-
-		RED_SAND_PAPER = create(AllItems.RED_SAND_PAPER).unlockedBy(() -> Items.PAPER)
-			.viaShapeless(b -> b.requires(Items.PAPER)
-				.requires(Tags.Items.SAND_RED))
+				.requires(Ingredient.of(I.redstone()), 8))
 
 	;
 

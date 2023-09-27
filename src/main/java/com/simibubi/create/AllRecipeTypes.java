@@ -6,7 +6,6 @@ import java.util.function.Supplier;
 import org.jetbrains.annotations.Nullable;
 
 import com.simibubi.create.compat.jei.ConversionRecipe;
-import com.simibubi.create.content.equipment.sandPaper.SandPaperPolishingRecipe;
 import com.simibubi.create.content.equipment.toolbox.ToolboxDyeingRecipe;
 import com.simibubi.create.content.fluids.transfer.EmptyingRecipe;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
@@ -47,7 +46,6 @@ public enum AllRecipeTypes implements IRecipeTypeInfo {
 	MIXING(MixingRecipe::new),
 	COMPACTING(CompactingRecipe::new),
 	PRESSING(PressingRecipe::new),
-	SANDPAPER_POLISHING(SandPaperPolishingRecipe::new),
 	SPLASHING(SplashingRecipe::new),
 	HAUNTING(HauntingRecipe::new),
 	FILLING(FillingRecipe::new),

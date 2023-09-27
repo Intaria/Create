@@ -30,13 +30,11 @@ import com.simibubi.create.compat.jei.category.MillingCategory;
 import com.simibubi.create.compat.jei.category.MixingCategory;
 import com.simibubi.create.compat.jei.category.MysteriousItemConversionCategory;
 import com.simibubi.create.compat.jei.category.PackingCategory;
-import com.simibubi.create.compat.jei.category.PolishingCategory;
 import com.simibubi.create.compat.jei.category.PressingCategory;
 import com.simibubi.create.compat.jei.category.ProcessingViaFanCategory;
 import com.simibubi.create.compat.jei.category.SequencedAssemblyCategory;
 import com.simibubi.create.compat.jei.category.SpoutCategory;
 import com.simibubi.create.content.equipment.blueprint.BlueprintScreen;
-import com.simibubi.create.content.equipment.sandPaper.SandPaperPolishingRecipe;
 import com.simibubi.create.content.fluids.potion.PotionFluid;
 import com.simibubi.create.content.fluids.potion.PotionMixingRecipes;
 import com.simibubi.create.content.fluids.transfer.EmptyingRecipe;
@@ -200,14 +198,6 @@ public class CreateJEI implements IModPlugin {
 				.doubleItemIcon(AllBlocks.MECHANICAL_PRESS.get(), Blocks.CRAFTING_TABLE)
 				.emptyBackground(177, 85)
 				.build("automatic_packing", PackingCategory::autoSquare),
-
-		polishing = builder(SandPaperPolishingRecipe.class)
-				.addTypedRecipes(AllRecipeTypes.SANDPAPER_POLISHING)
-				.catalyst(AllItems.SAND_PAPER::get)
-				.catalyst(AllItems.RED_SAND_PAPER::get)
-				.itemIcon(AllItems.SAND_PAPER.get())
-				.emptyBackground(177, 55)
-				.build("sandpaper_polishing", PolishingCategory::new),
 
 		spoutFilling = builder(FillingRecipe.class)
 				.addTypedRecipes(AllRecipeTypes.FILLING)

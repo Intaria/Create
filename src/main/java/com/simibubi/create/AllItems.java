@@ -29,7 +29,6 @@ import com.simibubi.create.content.equipment.armor.DivingHelmetItem;
 import com.simibubi.create.content.equipment.blueprint.BlueprintItem;
 import com.simibubi.create.content.equipment.goggles.GogglesItem;
 import com.simibubi.create.content.equipment.goggles.GogglesModel;
-import com.simibubi.create.content.equipment.sandPaper.SandPaperItem;
 import com.simibubi.create.content.equipment.wrench.WrenchItem;
 import com.simibubi.create.content.kinetics.belt.item.BeltConnectorItem;
 import com.simibubi.create.content.kinetics.gearbox.VerticalGearboxItem;
@@ -288,15 +287,6 @@ public class AllItems {
 			.properties(p -> p.fireResistant())
 			.tag(forgeItemTag("armors/boots"))
 			.register();
-
-	public static final ItemEntry<SandPaperItem> SAND_PAPER = REGISTRATE.item("sand_paper", SandPaperItem::new)
-		.tag(AllTags.AllItemTags.SANDPAPER.tag)
-		.register();
-
-	public static final ItemEntry<SandPaperItem> RED_SAND_PAPER = REGISTRATE.item("red_sand_paper", SandPaperItem::new)
-		.tag(AllTags.AllItemTags.SANDPAPER.tag)
-		.onRegister(s -> ItemDescription.referKey(s, SAND_PAPER))
-		.register();
 
 	public static final ItemEntry<WrenchItem> WRENCH = REGISTRATE.item("wrench", WrenchItem::new)
 		.properties(p -> p.stacksTo(1))
