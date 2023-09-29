@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+      "A": {
+        "item": "create:andesite_alloy"
+      },
+      "P": {
+        "tag": "minecraft:planks"
+      },
+      "S": {
+        "item": "create:shaft"
+      }
+    },
+    "pattern": [
+      "APA",
+      "PSP",
+      "APA"
+    ],
+    "result": {
+      "item": "create:crushing_wheel"
+    }
+  }

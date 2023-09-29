@@ -255,6 +255,14 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 				.pattern("SCS")
 				.pattern("SSS")),
 
+		CRUSHING_WHEEL = create(AllBlocks.CRUSHING_WHEEL).unlockedBy(I::andesite)
+			.viaShaped(b -> b.define('P', I.planks())
+				.define('S', I.shaft())
+				.define('A', I.andesite())
+				.pattern("APA")
+				.pattern("PSP")
+				.pattern("APA")),
+
 		SHAFT = create(AllBlocks.SHAFT).returns(8)
 			.unlockedBy(I::andesite)
 			.viaShaped(b -> b.define('A', I.andesite())
