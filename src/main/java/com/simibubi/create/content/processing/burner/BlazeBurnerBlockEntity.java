@@ -261,10 +261,6 @@ public class BlazeBurnerBlockEntity extends SmartBlockEntity {
 		setBlockHeat(next);
 	}
 
-	public boolean isCreativeFuel(ItemStack stack) {
-		return AllItems.CREATIVE_BLAZE_CAKE.isIn(stack);
-	}
-
 	public boolean isValidBlockAbove() {
 		if (isVirtual())
 			return false;

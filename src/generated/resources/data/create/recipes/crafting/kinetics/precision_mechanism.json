@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+      "G": {
+        "item": "create:golden_sheet"
+      },
+      "C": {
+        "item": "create:cogwheel"
+      },
+      "L": {
+        "item": "create:large_cogwheel"
+      },
+      "N": {
+        "item": "minecraft:iron_nugget"
+      }
+    },
+    "pattern": [
+      " C ",
+      "NGN",
+      " L "
+    ],
+    "result": {
+      "item": "create:precision_mechanism"
+    }
+  }

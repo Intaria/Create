@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+      "S": {
+        "item": "create:copper_sheet"
+      },
+      "L": {
+        "tag": "forge:stripped_logs"
+      }
+    },
+    "pattern": [
+      "SL"
+    ],
+    "result": {
+      "item": "create:copper_casing"
+    }
+  }

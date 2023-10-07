@@ -9,7 +9,6 @@ import com.simibubi.create.AllSoundEvents;
 import com.simibubi.create.Create;
 import com.simibubi.create.foundation.advancement.AllAdvancements;
 import com.simibubi.create.foundation.data.recipe.ProcessingRecipeGen;
-import com.simibubi.create.foundation.data.recipe.SequencedAssemblyRecipeGen;
 import com.simibubi.create.foundation.data.recipe.StandardRecipeGen;
 import com.simibubi.create.foundation.ponder.PonderLocalization;
 import com.simibubi.create.foundation.utility.FilesHelper;
@@ -40,7 +39,6 @@ public class CreateDatagen {
 			generator.addProvider(true, new AllAdvancements(generator));
 
 			generator.addProvider(true, new StandardRecipeGen(generator));
-			generator.addProvider(true, new SequencedAssemblyRecipeGen(generator));
 			ProcessingRecipeGen.registerAll(generator);
 
 //			AllOreFeatureConfigEntries.gatherData(event);

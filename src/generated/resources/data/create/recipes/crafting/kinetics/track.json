@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+      "R": {
+        "item": "minecraft:rail"
+      },
+      "S": {
+        "tag": "create:sleepers"
+      }
+    },
+    "pattern": [
+      "R",
+      "S"
+    ],
+    "result": {
+      "item": "create:track"
+    }
+  }

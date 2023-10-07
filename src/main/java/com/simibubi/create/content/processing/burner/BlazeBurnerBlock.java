@@ -172,11 +172,6 @@ public class BlazeBurnerBlock extends HorizontalDirectionalBlock implements IBE<
 			return InteractionResultHolder.fail(ItemStack.EMPTY);
 		BlazeBurnerBlockEntity burnerBE = (BlazeBurnerBlockEntity) be;
 
-		if (burnerBE.isCreativeFuel(stack)) {
-			if (!simulate)
-				burnerBE.applyCreativeFuel();
-			return InteractionResultHolder.success(ItemStack.EMPTY);
-		}
 		if (!burnerBE.tryUpdateFuel(stack, forceOverflow, simulate))
 			return InteractionResultHolder.fail(ItemStack.EMPTY);
 

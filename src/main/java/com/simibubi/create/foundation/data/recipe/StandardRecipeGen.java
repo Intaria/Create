@@ -263,6 +263,41 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 				.pattern("PSP")
 				.pattern("APA")),
 
+		COPPER_CASING = create(AllBlocks.COPPER_CASING).unlockedBy(I::copper)
+			.viaShaped(b -> b.define('S', I.copperSheet())
+				.define('L', ItemTags.LOGS)
+				.pattern("SL")),
+
+		ANDESITE_CASING = create(AllBlocks.ANDESITE_CASING).unlockedBy(I::andesite)
+			.viaShaped(b -> b.define('S', I.andesite())
+				.define('L', ItemTags.LOGS)
+				.pattern("SL")),
+
+		BRASS_CASING = create(AllBlocks.BRASS_CASING).unlockedByTag(I::brass)
+			.viaShaped(b -> b.define('S', I.brassSheet())
+				.define('L', ItemTags.LOGS)
+				.pattern("SL")),
+
+		RAILWAY_CASING = create(AllBlocks.RAILWAY_CASING).unlockedByTag(I::sturdySheet)
+			.viaShaped(b -> b.define('S', I.sturdySheet())
+				.define('L', ItemTags.LOGS)
+				.pattern("SL")),
+
+		PRECISION_MECHANISM = create(AllItems.PRECISION_MECHANISM).unlockedByTag(I::goldSheet)
+			.viaShaped(b -> b.define('G', I.goldSheet())
+				.define('C', AllBlocks.COGWHEEL.get())
+				.define('L', AllBlocks.LARGE_COGWHEEL.get())
+				.define('N', Tags.Items.NUGGETS_IRON)
+				.pattern(" C ")
+				.pattern("NGN")
+				.pattern(" L ")),
+
+		TRACK = create(AllBlocks.TRACK).unlockedBy(I::andesite)
+			.viaShaped(b -> b.define('R', Blocks.RAIL)
+				.define('S', AllItemTags.SLEEPERS.tag)
+				.pattern("R")
+				.pattern("S")),
+
 		SHAFT = create(AllBlocks.SHAFT).returns(8)
 			.unlockedBy(I::andesite)
 			.viaShaped(b -> b.define('A', I.andesite())
