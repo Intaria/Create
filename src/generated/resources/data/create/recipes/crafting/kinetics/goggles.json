@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "G": {
-      "tag": "forge:glass"
+      "item": "minecraft:glass"
     },
     "P": {
       "tag": "forge:plates/gold"

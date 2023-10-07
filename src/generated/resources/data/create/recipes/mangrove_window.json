@@ -5,7 +5,7 @@
       "item": "minecraft:mangrove_planks"
     },
     "X": {
-      "tag": "forge:glass/colorless"
+      "item": "minecraft:glass"
     }
   },
   "pattern": [

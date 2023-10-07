@@ -394,15 +394,16 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 			.viaShapeless(b -> b.requires(ItemTags.WOODEN_TRAPDOORS)
 				.requires(I.railwayCasing())),
 
+
 		FRAMED_GLASS_DOOR = create(AllBlocks.FRAMED_GLASS_DOOR).returns(1)
-			.unlockedBy(AllPaletteBlocks.FRAMED_GLASS::get)
+			.unlockedByTag(() -> ItemTags.WOODEN_DOORS)
 			.viaShapeless(b -> b.requires(ItemTags.WOODEN_DOORS)
-				.requires(AllPaletteBlocks.FRAMED_GLASS.get())),
+				.requires(Tags.Items.GLASS)),
 
 		FRAMED_GLASS_TRAPDOOR = create(AllBlocks.FRAMED_GLASS_TRAPDOOR).returns(1)
-			.unlockedBy(AllPaletteBlocks.FRAMED_GLASS::get)
+			.unlockedByTag(() -> ItemTags.WOODEN_TRAPDOORS)
 			.viaShapeless(b -> b.requires(ItemTags.WOODEN_TRAPDOORS)
-				.requires(AllPaletteBlocks.FRAMED_GLASS.get())),
+				.requires(Tags.Items.GLASS)),
 
 		ANALOG_LEVER = create(AllBlocks.ANALOG_LEVER).unlockedBy(I::andesite)
 			.viaShaped(b -> b.define('S', I.andesiteCasing())
@@ -1050,15 +1051,7 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 		SOUL_SAND = create(AllPaletteStoneTypes.SCORIA.getBaseBlock()::get).viaCooking(() -> Blocks.SOUL_SAND)
 			.inFurnace(),
 
-		FRAMED_GLASS = recycleGlass(AllPaletteBlocks.FRAMED_GLASS),
-		TILED_GLASS = recycleGlass(AllPaletteBlocks.TILED_GLASS),
-		VERTICAL_FRAMED_GLASS = recycleGlass(AllPaletteBlocks.VERTICAL_FRAMED_GLASS),
-		HORIZONTAL_FRAMED_GLASS = recycleGlass(AllPaletteBlocks.HORIZONTAL_FRAMED_GLASS),
-		FRAMED_GLASS_PANE = recycleGlassPane(AllPaletteBlocks.FRAMED_GLASS_PANE),
-		TILED_GLASS_PANE = recycleGlassPane(AllPaletteBlocks.TILED_GLASS_PANE),
-		VERTICAL_FRAMED_GLASS_PANE = recycleGlassPane(AllPaletteBlocks.VERTICAL_FRAMED_GLASS_PANE),
-		HORIZONTAL_FRAMED_GLASS_PANE = recycleGlassPane(AllPaletteBlocks.HORIZONTAL_FRAMED_GLASS_PANE),
-
+	
 		CRUSHED_IRON = blastCrushedMetal(() -> Items.IRON_INGOT, AllItems.CRUSHED_IRON::get),
 		CRUSHED_GOLD = blastCrushedMetal(() -> Items.GOLD_INGOT, AllItems.CRUSHED_GOLD::get),
 		CRUSHED_COPPER = blastCrushedMetal(() -> Items.COPPER_INGOT, AllItems.CRUSHED_COPPER::get),

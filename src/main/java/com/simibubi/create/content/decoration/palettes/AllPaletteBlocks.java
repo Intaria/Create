@@ -36,35 +36,6 @@ public class AllPaletteBlocks {
 
 	// Windows and Glass
 
-	public static final BlockEntry<GlassBlock> TILED_GLASS = REGISTRATE.block("tiled_glass", GlassBlock::new)
-		.initialProperties(() -> Blocks.GLASS)
-		.addLayer(() -> RenderType::cutout)
-		.recipe((c, p) -> p.stonecutting(DataIngredient.tag(Tags.Items.GLASS_COLORLESS), c::get))
-		.blockstate((c, p) -> BlockStateGen.cubeAll(c, p, "palettes/"))
-		.tag(Tags.Blocks.GLASS_COLORLESS, BlockTags.IMPERMEABLE)
-		.item()
-		.tag(Tags.Items.GLASS_COLORLESS)
-		.build()
-		.register();
-
-	public static final BlockEntry<ConnectedGlassBlock> FRAMED_GLASS =
-		framedGlass("framed_glass", () -> new SimpleCTBehaviour(AllSpriteShifts.FRAMED_GLASS)),
-		HORIZONTAL_FRAMED_GLASS = framedGlass("horizontal_framed_glass",
-			() -> new HorizontalCTBehaviour(AllSpriteShifts.HORIZONTAL_FRAMED_GLASS, AllSpriteShifts.FRAMED_GLASS)),
-		VERTICAL_FRAMED_GLASS = framedGlass("vertical_framed_glass",
-			() -> new HorizontalCTBehaviour(AllSpriteShifts.VERTICAL_FRAMED_GLASS));
-
-	public static final BlockEntry<GlassPaneBlock> TILED_GLASS_PANE =
-		WindowGen.standardGlassPane("tiled_glass", TILED_GLASS, Create.asResource("block/palettes/tiled_glass"),
-			new ResourceLocation("block/glass_pane_top"), () -> RenderType::cutoutMipped);
-
-	public static final BlockEntry<ConnectedGlassPaneBlock> FRAMED_GLASS_PANE =
-		framedGlassPane("framed_glass", FRAMED_GLASS, () -> AllSpriteShifts.FRAMED_GLASS),
-		HORIZONTAL_FRAMED_GLASS_PANE = framedGlassPane("horizontal_framed_glass", HORIZONTAL_FRAMED_GLASS,
-			() -> AllSpriteShifts.HORIZONTAL_FRAMED_GLASS),
-		VERTICAL_FRAMED_GLASS_PANE = framedGlassPane("vertical_framed_glass", VERTICAL_FRAMED_GLASS,
-			() -> AllSpriteShifts.VERTICAL_FRAMED_GLASS);
-
 	public static final BlockEntry<WindowBlock> OAK_WINDOW = woodenWindowBlock(WoodType.OAK, Blocks.OAK_PLANKS),
 		SPRUCE_WINDOW = woodenWindowBlock(WoodType.SPRUCE, Blocks.SPRUCE_PLANKS),
 		BIRCH_WINDOW = woodenWindowBlock(WoodType.BIRCH, Blocks.BIRCH_PLANKS, () -> RenderType::translucent, true),
