@@ -2062,26 +2062,12 @@ public class AllBlocks {
 			.build()
 			.register();
 
-	public static final BlockEntry<RotatedPillarBlock> ROSE_QUARTZ_BLOCK =
-		REGISTRATE.block("rose_quartz_block", RotatedPillarBlock::new)
-			.initialProperties(() -> Blocks.AMETHYST_BLOCK)
-			.properties(p -> p.color(MaterialColor.TERRACOTTA_PINK)
-				.requiresCorrectToolForDrops()
-				.sound(SoundType.DEEPSLATE))
-			.transform(pickaxeOnly())
-			.blockstate((c, p) -> p.axisBlock(c.get(), p.modLoc("block/palettes/rose_quartz_side"),
-				p.modLoc("block/palettes/rose_quartz_top")))
-			.recipe((c, p) -> p.stonecutting(DataIngredient.items(AllItems.ROSE_QUARTZ), c::get, 2))
-			.simpleItem()
-			.lang("Block of Rose Quartz")
-			.register();
-
 	public static final BlockEntry<Block> ROSE_QUARTZ_TILES = REGISTRATE.block("rose_quartz_tiles", Block::new)
 		.initialProperties(() -> Blocks.DEEPSLATE)
 		.properties(p -> p.color(MaterialColor.TERRACOTTA_PINK).requiresCorrectToolForDrops())
 		.transform(pickaxeOnly())
 		.blockstate(simpleCubeAll("palettes/rose_quartz_tiles"))
-		.recipe((c, p) -> p.stonecutting(DataIngredient.items(AllItems.POLISHED_ROSE_QUARTZ), c::get, 2))
+		.recipe((c, p) -> p.stonecutting(DataIngredient.items(AllItems.ROSE_QUARTZ), c::get, 2))
 		.simpleItem()
 		.register();
 
@@ -2091,7 +2077,7 @@ public class AllBlocks {
 			.properties(p -> p.color(MaterialColor.TERRACOTTA_PINK).requiresCorrectToolForDrops())
 			.transform(pickaxeOnly())
 			.blockstate(simpleCubeAll("palettes/small_rose_quartz_tiles"))
-			.recipe((c, p) -> p.stonecutting(DataIngredient.items(AllItems.POLISHED_ROSE_QUARTZ), c::get, 2))
+			.recipe((c, p) -> p.stonecutting(DataIngredient.items(AllItems.ROSE_QUARTZ), c::get, 2))
 			.simpleItem()
 			.register();
 

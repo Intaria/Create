@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_polished_rose_quartz": {
+    "has_rose_quartz": {
       "conditions": {
         "items": [
           {
             "items": [
-              "create:polished_rose_quartz"
+              "create:rose_quartz"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_polished_rose_quartz",
+      "has_rose_quartz",
       "has_the_recipe"
     ]
   ],

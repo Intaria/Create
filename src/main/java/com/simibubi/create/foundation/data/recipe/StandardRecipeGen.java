@@ -138,7 +138,7 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 				.pattern("AB")),
 
 		ELECTRON_TUBE = create(AllItems.ELECTRON_TUBE).unlockedBy(AllItems.ROSE_QUARTZ::get)
-			.viaShaped(b -> b.define('L', AllItems.POLISHED_ROSE_QUARTZ.get())
+			.viaShaped(b -> b.define('L', AllItems.ROSE_QUARTZ.get())
 				.define('N', I.ironSheet())
 				.pattern("L")
 				.pattern("N")),
@@ -412,7 +412,7 @@ public class StandardRecipeGen extends CreateRecipeProvider {
 				.pattern("S")),
 
 		ROSE_QUARTZ_LAMP = create(AllBlocks.ROSE_QUARTZ_LAMP).unlockedByTag(I::zinc)
-			.viaShapeless(b -> b.requires(AllItems.POLISHED_ROSE_QUARTZ.get())
+			.viaShapeless(b -> b.requires(AllItems.ROSE_QUARTZ.get())
 				.requires(I.redstone())
 				.requires(I.zinc())),
 

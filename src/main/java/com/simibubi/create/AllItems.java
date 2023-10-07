@@ -69,7 +69,7 @@ public class AllItems {
 		taggedIngredient("wheat_flour", forgeItemTag("flour/wheat"), forgeItemTag("flour")),
 		DOUGH = taggedIngredient("dough", forgeItemTag("dough"), forgeItemTag("dough/wheat")),
 		CINDER_FLOUR = ingredient("cinder_flour"), ROSE_QUARTZ = ingredient("rose_quartz"),
-		POLISHED_ROSE_QUARTZ = ingredient("polished_rose_quartz"), POWDERED_OBSIDIAN = ingredient("powdered_obsidian"),
+		POWDERED_OBSIDIAN = ingredient("powdered_obsidian"),
 		STURDY_SHEET = taggedIngredient("sturdy_sheet", forgeItemTag("plates/obsidian"), PLATES.tag),
 		PROPELLER = ingredient("propeller"), WHISK = ingredient("whisk"),
 		ELECTRON_TUBE = ingredient("electron_tube");

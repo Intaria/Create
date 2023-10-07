@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "L": {
-      "item": "create:polished_rose_quartz"
+      "item": "create:rose_quartz"
     },
     "N": {
       "tag": "forge:plates/iron"

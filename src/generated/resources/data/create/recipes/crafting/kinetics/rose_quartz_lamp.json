@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "create:polished_rose_quartz"
+      "item": "create:rose_quartz"
     },
     {
       "tag": "forge:dusts/redstone"

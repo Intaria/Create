@@ -350,17 +350,11 @@ public class AllAdvancements implements DataProvider {
 			.after(BRASS)
 			.special(NOISY)),
 
-		ROSE_QUARTZ = create("rose_quartz", b -> b.icon(AllItems.POLISHED_ROSE_QUARTZ)
-			.title("Pink Diamonds")
-			.description("Polish some Rose Quartz")
-			.whenIconCollected()
-			.after(BRASS_CASING)),
-
 		MECHANISM = create("precision_mechanism", b -> b.icon(AllItems.PRECISION_MECHANISM)
 			.title("Complex Curiosities")
 			.description("Assemble a Precision Mechanism")
 			.whenIconCollected()
-			.after(ROSE_QUARTZ)
+			.after(BRASS_CASING)
 			.special(NOISY)),
 
 		SPEED_CONTROLLER = create("speed_controller", b -> b.icon(AllBlocks.ROTATION_SPEED_CONTROLLER)

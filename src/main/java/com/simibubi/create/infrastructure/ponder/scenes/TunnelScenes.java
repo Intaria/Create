@@ -529,7 +529,7 @@ public class TunnelScenes {
 
 		ItemStack item1 = new ItemStack(Items.CARROT);
 		ItemStack item2 = new ItemStack(Items.HONEY_BOTTLE);
-		ItemStack item3 = AllItems.POLISHED_ROSE_QUARTZ.asStack();
+		ItemStack item3 = AllItems.ROSE_QUARTZ.asStack();
 
 		scene.world.createItemOnBelt(util.grid.at(3, 1, 4), Direction.UP, item1);
 		scene.world.createItemOnBelt(util.grid.at(2, 1, 4), Direction.UP, item2);
