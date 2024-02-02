@@ -54,6 +54,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.network.PacketDistributor;
 
+import java.util.ArrayList;
+import org.openjdk.nashorn.internal.objects.Global;
+
 public class CarriageContraptionEntity extends OrientedContraptionEntity {
 
 	private static final EntityDataAccessor<CarriageSyncData> CARRIAGE_DATA =
@@ -641,7 +644,7 @@ public class CarriageContraptionEntity extends OrientedContraptionEntity {
 			if (lookAhead != null) {
 				if (spaceDown) {
 					carriage.train.manualTick = true;
-					nav.startNavigation(lookAhead, -1, false);
+					nav.startNavigation(nav.findPathTo(lookAhead, -1));
 					carriage.train.manualTick = false;
 					navDistanceTotal = nav.distanceToDestination;
 					return true;

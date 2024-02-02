@@ -104,8 +104,6 @@ public class GenericItemFilling {
 			return true;
 		if (fluid.isSame(AllFluids.POTION.get()))
 			return true;
-		if (fluid.isSame(AllFluids.TEA.get()))
-			return true;
 		return false;
 	}
 
@@ -123,8 +121,6 @@ public class GenericItemFilling {
 			Fluid fluid = toFill.getFluid();
 			if (FluidHelper.isWater(fluid))
 				fillBottle = PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.WATER);
-			else if (fluid.isSame(AllFluids.TEA.get()))
-				fillBottle = AllItems.BUILDERS_TEA.asStack();
 			else
 				fillBottle = PotionFluidHandler.fillBottle(stack, toFill);
 			stack.shrink(1);

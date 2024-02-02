@@ -55,7 +55,6 @@ public class OpenEndedPipe extends FlowSource {
 		registerEffectHandler(new MilkEffectHandler());
 		registerEffectHandler(new WaterEffectHandler());
 		registerEffectHandler(new LavaEffectHandler());
-		registerEffectHandler(new TeaEffectHandler());
 	}
 
 	private Level world;
@@ -444,24 +443,4 @@ public class OpenEndedPipe extends FlowSource {
 				entity.setSecondsOnFire(3);
 		}
 	}
-
-	public static class TeaEffectHandler implements IEffectHandler {
-		@Override
-		public boolean canApplyEffects(OpenEndedPipe pipe, FluidStack fluid) {
-			return fluid.getFluid().isSame(AllFluids.TEA.get());
-		}
-
-		@Override
-		public void applyEffects(OpenEndedPipe pipe, FluidStack fluid) {
-			Level world = pipe.getWorld();
-			if (world.getGameTime() % 5 != 0)
-				return;
-			List<LivingEntity> entities = world
-					.getEntitiesOfClass(LivingEntity.class, pipe.getAOE(), LivingEntity::isAffectedByPotions);
-			for (LivingEntity entity : entities) {
-					entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 21, 0, false, false, false));
-			}
-		}
-	}
-
 }

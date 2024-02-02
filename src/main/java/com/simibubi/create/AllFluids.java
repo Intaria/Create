@@ -47,11 +47,6 @@ public class AllFluids {
 			.lang("Potion")
 			.register();
 
-	public static final FluidEntry<VirtualFluid> TEA = REGISTRATE.virtualFluid("tea")
-		.lang("Builder's Tea")
-		.tag(AllTags.forgeFluidTag("tea"))
-		.register();
-
 	public static final FluidEntry<ForgeFlowingFluid.Flowing> HONEY =
 		REGISTRATE.standardFluid("honey",
 				SolidRenderedPlaceableFluidType.create(0xEAAE2F,

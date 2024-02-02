@@ -1,8 +1,13 @@
 package com.simibubi.create.content.kinetics.belt;
 
+import java.util.Map;
+
 import com.simibubi.create.AllTags.AllItemTags;
 import com.simibubi.create.foundation.utility.VecHelper;
 
+import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
+import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
+import net.minecraft.world.item.Item;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.util.Mth;
@@ -15,10 +20,13 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 
 public class BeltHelper {
+	public static Map<Item, Boolean> uprightCache = new Object2BooleanOpenHashMap<>();
+	public static final ResourceManagerReloadListener LISTENER = resourceManager -> uprightCache.clear();
 
 	public static boolean isItemUpright(ItemStack stack) {
-		return stack.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY)
-			.isPresent() || AllItemTags.UPRIGHT_ON_BELT.matches(stack);
+		return uprightCache.computeIfAbsent(stack.getItem(),
+			item -> stack.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY)
+				.isPresent() || AllItemTags.UPRIGHT_ON_BELT.matches(stack));
 	}
 
 	public static BeltBlockEntity getSegmentBE(LevelAccessor world, BlockPos pos) {

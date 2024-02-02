@@ -22,11 +22,6 @@ public class MixingRecipeGen extends ProcessingRecipeGen {
 		.output(Fluids.LAVA, 50)
 		.requiresHeat(HeatCondition.SUPERHEATED)),
 
-		TEA = create("tea", b -> b.require(Fluids.WATER, 250)
-			.require(Tags.Fluids.MILK, 250)
-			.require(ItemTags.LEAVES)
-			.output(AllFluids.TEA.get(), 500)
-			.requiresHeat(HeatCondition.HEATED)),
 
 		CHOCOLATE = create("chocolate", b -> b.require(Tags.Fluids.MILK, 250)
 			.require(Items.SUGAR)

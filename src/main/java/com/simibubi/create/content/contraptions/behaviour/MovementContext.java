@@ -12,6 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate.StructureBlockInfo;
 import net.minecraft.world.phys.Vec3;
+import com.simibubi.create.content.logistics.filter.FilterItemStack;
 
 public class MovementContext {
 
@@ -32,6 +33,8 @@ public class MovementContext {
 	public Contraption contraption;
 	public Object temporaryData;
 
+	private FilterItemStack filter;
+
 	public MovementContext(Level world, StructureBlockInfo info, Contraption contraption) {
 		this.world = world;
 		this.state = info.state;
@@ -47,6 +50,7 @@ public class MovementContext {
 		position = null;
 		data = new CompoundTag();
 		stall = false;
+		filter = null;
 	}
 
 	public float getAnimationSpeed() {
@@ -84,4 +88,9 @@ public class MovementContext {
 		return nbt;
 	}
 
+	public FilterItemStack getFilterFromBE() {
+		if (filter != null)
+			return filter;
+		return filter = FilterItemStack.of(blockEntityData.getCompound("Filter"));
+	}
 }

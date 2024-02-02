@@ -19,7 +19,6 @@ import com.simibubi.create.AllTags.AllItemTags;
 import com.simibubi.create.content.contraptions.glue.SuperGlueItem;
 import com.simibubi.create.content.contraptions.minecart.MinecartCouplingItem;
 import com.simibubi.create.content.contraptions.mounted.MinecartContraptionItem;
-import com.simibubi.create.content.equipment.BuildersTeaItem;
 import com.simibubi.create.content.equipment.TreeFertilizerItem;
 import com.simibubi.create.content.equipment.armor.AllArmorMaterials;
 import com.simibubi.create.content.equipment.armor.BacktankItem;
@@ -115,12 +114,6 @@ public class AllItems {
 		.properties(p -> p.food(new FoodProperties.Builder().nutrition(8)
 			.saturationMod(0.8F)
 			.build()))
-		.register();
-
-	public static final ItemEntry<BuildersTeaItem> BUILDERS_TEA = REGISTRATE.item("builders_tea", BuildersTeaItem::new)
-		.tag(AllItemTags.UPRIGHT_ON_BELT.tag)
-		.properties(p -> p.stacksTo(16))
-		.lang("Builder's Tea")
 		.register();
 
 	public static final ItemEntry<Item> RAW_ZINC =

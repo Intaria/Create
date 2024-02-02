@@ -3,10 +3,12 @@ package com.simibubi.create.content.processing.burner;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllTags.AllEntityTags;
 import com.simibubi.create.foundation.utility.RegisteredObjects;
 import com.simibubi.create.foundation.utility.VecHelper;
 
@@ -100,11 +102,9 @@ public class BlazeBurnerBlockItem extends BlockItem {
 			possibleSpawns.add(spawner.nextSpawnData);
 		}
 
-		ResourceLocation blazeId = RegisteredObjects.getKeyOrThrow(EntityType.BLAZE);
 		for (SpawnData e : possibleSpawns) {
-			ResourceLocation spawnerEntityId = new ResourceLocation(e.entityToSpawn()
-				.getString("id"));
-			if (!spawnerEntityId.equals(blazeId))
+			Optional<EntityType<?>> optionalEntity = EntityType.by(e.entityToSpawn());
+			if (optionalEntity.isEmpty() || !AllEntityTags.BLAZE_BURNER_CAPTURABLE.matches(optionalEntity.get()))
 				continue;
 
 			spawnCaptureEffects(world, VecHelper.getCenterOf(pos));
@@ -123,7 +123,7 @@ public class BlazeBurnerBlockItem extends BlockItem {
 		InteractionHand hand) {
 		if (hasCapturedBlaze())
 			return InteractionResult.PASS;
-		if (!(entity instanceof Blaze))
+		if (!AllEntityTags.BLAZE_BURNER_CAPTURABLE.matches(entity))
 			return InteractionResult.PASS;
 
 		Level world = player.level;

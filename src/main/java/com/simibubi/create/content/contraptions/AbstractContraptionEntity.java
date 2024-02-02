@@ -217,6 +217,9 @@ public abstract class AbstractContraptionEntity extends Entity implements IEntit
 	}
 
 	public Vec3 getPassengerPosition(Entity passenger, float partialTicks) {
+		if (contraption == null)
+			return null;
+
 		UUID id = passenger.getUUID();
 		if (passenger instanceof OrientedContraptionEntity) {
 			BlockPos localPos = contraption.getBearingPosOf(id);

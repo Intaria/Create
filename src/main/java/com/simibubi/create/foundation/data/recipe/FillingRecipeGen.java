@@ -20,10 +20,6 @@ public class FillingRecipeGen extends ProcessingRecipeGen {
 		.require(Items.GLASS_BOTTLE)
 		.output(Items.HONEY_BOTTLE)),
 
-		BUILDERS_TEA = create("builders_tea", b -> b.require(AllFluids.TEA.get(), 250)
-			.require(Items.GLASS_BOTTLE)
-			.output(AllItems.BUILDERS_TEA.get())),
-
 		FD_MILK = create(Mods.FD.recipeId("milk_bottle"), b -> b.require(Tags.Fluids.MILK, 250)
 			.require(Items.GLASS_BOTTLE)
 			.output(1, Mods.FD, "milk_bottle", 1)

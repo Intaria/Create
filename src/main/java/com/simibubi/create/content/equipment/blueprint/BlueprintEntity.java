@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
+import com.simibubi.create.content.logistics.filter.FilterItemStack;
 
 import javax.annotation.Nullable;
 
@@ -365,14 +366,14 @@ public class BlueprintEntity extends HangingEntity
 				boolean success = true;
 
 				Search: for (int i = 0; i < 9; i++) {
-					ItemStack requestedItem = items.getStackInSlot(i);
+					FilterItemStack requestedItem = FilterItemStack.of(items.getStackInSlot(i));
 					if (requestedItem.isEmpty()) {
 						craftingGrid.put(i, ItemStack.EMPTY);
 						continue;
 					}
 
 					for (int slot = 0; slot < playerInv.getSlots(); slot++) {
-						if (!FilterItem.test(level, playerInv.getStackInSlot(slot), requestedItem))
+						if (!requestedItem.test(level, playerInv.getStackInSlot(slot)))
 							continue;
 						ItemStack currentItem = playerInv.extractItem(slot, 1, false);
 						if (stacksTaken.containsKey(slot))
