@@ -58,6 +58,7 @@ import com.simibubi.create.foundation.utility.CameraAngleAnimationService;
 import com.simibubi.create.foundation.utility.ServerSpeedProvider;
 import com.simibubi.create.foundation.utility.worldWrappers.WrappedClientWorld;
 import com.simibubi.create.infrastructure.config.AllConfigs;
+import com.simibubi.create.content.equipment.armor.NetheriteDivingHandler;
 
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -291,7 +292,7 @@ public class ClientEvents {
 				event.scaleFarPlaneDistance(6.25f);
 				event.setCanceled(true);
 				return;
-			} else if (FluidHelper.isLava(fluid) && AllItems.NETHERITE_DIVING_HELMET.isIn(divingHelmet)) {
+			} else if (FluidHelper.isLava(fluid) && NetheriteDivingHandler.isNetheriteArmor(divingHelmet)) {
 				event.setNearPlaneDistance(-4.0f);
 				event.setFarPlaneDistance(20.0f);
 				event.setCanceled(true);

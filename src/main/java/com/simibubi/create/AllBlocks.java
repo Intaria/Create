@@ -103,8 +103,6 @@ import com.simibubi.create.content.kinetics.chainDrive.ChainDriveBlock;
 import com.simibubi.create.content.kinetics.chainDrive.ChainDriveGenerator;
 import com.simibubi.create.content.kinetics.chainDrive.ChainGearshiftBlock;
 import com.simibubi.create.content.kinetics.clock.CuckooClockBlock;
-import com.simibubi.create.content.kinetics.crafter.CrafterCTBehaviour;
-import com.simibubi.create.content.kinetics.crafter.MechanicalCrafterBlock;
 import com.simibubi.create.content.kinetics.crank.HandCrankBlock;
 import com.simibubi.create.content.kinetics.crank.ValveHandleBlock;
 import com.simibubi.create.content.kinetics.crusher.CrushingWheelBlock;
