@@ -1,5 +1,5 @@
 {
-  "parent": "create:mechanical_crafter",
+  "parent": "create:mechanical_arm",
   "criteria": {
     "0": {
       "conditions": {},
