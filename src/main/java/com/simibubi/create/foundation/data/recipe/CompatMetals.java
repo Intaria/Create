@@ -3,17 +3,18 @@ package com.simibubi.create.foundation.data.recipe;
 import static com.simibubi.create.foundation.data.recipe.Mods.IE;
 import static com.simibubi.create.foundation.data.recipe.Mods.MEK;
 import static com.simibubi.create.foundation.data.recipe.Mods.TH;
+import static com.simibubi.create.foundation.data.recipe.Mods.OR;
 
 import com.simibubi.create.foundation.utility.Lang;
 
 public enum CompatMetals {
 	ALUMINUM(IE),
-	LEAD(MEK, TH, IE),
+	LEAD(MEK, TH, IE, OR),
 	NICKEL(TH, IE),
 	OSMIUM(MEK),
 	PLATINUM(),
 	QUICKSILVER(),
-	SILVER(TH, IE),
+	SILVER(TH, IE, OR),
 	TIN(TH, MEK),
 	URANIUM(MEK, IE);
 

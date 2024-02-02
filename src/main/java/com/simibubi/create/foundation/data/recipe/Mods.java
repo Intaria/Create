@@ -8,6 +8,7 @@ public enum Mods {
 
 	MEK("mekanism", b -> b.reverseMetalPrefix()),
 	TH("thermal"),
+	OR("oreganized"),
 	IE("immersiveengineering", b -> b.reverseMetalPrefix()),
 
 	FD("farmersdelight"),
